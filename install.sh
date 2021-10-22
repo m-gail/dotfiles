@@ -5,7 +5,9 @@ sudo apt install -y curl stow
 
 # zsh
 sudo apt install -y zsh
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+mkdir zsh-plugins
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/zsh-plugins/powerlevel10k
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/zsh-plugins/zsh-syntax-highlighting
 chsh $USER -s /bin/zsh
 
 # vim
