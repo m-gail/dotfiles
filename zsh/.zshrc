@@ -16,6 +16,11 @@ alias ll="ls -al"
 alias la="ls -A"
 alias l="ls -C"
 
+# history
+export HISTFILE=~/.zsh_history
+export SAVEHIST=1000
+export HISTSIZE=100
+
 # plugins
 source ~/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
