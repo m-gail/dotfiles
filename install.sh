@@ -2,7 +2,7 @@
 
 if [[ "$1" == "--help" ]];
 then
-  echo "Available Distributions: debian (default), arch"
+  echo "Available Operating Systems: debian (default), arch, macos"
   exit
 fi
 
@@ -10,11 +10,14 @@ DISTRIBUTION=${1:-"debian"}
 
 # dependencies
 case $DISTRIBUTION in
-  debian)
+  arch)
     sudo pacman -S --noconfirm curl stow zsh vim 
   ;;
-  arch)
+  debian)
     sudo apt install -y curl stow zsh vim
+  ;;
+  macos)
+    brew install stow coreutils
   ;;
 esac
 
