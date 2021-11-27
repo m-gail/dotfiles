@@ -11,10 +11,10 @@ source ~/zsh-plugins/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # aliases
-alias ls="ls --color -F"
-alias ll="ls -al"
-alias la="ls -A"
-alias l="ls -C"
+source ~/.config/zsh/aliasrc
+
+# environment variables
+source ~/.config/zsh/environmentrc
 
 # history
 export HISTFILE=~/.zsh_history
@@ -24,3 +24,5 @@ export HISTSIZE=100
 # plugins
 source ~/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+[[ -f ~/.config/zsh/localrc ]] && source ~/.config/zsh/localrc

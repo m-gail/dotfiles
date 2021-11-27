@@ -11,13 +11,13 @@ DISTRIBUTION=${1:-"debian"}
 # dependencies
 case $DISTRIBUTION in
   arch)
-    sudo pacman -S --noconfirm curl stow zsh vim 
+    sudo pacman -S --noconfirm curl stow zsh vim exa
   ;;
   debian)
-    sudo apt install -y curl stow zsh vim
+    sudo apt install -y curl stow zsh vim exa
   ;;
   macos)
-    brew install stow coreutils
+    brew install stow coreutils exa
   ;;
 esac
 
