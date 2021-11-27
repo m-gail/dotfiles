@@ -1,4 +1,10 @@
+# ls
 alias ls="exa -F"
 alias ll="ls -al"
 alias la="ls -a"
 alias l="ls"
+
+# vim
+alias v="vim"
+alias vi="vim"
+alias sv="sudoedit"
