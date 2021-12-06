@@ -1,5 +1,5 @@
 # ls
-alias ls="exa -F"
+alias ls="exa -Fg"
 alias ll="ls -al"
 alias la="ls -a"
 alias l="ls"
