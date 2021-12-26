@@ -5,6 +5,7 @@ alias la="ls -a"
 alias l="ls"
 
 # vim
+alias vim="nvim"
 alias v="vim"
 alias vi="vim"
 alias sv="sudoedit"
