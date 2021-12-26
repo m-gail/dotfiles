@@ -11,10 +11,10 @@ DISTRIBUTION=${1:-"debian"}
 # dependencies
 case $DISTRIBUTION in
   arch)
-    sudo pacman -S --noconfirm curl stow zsh exa neovim
+    sudo pacman -S --noconfirm curl stow zsh exa neovim dunst rofi alacritty awesome
   ;;
   debian)
-    sudo apt install -y curl stow zsh exa neovim
+    sudo apt install -y curl stow zsh exa neovim dunst rofi awesome
   ;;
   macos)
     brew install stow coreutils exa neovim
