@@ -1,0 +1,9 @@
+:root {
+    --font-color: white;
+    --font-color-darkened: #e7e7e7;
+    --gradient-start-color: #0D131CCC;
+    --gradient-stop-color: #1A2638CC;
+    --root-font-size: 2.5vh;
+    --background-image: url("/usr/share/backgrounds/mountains_night.jpg");
+}
+
