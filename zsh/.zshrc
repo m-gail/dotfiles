@@ -26,3 +26,7 @@ source ~/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 [[ -f ~/.config/zsh/localrc ]] && source ~/.config/zsh/localrc
+
+# vi-mode
+bindkey -v
+KEYTIMEOUT=1
