@@ -8,11 +8,6 @@
 
 :colorscheme elflord
 
-map i <Up>
-map j <Left>
-map k <Down>
-noremap h i
-
 call plug#begin()
    Plug 'https://github.com/vim-airline/vim-airline'
    Plug 'https://github.com/vim-airline/vim-airline-themes'
