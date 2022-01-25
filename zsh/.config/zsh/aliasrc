@@ -9,3 +9,6 @@ alias vim="nvim"
 alias v="vim"
 alias vi="vim"
 alias sv="sudoedit"
+
+# python
+alias pe="pipenv"

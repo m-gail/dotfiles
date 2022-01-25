@@ -1,5 +1,5 @@
 configuration {
-	modi: "window,run,drun,combi";
+	modi: "window,run,drun,combi,calc";
 /*	font: "mono 12";*/
 /*	location: 0;*/
 /*	yoffset: 0;*/

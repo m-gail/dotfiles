@@ -4,7 +4,9 @@ require("awful.autofocus")
 local beautiful = require("beautiful")
 beautiful.init(require("ui.theme"))
 
+local apps = require("config.apps")
 modkey = "Mod4"
+terminal = apps.terminal
 require("keys")
 
 require("layouts")
