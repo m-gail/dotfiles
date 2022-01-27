@@ -1,8 +1,29 @@
 # ls
-alias ls="exa -Fg"
-alias ll="ls -al"
-alias la="ls -a"
+alias ls="exa -Fgh --icons"
 alias l="ls"
+alias ll="ls -l"
+alias lla="ls -la"
+alias la="ls -a"
+
+# mkdir
+alias mkdir="mkdir -pv"
+
+# cd
+function .. {
+    count=$1
+    [[ $1 -lt 1 ]] && count=1
+
+    for i in {1..$count}
+    do
+        cd ..
+    done
+}
+
+# confirmations
+alias mv='mv -i'
+alias cp='cp -i'
+alias rm='rm -i'
+alias ln='ln -i'
 
 # vim
 alias vim="nvim"
@@ -12,3 +33,4 @@ alias sv="sudoedit"
 
 # python
 alias pe="pipenv"
+
