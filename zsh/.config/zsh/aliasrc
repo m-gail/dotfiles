@@ -19,6 +19,8 @@ function .. {
     done
 }
 
+alias ra="ranger"
+
 # confirmations
 alias mv='mv -i'
 alias cp='cp -i'
