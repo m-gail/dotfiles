@@ -16,6 +16,7 @@ call plug#begin()
    Plug 'https://github.com/mhinz/vim-startify'
    Plug 'https://github.com/ryanoasis/vim-devicons'
    Plug 'https://github.com/neoclide/coc.nvim', {'branch': 'release'}
+   Plug 'https://github.com/LnL7/vim-nix'
 call plug#end()
 
 source $HOME/.config/nvim/plugins/airline.vim
