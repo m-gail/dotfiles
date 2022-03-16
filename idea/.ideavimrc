@@ -1,0 +1,35 @@
+let mapleader=" "
+
+set scrolloff=5
+
+set incsearch
+set number
+set relativenumber
+set showmode
+set NERDTree
+set easymotion
+
+" easymotion
+map <leader>w <Plug>(easymotion-bd-w)
+
+" Execute
+map <leader>er <Action>(Run)
+map <leader>eb <Action>(CompileDirty)
+map <leader>ek <Action>(Stop)
+
+" Refactor
+map <leader>rr <Action>(RenameElement)
+map <leader>riv <Action>(IntroduceVariable)
+map <leader>ric <Action>(IntroduceConstant)
+map <leader>rif <Action>(IntroduceField)
+map <leader>rip <Action>(IntroduceParameter)
+
+map <leader>q :wq<CR>
+
+" Format
+map <leader>f <Action>(ReformatCode)<Action>(OptimizeImports)
+map <leader>c <Action>(CommentByLineComment)
+
+" ToolWindows, Escape goes back to editor
+map <leader>nf <Action>(ActivateProjectToolWindow)
+map <leader>nt <Action>(ActivateTerminalToolWindow)
