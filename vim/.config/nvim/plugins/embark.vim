@@ -1,0 +1,2 @@
+:colorscheme embark
+:set termguicolors
