@@ -21,7 +21,7 @@ local keys = gears.table.join(
     ),
 
     awful.key(
-      { modkey }, "k",
+      { modkey }, "j",
       function () awful.client.focus.byidx(1) end,
       {
         description = "focus next by index", 
@@ -30,7 +30,7 @@ local keys = gears.table.join(
     ),
 
     awful.key(
-      { modkey }, "i",
+      { modkey }, "k",
       function () awful.client.focus.byidx(-1) end,
       {
         description = "focus previous by index", 
@@ -48,7 +48,7 @@ local keys = gears.table.join(
     ),
 
     awful.key(
-      { modkey }, "j", 
+      { modkey }, "h", 
       function () awful.tag.incmwfact(-0.05) end,
       {
         description = "decrease master width factor", 
@@ -57,7 +57,7 @@ local keys = gears.table.join(
     ),
 
     awful.key(
-      { modkey, "Shift" }, "j",
+      { modkey, "Shift" }, "h",
       function () awful.tag.incnmaster( 1, nil, true) end,
       {
         description = "increase the number of master clients", 
@@ -75,7 +75,7 @@ local keys = gears.table.join(
     ),
 
     awful.key(
-      { modkey, "Control" }, "j",
+      { modkey, "Control" }, "h",
       function () awful.tag.incncol( 1, nil, true) end,
       {
         description = "increase the number of columns", 
@@ -93,7 +93,7 @@ local keys = gears.table.join(
     ),
 
     awful.key(
-      { modkey, "Shift" }, "k", 
+      { modkey, "Shift" }, "j", 
       function () awful.client.swap.byidx(1) end, 
       {
         description = "swap with next client by index", 
@@ -102,7 +102,7 @@ local keys = gears.table.join(
     ), 
 
     awful.key(
-      { modkey, "Shift" }, "i", 
+      { modkey, "Shift" }, "k", 
       function () awful.client.swap.byidx(-1) end,
       {
         description = "swap with previous client by index", 

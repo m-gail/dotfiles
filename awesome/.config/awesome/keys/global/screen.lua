@@ -3,7 +3,7 @@ local gears = require("gears")
 
 local keys = gears.table.join(
     awful.key(
-      { modkey, "Control" }, "k", 
+      { modkey, "Control" }, "j", 
       function () awful.screen.focus_relative(1) end,
       {
         description = "focus the next screen", 
@@ -12,7 +12,7 @@ local keys = gears.table.join(
     ),
 
     awful.key(
-      { modkey, "Control" }, "i", 
+      { modkey, "Control" }, "k", 
       function () awful.screen.focus_relative(-1) end,
       {
         description = "focus the previous screen", 

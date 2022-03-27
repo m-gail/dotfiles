@@ -1,7 +1,7 @@
 * {
   background-color: transparent;
   color: white;
-  font: "JetBrains Mono Nerd Font Light 14";
+  font: "JetBrains Mono Nerd Font 14";
   padding: 0;
   margin: 0;
 }

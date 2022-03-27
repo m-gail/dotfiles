@@ -1,5 +1,5 @@
 return {
-  terminal = "alacritty",
+  terminal = "kitty",
   browser = "firefox",
   launcher = "rofi -show combi",
   lockscreen = "light-locker-command -l",

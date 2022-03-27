@@ -6,18 +6,19 @@ window:
 
 font:
   normal:
-    family: "MesloLGS NF"
+    family: "JetBrains Mono Nerd Font"
     style: Regular
   italic:
-    family: "MesloLGS NF"
+    family: "JetBrains Mono Nerd Font"
     style: Italic
   bold:
-    family: "MesloLGS NF"
+    family: "JetBrains Mono Nerd Font"
     style: Bold
 
 # Colors (Iceberg Dark)
 colors:
   # Default colors
+  transparen_background_colors: true
   primary:
     background: '#161821'
     foreground: '#d2d4de'

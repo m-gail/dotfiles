@@ -3,7 +3,7 @@ local awful = require("awful")
 
 local keys = {}
 
-for i = 1, 8 do
+for i = 1, 9 do
     keys = gears.table.join(keys,
         awful.key(
             { modkey }, "#" .. i + 9,
