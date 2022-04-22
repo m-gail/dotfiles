@@ -1,0 +1,6 @@
+{
+    "rust-analyzer.server.path": "/usr/bin/rust-analyzer",
+    "suggest.enablePreselect": true,
+    "suggest.selection": "recentlyUsed",
+    "suggest.noselect": false
+}

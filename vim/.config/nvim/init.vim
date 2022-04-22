@@ -1,12 +1,13 @@
 let mapleader=" "
 
-:set number
-:set relativenumber
-:set autoindent
-:set mouse=a
-:set tabstop=4  
-:set shiftwidth=4
-:set expandtab
+set number
+set relativenumber
+set autoindent
+set mouse=a
+set tabstop=4  
+set shiftwidth=4
+set expandtab
+set nocompatible
 
 call plug#begin()
     Plug 'vim-airline/vim-airline'
@@ -24,6 +25,7 @@ call plug#begin()
 
     Plug 'https://github.com/neoclide/coc.nvim', {'branch': 'release'}
     Plug 'https://github.com/LnL7/vim-nix'
+    Plug 'rust-lang/rust.vim'
 call plug#end()
 
 source $HOME/.config/nvim/plugins/airline.vim
