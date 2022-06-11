@@ -4,6 +4,7 @@ alias l="ls"
 alias ll="ls -l"
 alias lla="ls -la"
 alias la="ls -a"
+alias lt="ls -T"
 
 # mkdir
 alias mkdir="mkdir -pv"
@@ -20,6 +21,11 @@ function .. {
 }
 
 alias ra="ranger"
+alias ranger=". ranger"
+
+function j {
+    cd $(find -L ~/Programming ~/Documents ~/Nextcloud ~/Downloads ~/.config -type d | fzf)
+}
 
 # confirmations
 alias mv='mv -i'
@@ -32,6 +38,10 @@ alias vim="nvim"
 alias v="vim"
 alias vi="vim"
 alias sv="sudoedit"
+
+function vf {
+    v $(fzf)
+}
 
 # python
 alias pe="pipenv"

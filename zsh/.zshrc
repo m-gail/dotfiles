@@ -9,10 +9,6 @@ export HISTFILE=~/.zsh_history
 export SAVEHIST=1000
 export HISTSIZE=100
 
-# plugins
-source ~/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 [[ -f ~/.config/zsh/localrc ]] && source ~/.config/zsh/localrc
 
 # vi-mode
@@ -21,3 +17,7 @@ KEYTIMEOUT=1
 
 # starship prompt
 eval "$(starship init zsh)"
+
+# plugins
+source ~/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
