@@ -1,11 +1,19 @@
 local gears = require("gears")
 
+local apps_keys = require("keys.global.apps")
+local awesome_keys = require("keys.global.awesome")
+local layout_keys = require("keys.global.layout")
+local screen_keys = require("keys.global.screen")
+local tag_keys = require("keys.global.tag")
+local media_keys = require("keys.global.media")
+local client_keys = require("keys.global.client")
+
 root.keys(gears.table.join(
-  require("keys.global.apps"),
-  require("keys.global.awesome"),
-  require("keys.global.layout"),
-  require("keys.global.screen"),
-  require("keys.global.tag"),
-  require("keys.global.media"),
-  require("keys.global.client")
+    apps_keys, 
+    awesome_keys,
+    layout_keys,
+    screen_keys,
+    tag_keys,
+    media_keys,
+    client_keys 
 ))

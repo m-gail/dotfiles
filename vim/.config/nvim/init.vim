@@ -17,11 +17,11 @@ call plug#begin()
     Plug 'preservim/nerdtree'
     Plug 'ryanoasis/vim-devicons'
 
-    " Plug 'cocopon/iceberg.vim'
+    Plug 'cocopon/iceberg.vim'
     " Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
     " Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
     " Plug 'NLKNguyen/papercolor-theme'
-    Plug 'ghifarit53/tokyonight-vim'
+    " Plug 'ghifarit53/tokyonight-vim'
 
     Plug 'phaazon/hop.nvim'
     Plug 'nvim-lua/plenary.nvim'
@@ -35,7 +35,7 @@ call plug#begin()
 call plug#end()
 
 source $HOME/.config/nvim/plugins/airline.vim
-source $HOME/.config/nvim/plugins/tokyonight.vim
+source $HOME/.config/nvim/plugins/iceberg.vim
 source $HOME/.config/nvim/plugins/startify.vim
 source $HOME/.config/nvim/plugins/hop.vim
 source $HOME/.config/nvim/plugins/fzf.vim
