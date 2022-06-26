@@ -1,3 +1,5 @@
+require("plugins")
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.autoindent = true
@@ -11,7 +13,6 @@ vim.g.mapleader = " "
 
 vim.cmd("colorscheme iceberg")
 
-require("plugins")
 require("plugin_config.treesitter")
 require("plugin_config.lsp")
 require("keymap")
