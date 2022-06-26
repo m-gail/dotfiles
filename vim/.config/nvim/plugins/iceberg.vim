@@ -1,2 +1,0 @@
-:colorscheme iceberg
-:set termguicolors
