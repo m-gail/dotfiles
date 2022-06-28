@@ -30,7 +30,7 @@ function j {
 # confirmations
 alias mv='mv -i'
 alias cp='cp -i'
-alias rm='rm -i'
+alias rm='trash'
 alias ln='ln -i'
 
 # vim
