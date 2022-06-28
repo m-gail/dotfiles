@@ -27,11 +27,8 @@ require('packer').startup({ function()
     use {
         'kyazdani42/nvim-tree.lua',
         requires = {
-            'kyazdani42/nvim-web-devicons', -- optional, for file icons
-        },
-        config = function ()
-            require("nvim-tree").setup()
-        end
+            'kyazdani42/nvim-web-devicons',
+        }
     }
 
     -- Colorschemes
@@ -49,9 +46,31 @@ require('packer').startup({ function()
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
+    use {
+        'jose-elias-alvarez/null-ls.nvim',
+        config = function ()
+            require("null-ls").setup {
+                sources = {
+                    require("null-ls").builtins.formatting.black,
+                    require("null-ls").builtins.formatting.isort,
+                }
+            }
+        end
+    }
+
 
     -- Snippets
     use 'L3MON4D3/LuaSnip'
+    use {
+        'rafamadriz/friendly-snippets',
+        config = function ()
+            require("luasnip.loaders.from_vscode").lazy_load()
+        end
+    }
     use 'saadparwaiz1/cmp_luasnip'
 
     -- Statusline
@@ -80,6 +99,12 @@ require('packer').startup({ function()
         config = function()
             require('Comment').setup()
         end
+    }
+
+    -- Copilot
+    use {
+        'github/copilot.vim',
+        disable = true
     }
 end, config = {
     display = {

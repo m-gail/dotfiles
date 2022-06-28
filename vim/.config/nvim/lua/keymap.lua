@@ -1,13 +1,19 @@
-local function map(mode, keys, command)
-    vim.api.nvim_set_keymap(mode, keys, command, { noremap = true, silent = true })
+local default_opts = { noremap = true, silent = true }
+
+local function map(mode, keys, command, opts)
+    vim.keymap.set(mode, keys, command, opts)
 end
 
 local function nmap(keys, command)
-    map('n', keys, command)
+    map('n', keys, command, default_opts)
 end
 
 local function imap(keys, command)
-    map('i', keys, command)
+    map('i', keys, command, default_opts)
+end
+
+local function smap(keys, command)
+    map('s', keys, command, default_opts)
 end
 
 -- General
@@ -49,3 +55,21 @@ nmap("<leader>fg", ":Telescope live_grep<CR>")
 
 -- NvimTree
 nmap("<leader>fb", ":NvimTreeFocus<CR>")
+
+-- Luasnip
+local function jump_back()
+    local ls = require("luasnip")
+    if ls.jumpable(-1) then
+        ls.jump(-1)
+    end
+end
+
+local function jump_forward()
+    require("luasnip").jump(1)
+end
+
+map("i", "<Tab>", "luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'",
+    { silent = true, noremap = false, expr = true })
+imap("<S-Tab>", jump_back)
+smap("<Tab>", jump_forward)
+smap("<S-Tab>", jump_back)
