@@ -46,3 +46,5 @@ function vf {
 # python
 alias pe="pipenv"
 
+# findproject
+alias fp=". fp"
