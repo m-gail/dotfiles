@@ -1,0 +1,53 @@
+* {
+  background-color: transparent;
+  color: white;
+  font: "JetBrains Mono Nerd Font 14";
+  padding: 0;
+  margin: 0;
+}
+
+window {
+  background-color: #0e1316;
+  padding: 15;
+  width: 35%;
+  border: 2;
+  border-color: #6ca632;
+}
+
+inputbar {
+  children: [prompt, entry];
+}
+
+prompt {
+  padding: 10; 
+  border: 2;
+  border-color: #32a6a6;
+  margin: 0 10 0 0;
+}
+
+entry {
+  padding: 10; 
+  border: 2;
+  border-color: #32a6a6;
+  margin: 0;
+}
+
+listview {
+  margin: 10 0 0 0;
+  lines: 5;
+}
+
+element {
+  padding: 5;
+  margin: 2 0;
+}
+
+element-icon {
+  margin: 0 5 0 5;
+}
+
+element.selected {
+  background-color: #1d282e;
+}
+
+/* vim:ft=css
