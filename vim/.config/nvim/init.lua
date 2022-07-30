@@ -11,7 +11,7 @@ vim.opt.showmode = false
 vim.opt.cursorline = true
 vim.g.mapleader = " "
 
-vim.cmd("colorscheme iceberg")
+vim.cmd("colorscheme northern-lights")
 
 require("plugin_config.treesitter")
 require("plugin_config.lsp")

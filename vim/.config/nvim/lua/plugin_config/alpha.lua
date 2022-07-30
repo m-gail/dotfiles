@@ -4,8 +4,6 @@ theme.section.header.val = {
     '',
     '',
     '',
-    '',
-    '',
     '   ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣭⣿⣶⣿⣦⣼⣆         ',
     '    ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦       ',
     '          ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷⠄⠄⠄⠄⠻⠿⢿⣿⣧⣄     ',
@@ -17,6 +15,9 @@ theme.section.header.val = {
     ' ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇⠄⠛⠻⢷⣄ ',
     '      ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆     ',
     '       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ',
+    '',
+    '',
+    '',
 }
 
 theme.section.buttons.val = {
@@ -26,6 +27,14 @@ theme.section.buttons.val = {
     theme.button("SPC f b", "File Browser"),
 }
 
-theme.section.footer.val = "Have fun with neovim!"
+theme.section.header.opts.hl = "AlphaHeader"
+
+theme.section.footer.val = {
+    "",
+    "",
+    "",
+    "Have fun with neovim!",
+}
+theme.section.footer.opts.hl = "AlphaFooter"
 
 require("alpha").setup(theme.config)

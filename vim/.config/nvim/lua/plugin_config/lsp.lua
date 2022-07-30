@@ -27,8 +27,12 @@ local configs = {
     rust_analyzer = {},
     kotlin_language_server = {},
     jdtls = {
-        use_lombok_agent = true
-    }
+        use_lombok_agent = true,
+    },
+    html = { filetypes = { "html", "htmldjango" } },
+    tsserver = {},
+    cssls = {},
+    jsonls = {},
 }
 
 for _, value in pairs(configs) do
@@ -42,6 +46,10 @@ lspconfig.pyright.setup(configs.pyright)
 lspconfig.rust_analyzer.setup(configs.rust_analyzer)
 lspconfig.kotlin_language_server.setup(configs.kotlin_language_server)
 lspconfig.jdtls.setup(configs.jdtls)
+lspconfig.html.setup(configs.html)
+lspconfig.tsserver.setup(configs.tsserver)
+lspconfig.cssls.setup(configs.cssls)
+lspconfig.jsonls.setup(configs.jsonls)
 
 -- Setup completion
 
@@ -93,7 +101,7 @@ cmp.setup({
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ['<A-l>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },

@@ -33,12 +33,19 @@ require('packer').startup({ function()
 
     -- Colorschemes
     use 'cocopon/iceberg.vim'
+    use 'frenzyexists/aquarium-vim'
+    use 'jaredgorski/spacecamp'
+    use 'NLKNguyen/papercolor-theme'
+    use 'drewtempelmeyer/palenight.vim'
+    use 'ayu-theme/ayu-vim'
+    use 'sainnhe/everforest'
 
     -- LSP/IDE
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+    use 'nvim-treesitter/playground'
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
     use 'hrsh7th/cmp-nvim-lsp'
@@ -52,22 +59,27 @@ require('packer').startup({ function()
     }
     use {
         'jose-elias-alvarez/null-ls.nvim',
-        config = function ()
+        config = function()
             require("null-ls").setup {
                 sources = {
                     require("null-ls").builtins.formatting.black,
                     require("null-ls").builtins.formatting.isort,
+                    require("null-ls").builtins.formatting.prettier,
                 }
             }
         end
     }
+    use({
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+    })
 
 
     -- Snippets
     use 'L3MON4D3/LuaSnip'
     use {
         'rafamadriz/friendly-snippets',
-        config = function ()
+        config = function()
             require("luasnip.loaders.from_vscode").lazy_load()
         end
     }
@@ -76,7 +88,10 @@ require('packer').startup({ function()
     -- Statusline
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+        config = function()
+            require("lualine").setup { options = { theme = require("northern_lights.lualine_theme") } }
+        end
     }
 
     -- Git

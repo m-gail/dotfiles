@@ -6,7 +6,16 @@ require('nvim-treesitter.configs').setup {
     },
     indent = {
         enable = true
-    }
+    },
+    incremental_selection = {
+        enable = true,
+        keymaps = {
+            init_selection = "gnn",
+            node_incremental = "<A-o>",
+            scope_incremental = "grc",
+            node_decremental = "<A-i>",
+        },
+    },
 }
 
 function _G.custom_fold_text()

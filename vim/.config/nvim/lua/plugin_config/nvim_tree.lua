@@ -1,4 +1,9 @@
 require("nvim-tree").setup {
+    view = {
+        signcolumn = "auto",
+        width = 35,
+        adaptive_size = true
+    },
     renderer = {
         root_folder_modifier = ":t",
         icons = {
@@ -22,5 +27,12 @@ require("nvim-tree").setup {
     git = {
         enable = true,
         ignore = false
+    },
+    filters = {
+        custom = {
+            "__pycache__",
+            ".git",
+            ".idea"
+        }
     }
 }
