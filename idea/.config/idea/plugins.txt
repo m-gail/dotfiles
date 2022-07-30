@@ -1,0 +1,4 @@
+Atom Material Icons
+One Dark Theme
+IdeaVim
+IdeaVim-EasyMotion
