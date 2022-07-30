@@ -3,11 +3,11 @@ local gears = require("gears")
 
 local taglist_buttons = gears.table.join(
     awful.button(
-        { }, 1, 
+        {}, 1,
         function(t) t:view_only() end
     ),
 
-    awful.button({ modkey }, 1, 
+    awful.button({ modkey }, 1,
         function(t)
             if client.focus then
                 client.focus:move_to_tag(t)
@@ -16,12 +16,12 @@ local taglist_buttons = gears.table.join(
     ),
 
     awful.button(
-        { }, 3, 
+        {}, 3,
         awful.tag.viewtoggle
     ),
 
     awful.button(
-        { modkey }, 3, 
+        { modkey }, 3,
         function(t)
             if client.focus then
                 client.focus:toggle_tag(t)
@@ -39,3 +39,4 @@ local function create_taglist(s)
 end
 
 return create_taglist
+

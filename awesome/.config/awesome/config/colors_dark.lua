@@ -1,9 +1,15 @@
 return {
-  primary = "#0D131C",
-  secondary = "#1A2638",
-  accent = "#4A6FA5",
-  accent_dark_1 = "#3F5E8D",
-  accent_dark_2 = "#334B71",
-  text = "#FFFFFF",
-  inactive = "#adadad"
+    background = "#0e1316",
+    background_alt_1 = "#1d282e",
+    background_alt_2 = "#2d3e47",
+    forgeround = "#b8cca3",
+    forgeround_alt_1 = "#91998a",
+    forgeround_alt_2 = "#60665c",
+    red = "#a63232",
+    yellow = "#a6a632",
+    orange = "#a66c32",
+    green = "#6ca632",
+    cyan = "#32a6a6",
+    blue = "#3262a6",
+    purple = "#4532a6",
 }
