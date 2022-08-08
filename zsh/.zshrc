@@ -6,8 +6,8 @@ source ~/.config/zsh/environmentrc
 
 # history
 export HISTFILE=~/.zsh_history
-export SAVEHIST=1000
-export HISTSIZE=100
+export SAVEHIST=100000
+export HISTSIZE=100000
 
 [[ -f ~/.config/zsh/localrc ]] && source ~/.config/zsh/localrc
 
