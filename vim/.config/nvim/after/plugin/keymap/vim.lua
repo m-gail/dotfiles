@@ -1,8 +1,8 @@
-local default_opts = require('keymap').default_opts
-local nmap = require('keymap').nmap
-local map = require('keymap').map
-local imap = require('keymap').imap
-local smap = require('keymap').smap
+local default_opts = require('ihciM.keymap').default_opts
+local nmap = require('ihciM.keymap').nmap
+local map = require('ihciM.keymap').map
+local imap = require('ihciM.keymap').imap
+local smap = require('ihciM.keymap').smap
 
 -- General
 
@@ -28,7 +28,6 @@ nmap("gD", ":lua vim.lsp.buf.declaration()<CR>")
 nmap("gi", ":lua vim.lsp.buf.implementation()<CR>")
 nmap("gr", ":lua vim.lsp.buf.references()<CR>")
 nmap("<leader>lf", ":lua vim.lsp.buf.format { async = true }<CR>")
-nmap("<leader>lr", ":lua vim.lsp.buf.rename()<CR>")
 nmap("<leader>lR", ":LspRestart<CR>")
 
 -- Harpoon

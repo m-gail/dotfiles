@@ -11,6 +11,10 @@ function M.nmap(keys, command)
     M.map('n', keys, command, default_opts)
 end
 
+function M.vmap(keys, command)
+    M.map('v', keys, command, default_opts)
+end
+
 function M.imap(keys, command)
     M.map('i', keys, command, default_opts)
 end

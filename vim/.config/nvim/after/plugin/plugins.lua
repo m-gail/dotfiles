@@ -2,6 +2,10 @@ require('packer').startup({ function()
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    -- External tool management
+    use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
+
     -- Buffer navigation
     use {
         'phaazon/hop.nvim',
@@ -40,39 +44,40 @@ require('packer').startup({ function()
     use 'ayu-theme/ayu-vim'
     use 'sainnhe/everforest'
 
-    -- LSP/IDE
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
-    use 'nvim-treesitter/playground'
+    -- LSP
     use 'neovim/nvim-lspconfig'
-    use 'williamboman/nvim-lsp-installer'
+    use 'mfussenegger/nvim-jdtls'
+    use {
+        'jose-elias-alvarez/null-ls.nvim',
+    }
+    use{
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+    }
+
+    -- Debugging
+    use 'mfussenegger/nvim-dap'
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    use { 'theHamsta/nvim-dap-virtual-text', requires = {"mfussenegger/nvim-dap", "nvim-treesitter/nvim-treesitter"} }
+
+    -- Completion
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
+
+    -- Treesitter
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
+    use 'nvim-treesitter/playground'
+
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
-    use {
-        'jose-elias-alvarez/null-ls.nvim',
-        config = function()
-            require("null-ls").setup {
-                sources = {
-                    require("null-ls").builtins.formatting.black,
-                    require("null-ls").builtins.formatting.isort,
-                    require("null-ls").builtins.formatting.prettier,
-                }
-            }
-        end
-    }
-    use({
-        "glepnir/lspsaga.nvim",
-        branch = "main",
-    })
 
 
     -- Snippets
@@ -89,9 +94,6 @@ require('packer').startup({ function()
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-        config = function()
-            require("lualine").setup { options = { theme = require("northern_lights.lualine_theme") } }
-        end
     }
 
     -- Git

@@ -1,4 +1,3 @@
-require("plugins")
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.autoindent = true
@@ -12,11 +11,3 @@ vim.opt.cursorline = true
 vim.g.mapleader = " "
 
 vim.cmd("colorscheme northern-lights")
-
-require("plugin_config.treesitter")
-require("plugin_config.lsp")
-require("keymap")
-require("plugin_config.lualine")
-require("plugin_config.alpha")
-require("plugin_config.nvim_tree")
-require("plugin_config.telescope")

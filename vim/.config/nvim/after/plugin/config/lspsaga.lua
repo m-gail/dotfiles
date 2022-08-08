@@ -6,5 +6,5 @@ saga.init_lsp_saga({
         left_with = 'NvimTree',
         win_width = 40,
         auto_refresh = true,
-    }
+    },
 })

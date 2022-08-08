@@ -1,55 +1,17 @@
-require("nvim-lsp-installer").setup {
-    automatic_installation = true
-}
-
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Setup Language Servers
 
-local configs = {
-    sumneko_lua = {
-        settings = {
-            Lua = {
-                diagnostics = {
-                    globals = { 'vim', 'use' }
-                },
-                workspace = {
-                    -- Make the server aware of Neovim runtime files
-                    library = { [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-                        [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true }
-                }
-            }
-        }
-    },
-    pyright = {},
-    rust_analyzer = {},
-    kotlin_language_server = {},
-    jdtls = {
-        use_lombok_agent = true,
-    },
-    html = { filetypes = { "html", "htmldjango" } },
-    tsserver = {},
-    cssls = {},
-    jsonls = {},
-}
-
-for _, value in pairs(configs) do
-    value.capabilities = capabilities
-end
+local configs = require('ihciM.lspconfigs')
 
 local lspconfig = require('lspconfig')
 
-lspconfig.sumneko_lua.setup(configs.sumneko_lua)
-lspconfig.pyright.setup(configs.pyright)
-lspconfig.rust_analyzer.setup(configs.rust_analyzer)
-lspconfig.kotlin_language_server.setup(configs.kotlin_language_server)
-lspconfig.jdtls.setup(configs.jdtls)
-lspconfig.html.setup(configs.html)
-lspconfig.tsserver.setup(configs.tsserver)
-lspconfig.cssls.setup(configs.cssls)
-lspconfig.jsonls.setup(configs.jsonls)
+for ls, value in pairs(configs) do
+    value.capabilities = capabilities
+    lspconfig[ls].setup(value)
+end
 
 -- Setup completion
 
@@ -138,3 +100,11 @@ cmp.setup.cmdline(':', {
         { name = 'cmdline' }
     })
 })
+
+-- Signcolumn Icons
+local icons = { Error = '', Warn = '', Hint = '', Info = '' }
+
+for symbol, icon in pairs(icons) do
+    local sign_name = "DiagnosticSign" .. symbol
+    vim.fn.sign_define(sign_name, { text = icon, texthl = sign_name })
+end

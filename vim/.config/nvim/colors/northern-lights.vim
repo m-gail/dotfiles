@@ -154,3 +154,6 @@ call s:highlight('NvimTreeGitDeleted', s:red, 'NONE')
 " Alpha
 call s:highlight('AlphaHeader', s:green, 'NONE')
 call s:highlight('AlphaFooter', s:yellow, 'NONE', "italic")
+
+" Nvim-dap
+call s:highlight('DapBreakpoint', s:red, 'NONE')
