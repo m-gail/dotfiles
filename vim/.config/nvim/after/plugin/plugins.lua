@@ -78,6 +78,8 @@ require('packer').startup({ function()
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
+    use 'nvim-treesitter/nvim-treesitter-context'
+    use 'windwp/nvim-ts-autotag'
 
 
     -- Snippets

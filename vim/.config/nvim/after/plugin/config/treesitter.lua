@@ -1,10 +1,14 @@
 require('nvim-treesitter.configs').setup {
-    ensure_installed = { "java", "python", "javascript", "lua", "css", "html", "rust" },
+    ensure_installed = { "java", "kotlin", "python", "typescript", "javascript", "lua", "css", "html", "rust" },
     sync_install = false,
     highlight = {
         enable = true,
     },
     indent = {
+        enable = true,
+        disable = { "python" }
+    },
+    autotag = {
         enable = true
     },
     incremental_selection = {

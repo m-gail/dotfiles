@@ -31,7 +31,7 @@ require("nvim-tree").setup {
     filters = {
         custom = {
             "__pycache__",
-            ".git",
+            "^.git$",
             ".idea"
         }
     }
