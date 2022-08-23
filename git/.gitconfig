@@ -1,0 +1,11 @@
+[user]
+	name = Michael Gail
+	email = 7006957-ihciM@users.noreply.gitlab.com
+[init]
+	defaultBranch = main
+[merge]
+    tool = nvim
+[mergetool]
+    keepBackup = false
+[mergetool "nvim"]
+    cmd = nvim -d $LOCAL $MERGED $REMOTE
