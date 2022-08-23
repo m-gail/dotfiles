@@ -1,3 +1,5 @@
+unsetopt BEEP
+
 # aliases
 source ~/.config/zsh/aliasrc
 
@@ -21,3 +23,8 @@ eval "$(starship init zsh)"
 # plugins
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+autoload -U compinit; compinit
+zstyle ':completion:*' menu select
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
