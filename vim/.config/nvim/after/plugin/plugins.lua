@@ -53,6 +53,7 @@ require('packer').startup({ function()
     use{
         "glepnir/lspsaga.nvim",
         branch = "main",
+        commit = "2c90dc88e479e785859e9cc1347e976e1cf8645b"
     }
 
     -- Debugging
@@ -84,12 +85,12 @@ require('packer').startup({ function()
 
     -- Snippets
     use 'L3MON4D3/LuaSnip'
-    use {
-        'rafamadriz/friendly-snippets',
-        config = function()
-            require("luasnip.loaders.from_vscode").lazy_load()
-        end
-    }
+    -- use {
+    --     'rafamadriz/friendly-snippets',
+    --     -- config = function()
+    --     --     require("luasnip.loaders.from_vscode").lazy_load()
+    --     -- end
+    -- }
     use 'saadparwaiz1/cmp_luasnip'
 
     -- Statusline
