@@ -7,8 +7,9 @@ extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 local config = {
     cmd = {
         'jdtls',
-        '-configuration', '/home/michael/.local/share/nvim/mason/packages/jdtls/config_linux/',
-        '-data', workspace_dir
+        '-configuration', os.getenv("HOME") .. '/.local/share/nvim/mason/packages/jdtls/config_linux/',
+        '-data', workspace_dir,
+        '--jvm-arg=-javaagent:' .. os.getenv("HOME") .. '/.local/share/nvim/mason/packages/jdtls/lombok.jar'
     },
 
     root_dir = require('jdtls.setup').find_root({ '.git', 'mvnw', 'gradlew' }),
@@ -30,7 +31,7 @@ local config = {
 
     init_options = {
         bundles = {
-            vim.fn.glob("/home/michael/SourcePackages/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar")
+            vim.fn.glob(os.getenv("HOME") .. "/SourcePackages/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar")
         },
         extendedClientCapabilities = extendedClientCapabilities
     },
