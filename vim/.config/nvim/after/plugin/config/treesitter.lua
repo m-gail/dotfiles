@@ -1,5 +1,5 @@
 require('nvim-treesitter.configs').setup {
-    ensure_installed = { "java", "kotlin", "python", "typescript", "javascript", "lua", "css", "html", "rust" },
+    ensure_installed = { "java", "kotlin", "python", "typescript", "javascript", "lua", "css", "html", "rust", "go" },
     sync_install = false,
     highlight = {
         enable = true,
@@ -20,6 +20,18 @@ require('nvim-treesitter.configs').setup {
             node_decremental = "<A-i>",
         },
     },
+    textobjects = {
+        select = {
+            enable = true,
+            lookahead = true,
+            keymaps = {
+                ["af"] = "@function.outer",
+                ["if"] = "@function.inner",
+                ["ac"] = "@class.outer",
+                ["ic"] = "@class.inner",
+            }
+        }
+    }
 }
 
 function _G.custom_fold_text()

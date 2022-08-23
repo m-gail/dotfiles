@@ -73,12 +73,12 @@ require('packer').startup({ function()
         run = ':TSUpdate'
     }
     use 'nvim-treesitter/playground'
-
+    use 'nvim-treesitter/nvim-treesitter-context'
+    use 'nvim-treesitter/nvim-treesitter-textobjects'
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
-    use 'nvim-treesitter/nvim-treesitter-context'
     use 'windwp/nvim-ts-autotag'
 
 
