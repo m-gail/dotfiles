@@ -4,6 +4,14 @@ local jdtls = require('jdtls')
 local extendedClientCapabilities = jdtls.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
+local bundles = {}
+
+vim.list_extend(bundles,
+    vim.split(vim.fn.glob(os.getenv("HOME") .. "/SourcePackages/vscode-java-test/server/*.jar"), "\n"))
+vim.list_extend(bundles,
+    vim.split(vim.fn.glob(os.getenv("HOME") ..
+        "/SourcePackages/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"), "\n"))
+
 local config = {
     cmd = {
         'jdtls',
@@ -16,7 +24,36 @@ local config = {
 
     settings = {
         java = {
+            format = {
+                settings = {
+                    url = "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+                    profile = "GoogleStyle"
+                }
+            },
             signatureHelp = { enabled = true },
+            eclipse = {
+                downloadSources = true,
+            },
+            configuration = {
+                updateBuildConfiguration = "interactive",
+            },
+            maven = {
+                downloadSources = true,
+            },
+            implementationsCodeLens = {
+                enabled = true,
+            },
+            referencesCodeLens = {
+                enabled = true,
+            },
+            references = {
+                includeDecompiledSources = true,
+            },
+            inlayHints = {
+                parameterNames = {
+                    enabled = "all",
+                },
+            },
             codeGeneration = {
                 toString = {
                     template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}"
@@ -30,9 +67,7 @@ local config = {
     },
 
     init_options = {
-        bundles = {
-            vim.fn.glob(os.getenv("HOME") .. "/SourcePackages/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar")
-        },
+        bundles = bundles,
         extendedClientCapabilities = extendedClientCapabilities
     },
     on_attach = function(client, bufnr)
