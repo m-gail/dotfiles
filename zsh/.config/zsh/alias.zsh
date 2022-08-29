@@ -13,7 +13,6 @@ alias mkdir="mkdir -pv"
 function .. {
     count=$1
     [[ $1 -lt 1 ]] && count=1
-
     for i in {1..$count}
     do
         cd ..
