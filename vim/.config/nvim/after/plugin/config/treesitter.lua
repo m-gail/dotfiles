@@ -30,6 +30,16 @@ require('nvim-treesitter.configs').setup {
                 ["ac"] = "@class.outer",
                 ["ic"] = "@class.inner",
             }
+        },
+        move = {
+            enable = true,
+            set_jumps = true,
+            goto_next_start = {
+                ["]a"] = "@parameter.inner"
+            },
+            goto_previous_start = {
+                ["[a"] = "@parameter.inner"
+            }
         }
     }
 }
