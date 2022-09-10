@@ -1,0 +1,13 @@
+image=/usr/share/backgrounds/pexels-valdemaras-d-11042734.jpg
+scaling=fill
+font=JetBrains Mono Nerd Font
+font-size=20
+show-keyboard-layout
+ignore-empty-password
+show-failed-attempts
+
+indicator-radius=50
+indicator-thickness=10
+
+ring-color=#6ca632
+inside-color=#0e1316

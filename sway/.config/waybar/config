@@ -1,0 +1,104 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 0,
+    "modules-left": [
+        "sway/workspaces", 
+        "custom/left-separator", 
+        "sway/mode", 
+        "custom/left-separator-alt", 
+        "sway/window"
+    ],
+    "modules-center": [],
+    "modules-right": [
+        "custom/right-separator-alt", 
+        "pulseaudio", 
+        "custom/right-separator", 
+        "network", 
+        "custom/right-separator-alt", 
+        "sway/language", 
+        "custom/right-separator", 
+        "battery", 
+        "custom/right-separator-alt", 
+        "clock#calendar", 
+        "custom/right-separator", 
+        "clock"
+    ],
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon} {name}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+    "sway/mode": {
+        "format": "{}"
+    },
+    "clock#calendar": {
+        "format": "{: %d.%m.%Y}"
+    },
+    "clock": {
+        "format": "{: %H:%M}"
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": "ﮣ {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}% {format_source}",
+        "format-bluetooth": "{icon} {volume}% {format_source}",
+        "format-bluetooth-muted": " {volume}% {format_source}",
+        "format-muted": " {volume}% {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": " {volume}%",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/left-separator": {
+        "format": ""
+    },
+    "custom/left-separator-alt": {
+        "format": ""
+    },
+    "custom/right-separator": {
+        "format": ""
+    },
+    "custom/right-separator-alt": {
+        "format": ""
+    }
+}
+

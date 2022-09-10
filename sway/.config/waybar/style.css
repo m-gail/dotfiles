@@ -1,0 +1,105 @@
+* {
+    font-family: JetBrains Mono Nerd Font;
+    font-size: 16px;
+}
+
+window#waybar {
+    background-color: #0e1316;
+    color: #b8cca3;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: #b8cca3;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+#workspaces button.focused {
+    color: #6ca632;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#mode {
+    background-color: #1d282e;
+    color: #b8cca3;
+}
+
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#mode {
+    padding: 0 10px;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#clock.calendar {
+    background-color: #1d282e;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#network {
+    background-color: #0e1316;
+}
+
+#pulseaudio {
+    background-color: #1d282e;
+}
+
+#language {
+    background-color: #1d282e;
+    padding: 0 5px;
+}
+
+#custom-left-separator, #custom-right-separator {
+    font-size: 24px;
+    background-color: #1d282e;
+    color: #0e1316;
+}
+
+#custom-left-separator-alt, #custom-right-separator-alt {
+    font-size: 24px;
+    background-color: #0e1316;
+    color: #1d282e;
+}
