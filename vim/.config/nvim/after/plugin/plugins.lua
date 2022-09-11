@@ -121,11 +121,7 @@ require('packer').startup({ function()
         end
     }
 
-    -- Copilot
-    use {
-        'github/copilot.vim',
-        disable = true
-    }
+    use 'https://gitlab.com/ihciM/escape.nvim'
 end, config = {
     display = {
         open_fn = require('packer.util').float,
