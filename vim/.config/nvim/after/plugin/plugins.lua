@@ -28,12 +28,7 @@ require('packer').startup({ function()
         'ThePrimeagen/harpoon',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = {
-            'kyazdani42/nvim-web-devicons',
-        }
-    }
+    use { "nvim-telescope/telescope-file-browser.nvim" }
 
     -- Colorschemes
     use 'cocopon/iceberg.vim'
@@ -96,7 +91,7 @@ require('packer').startup({ function()
     -- Statusline
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+        requires = { 'kyazdani42/nvim-web-devicons' },
     }
 
     -- Git
@@ -121,6 +116,8 @@ require('packer').startup({ function()
         end
     }
 
+    -- Other
+    use 'kyazdani42/nvim-web-devicons'
     use 'https://gitlab.com/ihciM/escape.nvim'
 end, config = {
     display = {

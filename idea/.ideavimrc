@@ -34,6 +34,7 @@ nnoremap <C-l> <C-w>l
 xnoremap <leader>p \"_dP
 xnoremap <leader>c \"+
 nnoremap <leader>c \"+
+map <leader>vr <Action>(IdeaVim.ReloadVimRc.reload)
 
 " Hop/EasyMotion
 map <leader>w <Plug>(easymotion-bd-w)
@@ -44,9 +45,9 @@ map gd <Action>(GotoDeclaration)
 map gD <Action>(GotoDeclaration)
 map gr <Action>(GotoDeclaration)
 map gi <Action>(GotoImplementation)
-map <leader>la <Action>(ShowIntentionActions)
-map <leader>lf <Action>(ReformatCode)<Action>(OptimizeImports)
-map <leader>lr <Action>(RenameElement)
+map <leader>sa <Action>(ShowIntentionActions)
+map <leader>sf <Action>(ReformatCode)<Action>(OptimizeImports)
+map <leader>sr <Action>(RenameElement)
 
 " Telescope/find files
 map <leader>fg <Action>(FindInPath)
@@ -56,3 +57,14 @@ map <leader>fl <Action>(GotoSymbol)
 " NvimTree/NERDTree
 map <leader>fb <Action>(ActivateProjectToolWindow)
 map <leader>fB <Action>(SelectInProjectView)
+
+" Budget Harpoon yayaya
+nnoremap <leader>j 'A
+nnoremap <leader>k 'B
+nnoremap <leader>l 'C
+nnoremap <leader>; 'D
+nnoremap <leader>hj mA
+nnoremap <leader>hk mB
+nnoremap <leader>hl mC
+nnoremap <leader>h; mD
+nnoremap <leader>hc :delmarks A-Z<CR>
