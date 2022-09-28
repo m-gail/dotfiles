@@ -5,7 +5,7 @@ set $down j
 set $up k
 set $right l
 set $term kitty
-set $menu wofi --show=drun
+set $menu wofi --show=drun -I
 
 ### Output configuration
 output * bg /usr/share/backgrounds/pexels-valdemaras-d-11042734.jpg fill
