@@ -1,3 +1,4 @@
-local vmap = require("ihciM.keymap").vmap
+local map = require("ihciM.keymap").map
 
-vmap("<leader>e", require('escape').escape)
+map({"n", "v"}, "<leader>ee", require('escape').escape)
+map({"n", "v"}, "<leader>eu", require('escape').encode_uri_component)

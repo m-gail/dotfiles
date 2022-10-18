@@ -118,7 +118,10 @@ require('packer').startup({ function()
 
     -- Other
     use 'kyazdani42/nvim-web-devicons'
-    use 'https://gitlab.com/ihciM/escape.nvim'
+    use 'folke/which-key.nvim'
+    use 'm-gail/escape.nvim'
+    use 'm-gail/northernlights.vim'
+    use 'ThePrimeagen/vim-be-good'
 end, config = {
     display = {
         open_fn = require('packer.util').float,

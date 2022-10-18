@@ -1,7 +1,7 @@
 require('lualine').setup {
     options = {
         icons_enabled = true,
-        theme = require('northern_lights.lualine_theme'),
+        theme = require('northernlights.lualine_theme'),
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {"NvimTree"},

@@ -44,8 +44,8 @@ local function jump_forward()
     require("luasnip").jump(1)
 end
 
-map("i", "<Tab>", "luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'",
-    { silent = true, noremap = false, expr = true })
-imap("<S-Tab>", jump_back)
-smap("<Tab>", jump_forward)
-smap("<S-Tab>", jump_back)
+-- map("i", "<Tab>", "luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'",
+--     { silent = true, noremap = false, expr = true })
+-- imap("<S-Tab>", jump_back)
+-- smap("<Tab>", jump_forward)
+-- smap("<S-Tab>", jump_back)

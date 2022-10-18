@@ -21,7 +21,8 @@ local configs = {
     cssls = {},
     jsonls = {},
     gopls = {},
-    ansiblels = {}
+    ansiblels = {},
+    vimls = {}
 }
 
 return configs
