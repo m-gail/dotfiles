@@ -22,7 +22,9 @@ local configs = {
     jsonls = {},
     gopls = {},
     ansiblels = {},
-    vimls = {}
+    vimls = {},
+    taplo = {},
+    svelte = {}
 }
 
 return configs

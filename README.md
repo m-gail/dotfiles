@@ -12,4 +12,4 @@
 * Launcher: rofi/wofi
 * Terminal: kitty
 * Notifications: dunst
-* Setup: ansible, stow
+* Setup: [ansible](https://github.com/m-gail/ansible), stow

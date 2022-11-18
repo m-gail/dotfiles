@@ -38,6 +38,7 @@ require('packer').startup({ function()
     use 'drewtempelmeyer/palenight.vim'
     use 'ayu-theme/ayu-vim'
     use 'sainnhe/everforest'
+    use 'm-gail/northernlights.vim'
 
     -- LSP
     use 'neovim/nvim-lspconfig'
@@ -45,16 +46,14 @@ require('packer').startup({ function()
     use {
         'jose-elias-alvarez/null-ls.nvim',
     }
-    use{
+    use {
         "glepnir/lspsaga.nvim",
-        branch = "main",
-        commit = "2c90dc88e479e785859e9cc1347e976e1cf8645b"
     }
 
     -- Debugging
     use 'mfussenegger/nvim-dap'
-    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
-    use { 'theHamsta/nvim-dap-virtual-text', requires = {"mfussenegger/nvim-dap", "nvim-treesitter/nvim-treesitter"} }
+    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+    use { 'theHamsta/nvim-dap-virtual-text', requires = { "mfussenegger/nvim-dap", "nvim-treesitter/nvim-treesitter" } }
 
     -- Completion
     use 'hrsh7th/cmp-nvim-lsp'
@@ -116,11 +115,19 @@ require('packer').startup({ function()
         end
     }
 
-    -- Other
+    -- UI
     use 'kyazdani42/nvim-web-devicons'
+    use {
+        'folke/noice.nvim',
+        requires = {
+            'MunifTanjim/nui.nvim',
+            'rcarriga/nvim-notify'
+        }
+    }
+
+    -- Other
     use 'folke/which-key.nvim'
     use 'm-gail/escape.nvim'
-    use 'm-gail/northernlights.vim'
     use 'ThePrimeagen/vim-be-good'
 end, config = {
     display = {

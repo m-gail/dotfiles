@@ -1,1 +1,7 @@
-require('treesitter-context').setup()
+require('treesitter-context').setup {
+    patterns = {
+        html = {
+            "element"
+        }
+    }
+}

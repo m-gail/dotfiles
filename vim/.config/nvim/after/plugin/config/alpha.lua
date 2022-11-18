@@ -21,7 +21,7 @@ theme.section.header.val = {
 }
 
 theme.section.buttons.val = {
-    theme.button("SPC SPC m", "Harpoon Menu"),
+    theme.button("SPC H", "Harpoon Menu"),
     theme.button("SPC f f", "Find File"),
     theme.button("SPC f g", "Live Grep"),
     theme.button("SPC f b", "File Browser"),
