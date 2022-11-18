@@ -8,6 +8,8 @@ set relativenumber
 set showmode
 set NERDTree
 set easymotion
+set expandtab
+set ignorecase
 
 " Execute
 map <leader>er <Action>(Run)
@@ -31,6 +33,10 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+map <C-o> <Action>(Back)
+map <C-i> <Action>(Forward)
 xnoremap <leader>p \"_dP
 xnoremap <leader>c \"+
 nnoremap <leader>c \"+
@@ -42,12 +48,14 @@ map <leader>s <Plug>(easymotion-bd-f)
 
 " LSP/IDE
 map gd <Action>(GotoDeclaration)
+map gpd <Action>(QuickImplementations)
 map gD <Action>(GotoDeclaration)
 map gr <Action>(GotoDeclaration)
-map gi <Action>(GotoImplementation)
+map gI <Action>(GotoImplementation)
 map <leader>sa <Action>(ShowIntentionActions)
 map <leader>sf <Action>(ReformatCode)<Action>(OptimizeImports)
-map <leader>sr <Action>(RenameElement)
+map <leader>rn <Action>(RenameElement)
+map <leader>sd <Action>(ShowErrorDescription)
 
 " Telescope/find files
 map <leader>fg <Action>(FindInPath)
@@ -63,8 +71,27 @@ nnoremap <leader>j 'A
 nnoremap <leader>k 'B
 nnoremap <leader>l 'C
 nnoremap <leader>; 'D
+nnoremap <leader>J 'E
+nnoremap <leader>K 'F
+nnoremap <leader>L 'G
+nnoremap <leader>: 'H
 nnoremap <leader>hj mA
 nnoremap <leader>hk mB
 nnoremap <leader>hl mC
 nnoremap <leader>h; mD
+nnoremap <leader>hJ mE
+nnoremap <leader>hK mF
+nnoremap <leader>hL mG
+nnoremap <leader>h: mH
 nnoremap <leader>hc :delmarks A-Z<CR>
+map <leader>H <Action>(ShowTypeBookmarks)
+
+" Dap
+map <leader>db <Action>(ToggleLineBreak)
+map <leader>dn <Action>(StepOver)
+map <leader>di <Action>(StepInto)
+map <leader>do <Action>(StepOut)
+map <leader>dc <Action>(Resume)
+
+" Git
+map <leader>gr <Action>(Vcs.RollbackChangedLines)
