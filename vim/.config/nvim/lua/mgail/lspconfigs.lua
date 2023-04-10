@@ -1,5 +1,5 @@
 local configs = {
-    sumneko_lua = {
+    lua_ls = {
         settings = {
             Lua = {
                 diagnostics = {

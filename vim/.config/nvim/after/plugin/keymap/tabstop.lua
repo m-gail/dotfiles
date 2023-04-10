@@ -1,5 +1,5 @@
-local nmap = require('ihciM.keymap').nmap
-local updateTabStop = require('ihciM.tabstop').updateTabStop
+local nmap = require('mgail.keymap').nmap
+local updateTabStop = require('mgail.tabstop').updateTabStop
 
 
 nmap("<leader>t2", function () updateTabStop(2) end)

@@ -1,8 +1,8 @@
-local default_opts = require('ihciM.keymap').default_opts
-local nmap = require('ihciM.keymap').nmap
-local map = require('ihciM.keymap').map
-local imap = require('ihciM.keymap').imap
-local smap = require('ihciM.keymap').smap
+local default_opts = require('mgail.keymap').default_opts
+local nmap = require('mgail.keymap').nmap
+local map = require('mgail.keymap').map
+local imap = require('mgail.keymap').imap
+local smap = require('mgail.keymap').smap
 
 -- General
 

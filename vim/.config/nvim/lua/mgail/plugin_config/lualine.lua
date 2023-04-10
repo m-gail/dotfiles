@@ -4,7 +4,6 @@ require('lualine').setup {
         theme = require('northernlights.lualine_theme'),
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
-        disabled_filetypes = {"NvimTree"},
         always_divide_middle = true,
         globalstatus = false,
     },
@@ -12,7 +11,15 @@ require('lualine').setup {
         lualine_a = { 'mode' },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = { 'filename' },
-        lualine_x = { 'encoding', 'fileformat' },
+        lualine_x = {
+            {
+                require("noice").api.statusline.mode.get,
+                cond = require("noice").api.statusline.mode.has,
+                color = { fg = "#6ca632" }
+            },
+            'encoding',
+            'fileformat'
+        },
         lualine_y = { 'filetype' },
         lualine_z = { 'location' }
     },
@@ -21,8 +28,8 @@ require('lualine').setup {
         lualine_b = {},
         lualine_c = {},
         lualine_x = {},
-        lualine_y = {'filetype'},
-        lualine_z = {'location'}
+        lualine_y = { 'filetype' },
+        lualine_z = { 'location' }
     },
     tabline = {},
     extensions = {}

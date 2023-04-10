@@ -1,4 +1,4 @@
-local nmap = require("ihciM.keymap").nmap
+local nmap = require("mgail.keymap").nmap
 
 nmap("<leader>dc", require('dap').continue, "continue")
 nmap("<leader>dn", require('dap').step_over, "step over")
