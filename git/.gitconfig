@@ -1,6 +1,7 @@
 [user]
-	name = Michael Gail
-	email = 7006957-ihciM@users.noreply.gitlab.com
+	name = m-gail
+	email = 34513390+m-gail@users.noreply.github.com
+	signingkey = C281A4961C081159
 [init]
 	defaultBranch = main
 [merge]
@@ -9,3 +10,7 @@
     keepBackup = false
 [mergetool "nvim"]
     cmd = nvim -d $LOCAL $MERGED $REMOTE
+[commit]
+	gpgsign = true
+[url "git@github.com:"]
+  insteadOf = https://github.com/
