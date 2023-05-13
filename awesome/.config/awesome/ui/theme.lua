@@ -30,6 +30,8 @@ theme.taglist_bg_empty = gears.color.transparent
 theme.taglist_bg_occupied = gears.color.transparent
 theme.taglist_bg_focus = gears.color.transparent
 theme.taglist_bg_urgent = gears.color.transparent
+theme.bg_systray = colors.background
+theme.systray_icon_spacing = dpi(8)
 
 -- Notifications
 theme.notification_font = "JetBrains Mono Nerd Font 14"

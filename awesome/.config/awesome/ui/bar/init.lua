@@ -69,6 +69,27 @@ awful.screen.connect_for_each_screen(function(s)
                 {
                     layout = wibox.container.background,
                     bg = colors.background_alt_1,
+                    fg = colors.background,
+                    seperator_right
+
+                },
+                {
+                    layout = wibox.container.margin,
+                    left = 10,
+                    top = 4,
+                    bottom = 4,
+                    wibox.widget.systray(),
+                },
+                {
+                    layout = wibox.container.background,
+                    bg = colors.accent,
+                    fg = colors.background_alt_1,
+                    seperator_right
+
+                },
+                {
+                    layout = wibox.container.background,
+                    bg = colors.background_alt_1,
                     fg = colors.forgeround,
                     {
                         layout = wibox.layout.fixed.horizontal,
