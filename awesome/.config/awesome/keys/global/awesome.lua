@@ -4,30 +4,42 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 
 local keys = gears.table.join(
     awful.key(
-      { modkey }, "e",
-      hotkeys_popup.show_help,
-      {
-        description="show help", 
-        group="awesome"
-      }
+        { modkey }, "e",
+        hotkeys_popup.show_help,
+        {
+            description = "show help",
+            group = "awesome"
+        }
     ),
 
     awful.key(
-      { modkey, "Control" }, "r", 
-      awesome.restart,
-      {
-        description = "reload awesome", 
-        group = "awesome"
-      }
+        { modkey, "Control" }, "r",
+        awesome.restart,
+        {
+            description = "reload awesome",
+            group = "awesome"
+        }
     ),
 
     awful.key(
-      { modkey, "Control"   }, "q", 
-      awesome.quit,
-      {
-        description = "quit awesome", 
-        group = "awesome"
-      }
+        { modkey, "Control" }, "q",
+        awesome.quit,
+        {
+            description = "quit awesome",
+            group = "awesome"
+        }
+    ),
+
+    awful.key(
+        { modkey }, "=",
+        function()
+            local systray = awful.screen.focused().systray
+            systray.visible = not systray.visible
+        end,
+        {
+            description = "change systray visibility",
+            group = "awesome"
+        }
     )
 )
 

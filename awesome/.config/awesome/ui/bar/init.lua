@@ -15,6 +15,8 @@ awful.screen.connect_for_each_screen(function(s)
 
     create_layoutbox(s)
     create_taglist(s)
+    s.systray = wibox.widget.systray()
+    s.systray.visible = false
 
     -- Create the wibox
     s.mywibox = awful.wibox({
@@ -78,7 +80,7 @@ awful.screen.connect_for_each_screen(function(s)
                     left = 10,
                     top = 4,
                     bottom = 4,
-                    wibox.widget.systray(),
+                    s.systray
                 },
                 {
                     layout = wibox.container.background,
