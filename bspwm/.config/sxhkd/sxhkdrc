@@ -22,6 +22,12 @@ super + c
 super + Escape
 	pkill -USR1 -x sxhkd
 
+# flameshot
+super + a
+    flameshot gui
+super + p
+    flameshot screen -c
+
 #
 # bspwm hotkeys
 #
