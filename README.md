@@ -2,8 +2,12 @@
 
 ## bspwm
 ![Preview](assets/preview_bspwm.png)
+
 [Wallpaper](https://www.pexels.com/photo/purple-rose-on-wooden-surface-971360/)
+
 [Rofi Background](https://www.pexels.com/photo/close-up-photo-of-purple-lilac-flowers-1381679/)
+
+[Theme](https://github.com/rose-pine)
 
 ## sway
 ![Preview](assets/preview_sway.png)
@@ -13,7 +17,7 @@
 # Software I use
 
 * Editor: neovim
-* Window Manager: sway/awesome
+* Window Manager: bspwm/sway/awesome
 * Shell: zsh
 * Terminal multiplexer: tmux
 * Launcher: rofi/wofi
