@@ -1,0 +1,23 @@
+:root {
+    --toolbarbutton-border-radius: 0 !important;
+}
+
+#tabbrowser-arrowscrollbox-periphery {
+    display: none;
+}
+
+.tabbrowser-tab {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.tabbrowser-tab[fadein=true]:not([pinned]) {
+    max-width: unset !important;
+    font-family: monospace;
+}
+
+.tab-background {
+    margin: 0 !important;
+    border-radius: 0 !important;
+    outline: none !important;
+}

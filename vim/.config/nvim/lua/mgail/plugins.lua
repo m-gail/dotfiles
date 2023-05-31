@@ -33,11 +33,9 @@ require('packer').startup({ function()
     -- Colorschemes
     use 'cocopon/iceberg.vim'
     use 'frenzyexists/aquarium-vim'
-    use 'jaredgorski/spacecamp'
-    use 'NLKNguyen/papercolor-theme'
-    use 'drewtempelmeyer/palenight.vim'
-    use 'ayu-theme/ayu-vim'
     use 'sainnhe/everforest'
+    use { 'rose-pine/neovim', as = 'rose-pine' }
+    use 'nyoom-engineering/oxocarbon.nvim'
     use 'm-gail/northernlights.vim'
 
     -- LSP

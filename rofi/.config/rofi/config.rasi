@@ -145,6 +145,6 @@ configuration {
   }
 }
 
-@theme "themes/northern-lights"
+@theme "themes/rose-pine"
 
 /* vim:ft=css

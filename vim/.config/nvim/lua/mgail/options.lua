@@ -25,4 +25,4 @@ vim.opt.smartcase = true
 
 vim.g.mapleader = " "
 
-vim.cmd("colorscheme northernlights")
+vim.cmd("colorscheme rose-pine")

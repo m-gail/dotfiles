@@ -24,7 +24,8 @@ local configs = {
     ansiblels = {},
     vimls = {},
     taplo = {},
-    svelte = {}
+    svelte = {},
+    volar = {}
 }
 
 return configs
