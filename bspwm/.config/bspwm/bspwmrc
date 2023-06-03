@@ -3,7 +3,7 @@
 sxhkd &
 
 bspc monitor DP-4 -d code system
-bspc monitor HDMI-0 -d browser chat music
+bspc monitor HDMI-0 -d browser chat music vm
 
 bspc wm --reorder-monitors DP-4 HDMI-0
 

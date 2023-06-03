@@ -79,8 +79,8 @@ super + {o,i}
 	bspc wm -h on
 
 # focus or send to the given desktop
-super + {_,shift + }{1-5}
-	bspc {desktop -f,node -d} '^{1-5}'
+super + {_,shift + }{1-6}
+	bspc {desktop -f,node -d} '^{1-6}'
 
 #
 # preselect

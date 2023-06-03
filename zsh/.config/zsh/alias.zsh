@@ -46,4 +46,4 @@ function vf {
 alias pe="pipenv"
 
 # findproject
-alias fp=". fp"
+alias fp="fp_tmux"
