@@ -25,7 +25,8 @@ local configs = {
     vimls = {},
     taplo = {},
     svelte = {},
-    volar = {}
+    -- volar = {}
+    vuels = {},
 }
 
 return configs

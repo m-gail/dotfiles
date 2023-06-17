@@ -1,4 +1,4 @@
-local nmap = require('mgail.keymap').nmap
+local nmap = require('mgail.util.keymap').nmap
 
 nmap("<leader>ha", require('harpoon.mark').add_file, "Add Harpoon mark")
 nmap("<leader>hd", require('harpoon.mark').rm_file, "Remove harpoon mark")

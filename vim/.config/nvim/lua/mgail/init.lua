@@ -1,4 +1,5 @@
 require("mgail.options")
-require("mgail.plugins")
-require("mgail.plugin_config")
+require("mgail.keymap.vim")
+require("mgail.keymap.tabstop")
 require("mgail.autocommands")
+require("mgail.plugins")

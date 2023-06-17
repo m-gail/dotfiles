@@ -32,3 +32,20 @@ dap.configurations.typescriptreact = javascript
 
 
 vim.fn.sign_define('DapBreakpoint', { text = '', texthl = "DapBreakpoint" })
+
+require('dapui').setup({
+    layouts = {
+        {
+            elements = {
+                "scopes",
+                "watches",
+                "repl",
+                "console",
+            },
+            size = 60,
+            position = "right"
+        }
+    }
+})
+
+require('nvim-dap-virtual-text').setup()

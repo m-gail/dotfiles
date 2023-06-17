@@ -3,7 +3,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Setup Language Servers
 
-local configs = require('mgail.lspconfigs')
+local configs = require("mgail.util.lspconfigs")
 
 local lspconfig = require('lspconfig')
 

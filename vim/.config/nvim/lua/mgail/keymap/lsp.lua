@@ -1,10 +1,9 @@
-local nmap = require('mgail.keymap').nmap
-local map = require('mgail.keymap').map
-local default_opts = require('mgail.keymap').default_opts
+local nmap = require('mgail.util.keymap').nmap
 
 nmap("K", function() require('lspsaga.hover'):render_hover_doc() end)
 
 nmap("gpd", function() require('lspsaga.definition'):peek_definition(1) end, "preview definition")
+nmap("<leader>rn", function() require('lspsaga.rename'):lsp_rename() end, "rename")
 nmap("gd", ":lua vim.lsp.buf.definition()<CR>", "go to definition")
 nmap("gD", ":lua vim.lsp.buf.declaration()<CR>", "go to declaration")
 nmap("gI", ":lua vim.lsp.buf.implementation()<CR>", "go to implementation")

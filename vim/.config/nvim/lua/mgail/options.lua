@@ -24,5 +24,3 @@ vim.opt.cursorline = true
 vim.opt.smartcase = true
 
 vim.g.mapleader = " "
-
-vim.cmd("colorscheme rose-pine")

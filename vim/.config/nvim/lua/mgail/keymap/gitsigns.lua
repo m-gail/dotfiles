@@ -1,6 +1,6 @@
-local nmap = require('mgail.keymap').nmap
-local map = require('mgail.keymap').map
-local default_opts = require('mgail.keymap').default_opts
+local nmap = require('mgail.util.keymap').nmap
+local map = require('mgail.util.keymap').map
+local default_opts = require('mgail.util.keymap').default_opts
 local gitsigns = require("gitsigns")
 
 map({"n", "v"}, "<leader>gr", gitsigns.reset_hunk, default_opts, "reset hunk")

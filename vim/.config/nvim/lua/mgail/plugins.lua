@@ -1,134 +1,173 @@
-require('packer').startup({ function()
-    -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
+end
+vim.opt.rtp:prepend(lazypath)
 
-    -- External tool management
-    use "williamboman/mason.nvim"
-    use "williamboman/mason-lspconfig.nvim"
+require("lazy").setup({
+    {
+        "williamboman/mason.nvim",
+        dependencies = { "williamboman/mason-lspconfig.nvim" },
+        init = function() require("mgail.config.mason") end
+    },
 
-    -- Buffer navigation
-    use {
+    {
+        "nvim-telescope/telescope.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            {
+                "nvim-telescope/telescope-fzf-native.nvim",
+                build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
+            },
+            { "nvim-telescope/telescope-file-browser.nvim" }
+        },
+        init = function()
+            require("mgail.config.telescope")
+            require("mgail.keymap.telescope")
+        end
+    },
+    {
+        "ThePrimeagen/harpoon",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        init = function()
+            require("mgail.keymap.harpoon")
+        end
+    },
+    {
         'phaazon/hop.nvim',
         branch = 'v1',
-        config = function()
-            require 'hop'.setup()
+        init = function()
+            require('hop').setup()
+            require("mgail.keymap.hop")
         end
-    }
+    },
 
-    -- File navigation
-    use {
-        'nvim-telescope/telescope.nvim',
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    }
-    use {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
-    }
-    use {
-        'ThePrimeagen/harpoon',
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    }
-    use { "nvim-telescope/telescope-file-browser.nvim" }
-
-    -- Colorschemes
-    use 'cocopon/iceberg.vim'
-    use 'frenzyexists/aquarium-vim'
-    use 'sainnhe/everforest'
-    use { 'rose-pine/neovim', as = 'rose-pine' }
-    use 'nyoom-engineering/oxocarbon.nvim'
-    use 'm-gail/northernlights.vim'
+    -- Themes
+    "cocopon/iceberg.vim",
+    "frenzyexists/aquarium-vim",
+    "sainnhe/everforest",
+    { "rose-pine/neovim", name = "rose-pine", init = function() vim.cmd("colorscheme rose-pine") end },
+    "nyoom-engineering/oxocarbon.nvim",
+    "m-gail/northernlights.vim",
 
     -- LSP
-    use 'neovim/nvim-lspconfig'
-    use 'mfussenegger/nvim-jdtls'
-    use {
-        'jose-elias-alvarez/null-ls.nvim',
-    }
-    use {
-        "glepnir/lspsaga.nvim",
-    }
+    {
+        "neovim/nvim-lspconfig",
+        dependencies = {
+            "mfussenegger/nvim-jdtls",
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-cmdline",
+            "hrsh7th/nvim-cmp",
+            "L3MON4D3/LuaSnip",
+            "saadparwaiz1/cmp_luasnip",
+            "glepnir/lspsaga.nvim",
+        },
+        init = function()
+            require("mgail.config.lsp")
+            require("mgail.config.lspsaga")
+            require("mgail.config.luasnip")
+            require("mgail.keymap.lsp")
+        end
+    },
+    {
+        "jose-elias-alvarez/null-ls.nvim",
+        init = function()
+            require("mgail.config.null_ls")
+        end
+    },
+    {
+        "numToStr/Comment.nvim",
+        init = function()
+            require("Comment").setup()
+        end
+    },
 
     -- Debugging
-    use 'mfussenegger/nvim-dap'
-    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
-    use { 'theHamsta/nvim-dap-virtual-text', requires = { "mfussenegger/nvim-dap", "nvim-treesitter/nvim-treesitter" } }
-
-    -- Completion
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/nvim-cmp'
+    {
+        'mfussenegger/nvim-dap',
+        dependencies = {
+            "rcarriga/nvim-dap-ui",
+            'theHamsta/nvim-dap-virtual-text',
+        },
+        init = function()
+            require("mgail.config.dap")
+            require("mgail.keymap.dap")
+        end
+    },
 
     -- Treesitter
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
-    use 'nvim-treesitter/playground'
-    use 'nvim-treesitter/nvim-treesitter-context'
-    use 'nvim-treesitter/nvim-treesitter-textobjects'
-    use {
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+        init = function()
+            require("mgail.config.treesitter")
+        end
+    },
+    "nvim-treesitter/playground",
+    {
+        "nvim-treesitter/nvim-treesitter-context",
+        init = function()
+            require("mgail.config.treesitter_context")
+        end
+    },
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
-    }
-    use 'windwp/nvim-ts-autotag'
-
-
-    -- Snippets
-    use 'L3MON4D3/LuaSnip'
-    -- use {
-    --     'rafamadriz/friendly-snippets',
-    --     -- config = function()
-    --     --     require("luasnip.loaders.from_vscode").lazy_load()
-    --     -- end
-    -- }
-    use 'saadparwaiz1/cmp_luasnip'
-
-    -- Statusline
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons' },
-    }
-
-    -- Git
-    use {
-        'lewis6991/gitsigns.nvim',
-        config = function()
-            require('gitsigns').setup()
-        end
-    }
-
-    -- Startup
-    use {
-        'goolord/alpha-nvim',
-        requires = { 'kyazdani42/nvim-web-devicons' },
-    }
-
-    -- Commenting
-    use {
-        'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
-    }
+    },
+    "windwp/nvim-ts-autotag",
 
     -- UI
-    use 'kyazdani42/nvim-web-devicons'
-    use {
-        'folke/noice.nvim',
-        requires = {
-            'MunifTanjim/nui.nvim',
-            'rcarriga/nvim-notify'
-        }
-    }
+    {
+        "nvim-lualine/lualine.nvim",
+        dependencies = { "kyazdani42/nvim-web-devicons" },
+        init = function()
+            require("mgail.config.lualine")
+        end
+    },
+    {
+        "folke/noice.nvim",
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify"
+        },
+        init = function()
+            require("mgail.config.noice")
+        end
+    },
+    {
+        "goolord/alpha-nvim",
+        dependencies = { "kyazdani42/nvim-web-devicons" },
+        init = function()
+            require("mgail.config.alpha")
+        end
+    },
+    {
+        "folke/which-key.nvim",
+        init = function()
+            require("mgail.config.whichkey")
+        end
+    },
+    {
+        "lewis6991/gitsigns.nvim",
+        init = function()
+            require("gitsigns").setup()
+            require("mgail.keymap.gitsigns")
+        end
+    },
 
     -- Other
-    use 'folke/which-key.nvim'
-    use 'm-gail/escape.nvim'
-    use 'ThePrimeagen/vim-be-good'
-end, config = {
-    display = {
-        open_fn = require('packer.util').float,
+    {
+        'm-gail/escape.nvim',
+        init = function() require("mgail.keymap.escape") end
     }
-} })
+})
