@@ -47,3 +47,6 @@ alias pe="pipenv"
 
 # findproject
 alias fp="fp_tmux"
+
+# ssh
+alias ssh="TERM=xterm ssh"

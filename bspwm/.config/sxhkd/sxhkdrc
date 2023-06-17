@@ -28,6 +28,26 @@ super + a
 super + p
     flameshot screen -c
 
+# eww
+super + q
+    eww open --toggle powermenu
+
+super + n
+    eww open --toggle notificationcenter
+
+# music
+super + alt + 7
+    playerctl previous
+
+super + alt + 8
+    playerctl play-pause
+
+super + alt + 9
+    playerctl next
+
+XF86Audio{Prev,Next}
+	playerctl {previous,next}
+
 #
 # bspwm hotkeys
 #
