@@ -2,8 +2,15 @@
 
 sxhkd &
 
-bspc monitor DP-4 -d code system
-bspc monitor HDMI-0 -d browser chat music vm
+MONITOR_COUNT=$(xrandr --query | grep " connected " | awk '{ print$1 }' | wc -l)
+
+if [ $MONITOR_COUNT -eq 1 ]; then
+    bspc monitor -d code system browser chat music vm
+    bspc monitor
+else
+    bspc monitor DP-4 -d code system
+    bspc monitor HDMI-0 -d browser chat music vm
+fi
 
 bspc wm --reorder-monitors DP-4 HDMI-0
 

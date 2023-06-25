@@ -27,6 +27,8 @@ local configs = {
     svelte = {},
     -- volar = {}
     vuels = {},
+    bashls = {},
+    nil_ls = {}
 }
 
 return configs
