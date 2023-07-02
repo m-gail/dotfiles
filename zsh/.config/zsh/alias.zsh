@@ -48,5 +48,8 @@ alias pe="pipenv"
 # findproject
 alias fp="fp_tmux"
 
+# lazygit
+alias lg="lazygit"
+
 # ssh
 alias ssh="TERM=xterm ssh"
