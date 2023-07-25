@@ -6,4 +6,4 @@ setxkbmap -option caps:escape
 [ -z  "$(pgrep nextcloud)" ] && nextcloud --background &
 [ -z  "$(pgrep light-locker)" ] && light-locker &
 $HOME/.config/polybar/launch.sh &
-feh --bg-fill /usr/share/backgrounds/pexels-creative-free-stock-971360.jpg
+feh --bg-fill $HOME/Pictures/Wallpapers/pexels-creative-free-stock-971360.jpg

@@ -1,0 +1,19 @@
+{
+    "project_dirs": [
+        {
+            "path": "~/Programming",
+            "exclude": [],
+            "subdirs": []
+        },
+        {
+            "path": "~/.config",
+            "exclude": ["Nextcloud", "GIMP", "Thunar", "xfce4", "dconf"],
+            "subdirs": []
+        }
+    ],
+    "additional_projects": [
+        "~/Notes",
+        "~/.dotfiles",
+        "~/.ansible"
+    ]
+}

@@ -19,7 +19,7 @@ window {
 
 inputbar {
     padding: 100 40;
-    background-image: url("/usr/share/backgrounds/pexels-irina-iriser-1381679-scaled.jpg", width);
+    background-image: url("~/Pictures/Wallpapers/pexels-irina-iriser-1381679-scaled.jpg", width);
     children: [prompt, entry];
 }
 
