@@ -24,7 +24,8 @@ require("lazy").setup({
             "nvim-lua/plenary.nvim",
             {
                 "nvim-telescope/telescope-fzf-native.nvim",
-                build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
+                build =
+                "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
             },
             { "nvim-telescope/telescope-file-browser.nvim" }
         },
@@ -57,6 +58,16 @@ require("lazy").setup({
     "nyoom-engineering/oxocarbon.nvim",
     "m-gail/northernlights.vim",
 
+    -- Git
+    {
+        "NeogitOrg/neogit",
+        dependencies = 'nvim-lua/plenary.nvim',
+        init = function()
+            require("neogit").setup {}
+        end
+    },
+    "sindrets/diffview.nvim",
+
     -- LSP
     {
         "neovim/nvim-lspconfig",
@@ -87,7 +98,9 @@ require("lazy").setup({
     {
         "numToStr/Comment.nvim",
         init = function()
-            require("Comment").setup()
+            require("Comment").setup {
+                pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+            }
         end
     },
 
@@ -125,6 +138,7 @@ require("lazy").setup({
         config = function() require("nvim-autopairs").setup {} end
     },
     "windwp/nvim-ts-autotag",
+    "JoosepAlviste/nvim-ts-context-commentstring",
 
     -- UI
     {
@@ -169,5 +183,22 @@ require("lazy").setup({
     {
         'm-gail/escape.nvim',
         init = function() require("mgail.keymap.escape") end
+    },
+
+    -- Notes
+    -- {
+    --     "nvim-neorg/neorg",
+    --     build = ":Neorg sync-parsers",
+    --     dependencies = { "nvim-lua/plenary.nvim" },
+    --     config = function()
+    --         require("mgail.config.neorg")
+    --     end,
+    -- },
+    {
+        'nvim-orgmode/orgmode',
+        init = function()
+            require('mgail.config.orgmode')
+        end
     }
+
 })

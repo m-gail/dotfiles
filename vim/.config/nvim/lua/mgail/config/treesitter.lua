@@ -1,8 +1,9 @@
 require('nvim-treesitter.configs').setup {
-    ensure_installed = { "java", "kotlin", "python", "typescript", "javascript", "lua", "css", "html", "rust", "go", "markdown", "markdown_inline" },
+    ensure_installed = "all",
     sync_install = false,
     highlight = {
         enable = true,
+        additional_vim_regex_highlighting = { 'org' },
     },
     indent = {
         enable = true,
@@ -41,7 +42,10 @@ require('nvim-treesitter.configs').setup {
                 ["[a"] = "@parameter.inner"
             }
         }
-    }
+    },
+    context_commentstring = {
+        enable = true,
+    },
 }
 
 function _G.custom_fold_text()

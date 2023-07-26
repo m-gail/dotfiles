@@ -1,6 +1,6 @@
 local nmap = require('mgail.util.keymap').nmap
 
-nmap("K", function() require('lspsaga.hover'):render_hover_doc() end)
+nmap("K", "<cmd>Lspsaga hover_doc<CR>")
 
 nmap("gpd", function() require('lspsaga.definition'):peek_definition(1) end, "preview definition")
 nmap("<leader>rn", function() require('lspsaga.rename'):lsp_rename() end, "rename")
