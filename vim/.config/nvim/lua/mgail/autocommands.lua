@@ -7,3 +7,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     group = highlight_group,
     pattern = '*',
 })
+
+-- https://github.com/nvim-treesitter/nvim-treesitter/issues/1337#issuecomment-1397639999
+local folding_group = vim.api.nvim_create_augroup('FoldingFix', { clear = true })
+
+vim.api.nvim_create_autocmd('BufEnter', {
+    command = "normal zx",
+    group = folding_group,
+    pattern = '*',
+})
