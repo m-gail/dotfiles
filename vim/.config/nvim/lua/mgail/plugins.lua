@@ -78,7 +78,7 @@ require("lazy").setup({
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-cmdline",
             "hrsh7th/nvim-cmp",
-            "L3MON4D3/LuaSnip",
+            { "L3MON4D3/LuaSnip", version = "2.*" },
             "saadparwaiz1/cmp_luasnip",
             "glepnir/lspsaga.nvim",
         },
@@ -87,6 +87,7 @@ require("lazy").setup({
             require("mgail.config.lspsaga")
             require("mgail.config.luasnip")
             require("mgail.keymap.lsp")
+            require("mgail.keymap.luasnip")
         end
     },
     {

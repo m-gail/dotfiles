@@ -17,32 +17,32 @@ end
 local cmp = require('cmp')
 
 local kind_icons = {
-    Text = "",
-    Method = "",
-    Function = "",
+    Text = "󰉿",
+    Method = "󰆧",
+    Function = "󰊕",
     Constructor = "",
-    Field = "",
-    Variable = "",
-    Class = "ﴯ",
+    Field = "󰜢",
+    Variable = "󰀫",
+    Class = "󰠱",
     Interface = "",
     Module = "",
-    Property = "ﰠ",
-    Unit = "",
-    Value = "",
+    Property = "󰜢",
+    Unit = "󰑭",
+    Value = "󰎠",
     Enum = "",
-    Keyword = "",
+    Keyword = "󰌋",
     Snippet = "",
-    Color = "",
-    File = "",
-    Reference = "",
-    Folder = "",
+    Color = "󰏘",
+    File = "󰈙",
+    Reference = "󰈇",
+    Folder = "󰉋",
     EnumMember = "",
-    Constant = "",
-    Struct = "",
+    Constant = "󰏿",
+    Struct = "󰙅",
     Event = "",
-    Operator = "",
-    TypeParameter = ""
-}
+    Operator = "󰆕",
+    TypeParameter = "",
+};
 
 cmp.setup({
     window = {
@@ -106,7 +106,7 @@ cmp.setup.cmdline(':', {
 })
 
 -- Signcolumn Icons
-local icons = { Error = '', Warn = '', Hint = '', Info = '' }
+local icons = { Error = '', Warn = '', Hint = '', Info = '' }
 
 for symbol, icon in pairs(icons) do
     local sign_name = "DiagnosticSign" .. symbol
