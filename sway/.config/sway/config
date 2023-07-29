@@ -8,7 +8,7 @@ set $term kitty
 set $menu wofi --show=drun -I
 
 ### Output configuration
-output * bg /usr/share/backgrounds/pexels-valdemaras-d-11042734.jpg fill
+output * bg ~/Pictures/Wallpapers/pexels-valdemaras-d-11042734.jpg fill
 ### Idle configuration
 exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \

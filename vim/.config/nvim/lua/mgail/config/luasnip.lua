@@ -5,6 +5,8 @@ local i = ls.insert_node
 local d = ls.dynamic_node
 local sn = ls.snippet_node
 
+require("luasnip.loaders.from_vscode").lazy_load()
+
 ls.config.set_config {
     history = false,
     updateevents = "TextChanged,TextChangedI"
