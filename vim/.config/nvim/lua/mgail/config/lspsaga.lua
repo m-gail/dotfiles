@@ -2,7 +2,7 @@ local saga = require("lspsaga")
 
 saga.setup {
     ui = {
-        border = "rounded",
+        border = "none",
     },
     lightbulb = {
         enable = false

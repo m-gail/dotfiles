@@ -1,3 +1,5 @@
+require("neodev").setup {}
+
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
@@ -45,9 +47,9 @@ local kind_icons = {
 };
 
 cmp.setup({
-    window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+    performance = {
+        debounce = 15,
+        throttle = 15
     },
     snippet = {
         expand = function(args)

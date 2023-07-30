@@ -28,7 +28,7 @@ local configs = {
     -- volar = {}
     vuels = {},
     bashls = {},
-    nil_ls = {}
+    -- nil_ls = {}
 }
 
 return configs

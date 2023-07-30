@@ -25,7 +25,7 @@ require("lazy").setup({
             {
                 "nvim-telescope/telescope-fzf-native.nvim",
                 build =
-                "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
+                "make"
             },
             { "nvim-telescope/telescope-file-browser.nvim" }
         },
@@ -54,7 +54,7 @@ require("lazy").setup({
     "cocopon/iceberg.vim",
     "frenzyexists/aquarium-vim",
     "sainnhe/everforest",
-    { "rose-pine/neovim", name = "rose-pine", init = function() vim.cmd("colorscheme rose-pine") end },
+    { "rose-pine/neovim", priority = 1000, name = "rose-pine", init = function() vim.cmd("colorscheme rose-pine") end },
     "nyoom-engineering/oxocarbon.nvim",
     "m-gail/northernlights.vim",
 
@@ -85,6 +85,7 @@ require("lazy").setup({
             },
             "saadparwaiz1/cmp_luasnip",
             "glepnir/lspsaga.nvim",
+            { "folke/neodev.nvim", opts = {} },
         },
         init = function()
             require("mgail.config.lsp")
