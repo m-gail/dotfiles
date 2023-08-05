@@ -9,6 +9,13 @@
 
 [Theme](https://github.com/rose-pine)
 
+## awesome
+![Preview](assets/preview_awesome.png)
+
+[Wallpaper](https://www.pexels.com/photo/purple-rose-on-wooden-surface-971360/)
+
+[Theme](https://github.com/rose-pine)
+
 ## sway
 ![Preview](assets/preview_sway.png)
 

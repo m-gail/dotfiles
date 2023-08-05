@@ -13,45 +13,37 @@ local theme = {}
 
 gtable.crush(theme, default_theme)
 
-theme.wallpaper = "/usr/share/backgrounds/pexels-valdemaras-d-11042734.jpg"
+theme.wallpaper = "~/Pictures/Wallpapers/pexels-creative-free-stock-971360.jpg"
 theme.useless_gap = dpi(6)
-theme.border_width = 3
-theme.border_normal = colors.background_alt_2
-theme.border_focus = colors.green
+theme.border_width = dpi(2)
+theme.border_normal = colors.muted
+theme.border_focus = colors.cyan
 theme.font = "JetBrains Mono Nerd Font 14"
-theme.wibar_height = dpi(36)
-theme.taglist_font = "Font Awesome 6 Free Solid 14"
+theme.wibar_height = dpi(40)
+theme.taglist_font = "JetBrains Mono Nerd Font 14"
 theme.taglist_spacing = dpi(8)
-theme.taglist_fg_empty = colors.forgeround
-theme.taglist_fg_occupied = colors.forgeround
-theme.taglist_fg_focus = colors.green
+theme.taglist_fg_empty = colors.text
+theme.taglist_fg_occupied = colors.text
+theme.taglist_fg_focus = colors.purple
 theme.taglist_fg_urgent = colors.yellow
 theme.taglist_bg_empty = gears.color.transparent
 theme.taglist_bg_occupied = gears.color.transparent
 theme.taglist_bg_focus = gears.color.transparent
 theme.taglist_bg_urgent = gears.color.transparent
-theme.bg_systray = colors.background
+theme.bg_systray = colors.surface
 theme.systray_icon_spacing = dpi(8)
-
--- Notifications
-theme.notification_font = "JetBrains Mono Nerd Font 14"
-theme.notification_bg = colors.background
-theme.notification_fg = colors.forgeround
-theme.notification_border_width = 2
-theme.notification_border_color = colors.green
-theme.notification_max_width = dpi(500)
-theme.notification_max_height = dpi(200)
-theme.notification_icon_size = dpi(180)
+theme.module_outer_margin = dpi(6)
+theme.module_inner_margin = dpi(12)
 
 -- Hotkeys
-theme.hotkeys_bg = colors.background
-theme.hotkeys_border_color = colors.green
+theme.hotkeys_bg = colors.base
+theme.hotkeys_border_color = colors.cyan
 theme.hotkeys_font = "JetBrains Mono Nerd Font 12"
 theme.hotkeys_description_font = "JetBrains Mono Nerd Font 12"
 theme.hotkeys_group_margin = dpi(16)
-theme.hotkeys_label_bg = colors.cyan
-theme.hotkeys_label_fg = colors.forgeround
-theme.hotkeys_fg = colors.forgeround
-theme.hotkeys_modifiers_fg = colors.green
+theme.hotkeys_label_bg = colors.blue
+theme.hotkeys_label_fg = colors.text
+theme.hotkeys_fg = colors.text
+theme.hotkeys_modifiers_fg = colors.purple
 
 return theme

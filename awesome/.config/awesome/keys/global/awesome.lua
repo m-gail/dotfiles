@@ -13,7 +13,7 @@ local keys = gears.table.join(
     ),
 
     awful.key(
-        { modkey, "Control" }, "r",
+        { modkey, "Mod1" }, "r",
         awesome.restart,
         {
             description = "reload awesome",
@@ -22,7 +22,7 @@ local keys = gears.table.join(
     ),
 
     awful.key(
-        { modkey, "Control" }, "q",
+        { modkey, "Mod1" }, "q",
         awesome.quit,
         {
             description = "quit awesome",

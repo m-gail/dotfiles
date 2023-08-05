@@ -1,11 +1,13 @@
+local colors = require("config.colors")
+
 return {
-  terminal = "kitty",
-  browser = "firefox",
-  launcher = "rofi -show combi",
-  lockscreen = "light-locker-command -l",
-  colorpicker = "xcolor -S 3 -P 80 | tr -d '\\n' | xclip -selection c",
-  screenshot = {
-    area = "flameshot gui",
-    screen = "flameshot screen -c"
-  }
+    terminal = "kitty",
+    dev_terminal = "wmctrl -xa kitty-dev || kitty --class=kitty-dev",
+    browser = "wmctrl -xa firefox || firefox",
+    launcher = "rofi -show drun -theme rose-pine",
+    lockscreen = "i3lock -c '" .. colors.surface .. "'",
+    screenshot = {
+        area = "flameshot gui",
+        screen = "flameshot screen -n 1 -c"
+    }
 }

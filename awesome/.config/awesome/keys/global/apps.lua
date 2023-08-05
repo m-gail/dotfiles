@@ -14,9 +14,18 @@ return gears.table.join(
 
     awful.key(
         { modkey }, "b",
-        function() awful.spawn(apps.browser) end,
+        function() awful.spawn.with_shell(apps.browser) end,
         {
-            description = "open a browser",
+            description = "open or focus a browser",
+            group = "launcher"
+        }
+    ),
+
+    awful.key(
+        { modkey }, "d",
+        function() awful.spawn.with_shell(apps.dev_terminal) end,
+        {
+            description = "open or focus a development terminal",
             group = "launcher"
         }
     ),
@@ -40,10 +49,10 @@ return gears.table.join(
     ),
 
     awful.key(
-        { modkey }, "q",
-        function() awful.spawn(apps.lockscreen) end,
+        { modkey, "Shift" }, "q",
+        function() awful.spawn.with_shell(apps.lockscreen) end,
         {
-            description = "lock the screen",
+            description = "lock the screen" .. apps.lockscreen,
             group = "launcher"
         }
     ),
@@ -53,15 +62,6 @@ return gears.table.join(
         function() awful.spawn.with_shell(apps.launcher) end,
         {
             description = "run prompt",
-            group = "launcher"
-        }
-    ),
-
-    awful.key(
-        { modkey }, "p",
-        function() awful.spawn.with_shell(apps.colorpicker) end,
-        {
-            description = "show a color picker",
             group = "launcher"
         }
     )
