@@ -5,8 +5,10 @@ local clientkeys = require("keys.client.keys")
 local clientbuttons = require("keys.client.buttons")
 
 awful.rules.rules = {
-    { rule = {},
-        properties = { border_width = beautiful.border_width,
+    {
+        rule = {},
+        properties = {
+            border_width = beautiful.border_width,
             border_color = beautiful.border_normal,
             focus = awful.client.focus.filter,
             raise = true,
@@ -19,53 +21,58 @@ awful.rules.rules = {
     },
 
     -- Floating clients.
-    { rule_any = {
-        instance = {
-            "DTA", -- Firefox addon DownThemAll.
-            "copyq", -- Includes session name in class.
-            "pinentry",
-        },
-        class = {
-            "Arandr",
-            "Blueman-manager",
-            "Gpick",
-            "Kruler",
-            "MessageWin", -- kalarm.
-            "Sxiv",
-            "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
-            "Wpa_gui",
-            "veromix",
-            "xtightvncviewer" },
+    {
+        rule_any = {
+            class = {
+                "Arandr",
+                "Blueman-manager",
+                "Pavucontrol",
+                "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
+            },
 
-        -- Note that the name property shown in xprop might be set slightly after creation of the client
-        -- and the name shown there might not match defined rules here.
-        name = {
-            "Event Tester", -- xev.
+            -- Note that the name property shown in xprop might be set slightly after creation of the client
+            -- and the name shown there might not match defined rules here.
+            name = {
+                "Event Tester", -- xev.
+            },
+            role = {
+                "AlarmWindow",   -- Thunderbird's calendar.
+                "ConfigManager", -- Thunderbird's about:config.
+                "pop-up",        -- e.g. Google Chrome's (detached) Developer Tools.
+            }
         },
-        role = {
-            "AlarmWindow", -- Thunderbird's calendar.
-            "ConfigManager", -- Thunderbird's about:config.
-            "pop-up", -- e.g. Google Chrome's (detached) Developer Tools.
-        }
-    }, properties = { floating = true } },
+        properties = { floating = true, placement = awful.placement.centered }
+    },
 
     -- Tag mappings
-    { rule = { class = "firefox" },
-        properties = { tag = "" } },
+    {
+        rule = { class = "kitty-dev" },
+        properties = { tag = " " }
+    },
 
-    { rule = { class = "discord" },
-        properties = { tag = "", screen = 2 } },
+    {
+        rule_any = { class = { "firefox", "Firefox" } },
+        properties = { tag = "󰖟 " }
+    },
 
-    { rule = { class = "Virt-manager" },
+    {
+        rule = { class = "discord" },
+        properties = { tag = "󰭹 ", screen = 2 }
+    },
+
+    {
+        rule = { class = "Virt-manager" },
         except = { name = "Virtual Machine Manager" },
-        properties = { tag = "", screen = 1 } },
+        properties = { tag = "󰍹 ", screen = 1 }
+    },
 
-    { rule = { class = "Virt-manager", name = "Virtual Machine Manager" },
-        properties = { tag = "", screen = 2 } },
+    {
+        rule = { class = "Virt-manager", name = "Virtual Machine Manager" },
+        properties = { tag = "󰍹 ", screen = 2 }
+    },
 
-    { rule = { class = "Thunar" },
-        properties = { tag = "" } },
-
-    { rule = { class = "Spotify" },
-        properties = { tag = "", screen = 2 } },
+    {
+        rule = { class = "Spotify" },
+        properties = { tag = " ", screen = 2 }
+    },
 }

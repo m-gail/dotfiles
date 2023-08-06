@@ -22,6 +22,10 @@ super + b
 super + r
 	rofi -show drun
 
+# lock
+super + shift + q
+    i3lock -c "#191724"
+
 # keyboard layout
 super + c
 	$HOME/.config/awesome/keys/global/switch_keyboard_layout.sh
