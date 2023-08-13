@@ -7,8 +7,8 @@ map({"n", "v"}, "<leader>gr", gitsigns.reset_hunk, default_opts, "reset hunk")
 nmap("<leader>gR", gitsigns.reset_buffer, "reset buffer")
 nmap("<leader>gp", gitsigns.preview_hunk, "preview hunk")
 nmap("<leader>gb", function() gitsigns.blame_line({ full = true }) end, "blame line")
-nmap("<leader>gN", function() gitsigns.prev_hunk() end, "previous hunk")
-nmap("<leader>gn", function() gitsigns.next_hunk() end, "next hunk")
+nmap("[h", function() gitsigns.prev_hunk() end, "previous hunk")
+nmap("]h", function() gitsigns.next_hunk() end, "next hunk")
 
 -- Text object
 map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>', default_opts, "git hunk")

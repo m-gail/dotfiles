@@ -15,3 +15,10 @@ nmap("<C-u>", "<C-u>zz")
 map("x", "<leader>p", "\"_dP", default_opts)
 map({"x", "n"}, "<leader>y", "\"+y", default_opts)
 map({"x", "n"}, "<leader>Y", "\"+Y", default_opts)
+
+vim.cmd.cnoreabbrev {
+    "H",
+    "vert",
+    "bo",
+    "h"
+}

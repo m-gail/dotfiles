@@ -9,8 +9,8 @@ nmap("gD", ":lua vim.lsp.buf.declaration()<CR>", "go to declaration")
 nmap("gI", ":lua vim.lsp.buf.implementation()<CR>", "go to implementation")
 nmap("gr", ":lua vim.lsp.buf.references()<CR>", "show references")
 
-nmap("<leader>sa", function() require('lspsaga.codeaction'):code_action() end, "code action")
-nmap("<leader>sd", function() require('lspsaga.showdiag'):show_diagnostics({line = true}) end, "show line diagnostics")
+nmap("<leader>sa", ":Lspsaga code_action<CR>", "code action")
+nmap("<leader>sd", ":Lspsaga show_line_diagnostics<CR>", "show line diagnostics")
 nmap("<leader>sf", ":lua vim.lsp.buf.format { async = true }<CR>", "format")
 nmap("<leader>sr", ":LspRestart<CR>", "restart lsp")
 

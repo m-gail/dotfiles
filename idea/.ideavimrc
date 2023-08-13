@@ -87,7 +87,7 @@ nnoremap <leader>hc :delmarks A-Z<CR>
 map <leader>H <Action>(ShowTypeBookmarks)
 
 " Dap
-map <leader>db <Action>(ToggleLineBreak)
+map <leader>db <Action>(ToggleLineBreakpoint)
 map <leader>dn <Action>(StepOver)
 map <leader>di <Action>(StepInto)
 map <leader>do <Action>(StepOut)

@@ -30,17 +30,29 @@ require('nvim-treesitter.configs').setup {
                 ["if"] = "@function.inner",
                 ["ac"] = "@class.outer",
                 ["ic"] = "@class.inner",
+                ["aa"] = "@parameter.outer",
+                ["ia"] = "@parameter.inner",
             }
         },
         move = {
             enable = true,
             set_jumps = true,
             goto_next_start = {
-                ["]a"] = "@parameter.inner"
+                ["]a"] = "@parameter.inner",
+                ["]c"] = "@class.inner",
+                ["]m"] = "@function.outer",
+            },
+            goto_next_end = {
+                ["]M"] = "@function.outer",
             },
             goto_previous_start = {
-                ["[a"] = "@parameter.inner"
-            }
+                ["[a"] = "@parameter.inner",
+                ["[c"] = "@class.inner",
+                ["[m"] = "@function.outer",
+            },
+            goto_previous_end = {
+                ["[M"] = "@function.outer",
+            },
         }
     },
     context_commentstring = {

@@ -114,3 +114,20 @@ for symbol, icon in pairs(icons) do
     local sign_name = "DiagnosticSign" .. symbol
     vim.fn.sign_define(sign_name, { text = icon, texthl = sign_name })
 end
+
+-- Diagnostics
+vim.diagnostic.config {
+    severity_sort = true,
+    underline = function(ns_id, _)
+        local namespace = vim.diagnostic.get_namespace(ns_id)
+        -- Remove underlines for eslint warnings
+        if namespace.name == "NULL_LS_SOURCE_7" then
+            -- Can also use { min = ... }
+            return { severity = vim.diagnostic.severity.ERROR }
+        end
+        return true
+    end,
+    virtual_text = {
+        format = require("concise_diagnostics").format
+    }
+}

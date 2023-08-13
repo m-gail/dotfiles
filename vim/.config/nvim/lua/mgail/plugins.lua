@@ -51,11 +51,11 @@ require("lazy").setup({
     },
 
     -- Themes
-    "cocopon/iceberg.vim",
-    "frenzyexists/aquarium-vim",
-    "sainnhe/everforest",
-    { "rose-pine/neovim", priority = 1000, name = "rose-pine", init = function() vim.cmd("colorscheme rose-pine") end },
-    "nyoom-engineering/oxocarbon.nvim",
+    { "rose-pine/neovim", priority = 1000, name = "rose-pine",
+        init = function()
+            require("mgail.config.rosepine")
+            vim.cmd("colorscheme rose-pine")
+        end },
     "m-gail/northernlights.vim",
 
     -- Git
@@ -63,10 +63,24 @@ require("lazy").setup({
         "NeogitOrg/neogit",
         dependencies = 'nvim-lua/plenary.nvim',
         init = function()
-            require("neogit").setup {}
+            require("mgail.config.neogit")
+            require("mgail.keymap.neogit")
         end
     },
-    "sindrets/diffview.nvim",
+    {
+        "sindrets/diffview.nvim",
+        init = function ()
+            require("mgail.config.diffview")
+            require("mgail.keymap.diffview")
+        end
+    },
+    {
+        "lewis6991/gitsigns.nvim",
+        init = function()
+            require("gitsigns").setup()
+            require("mgail.keymap.gitsigns")
+        end
+    },
 
     -- LSP
     {
@@ -107,6 +121,24 @@ require("lazy").setup({
             require("Comment").setup {
                 pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
             }
+        end
+    },
+    {
+        "ThePrimeagen/refactoring.nvim",
+        requires = {
+            { "nvim-lua/plenary.nvim" },
+            { "nvim-treesitter/nvim-treesitter" }
+        },
+        init = function()
+            require("telescope").load_extension("refactoring")
+            require("refactoring").setup {}
+            require("mgail.keymap.refactoring")
+        end
+    },
+    {
+        "m-gail/diagnostic_manipulation.nvim",
+        init = function()
+            require("mgail.config.diagnostic_manipulation")
         end
     },
 
@@ -177,34 +209,10 @@ require("lazy").setup({
             require("mgail.config.whichkey")
         end
     },
-    {
-        "lewis6991/gitsigns.nvim",
-        init = function()
-            require("gitsigns").setup()
-            require("mgail.keymap.gitsigns")
-        end
-    },
 
     -- Other
     {
         'm-gail/escape.nvim',
         init = function() require("mgail.keymap.escape") end
     },
-
-    -- Notes
-    -- {
-    --     "nvim-neorg/neorg",
-    --     build = ":Neorg sync-parsers",
-    --     dependencies = { "nvim-lua/plenary.nvim" },
-    --     config = function()
-    --         require("mgail.config.neorg")
-    --     end,
-    -- },
-    {
-        'nvim-orgmode/orgmode',
-        init = function()
-            require('mgail.config.orgmode')
-        end
-    }
-
 })
