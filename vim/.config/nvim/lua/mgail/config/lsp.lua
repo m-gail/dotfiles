@@ -123,7 +123,7 @@ vim.diagnostic.config {
         -- Remove underlines for eslint warnings
         if namespace.name == "NULL_LS_SOURCE_7" then
             -- Can also use { min = ... }
-            return { severity = vim.diagnostic.severity.ERROR }
+            return { severity = { min = vim.diagnostic.severity.WARN } }
         end
         return true
     end,
