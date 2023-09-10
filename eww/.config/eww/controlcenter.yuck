@@ -1,0 +1,77 @@
+(defpoll bluetooth-status :interval "1s" "~/.config/eww/scripts/bluetooth.py")
+(defpoll volume-status :interval "1s" "~/.config/eww/scripts/volume.py")
+(defpoll microphone-status :interval "1s" "~/.config/eww/scripts/microphone.py")
+(defpoll battery-status :interval "1s" "~/.config/eww/scripts/battery.py")
+
+(defwidget slider [icon class percentage onchange disabled onclick]
+(box :orientation "horizontal"
+        :class "slider ${class} ${disabled ? "disabled" : "enabled"}"
+        :space-evenly false
+        :spacing 10
+    (eventbox :class "slider-icon"
+            :onclick onclick
+        (label :text "${icon}"))
+    (scale :hexpand true
+            :class "slider-scale"
+            :value percentage
+            :onchange onchange)
+    (label :text "${round(percentage, 0)}%"
+            :class "slider-percentage")))
+
+(defwidget indicator [icon class text disabled]
+(box :orientation "horizontal"
+        :class "indicator ${class} ${disabled ? "disabled" : "enabled"}"
+        :space-evenly false
+        :spacing 10
+    (label :text "${icon}" :class "indicator-icon")
+    (label :text "${disabled ? "Not connected" : text}" :class "indicator-text")))
+
+(defwidget battery []
+    (box :class "battery"
+(overlay :style "color: ${battery-status.color}"
+        :visible {battery-status.has_battery}
+    (circular-progress
+            :value {battery-status.percent}
+            :start-at 75
+            :width 60
+            :height 60
+            :thickness 6)
+    (label :text {battery-status.icon}))
+))
+
+(defwidget controlcenter []
+(box :orientation "vertical" :class "controlcenter-content"
+        :valign "start"
+        :spacing 16
+    (slider :icon {volume-status.icon}
+            :percentage {volume-status.volume}
+            :onchange "pactl set-sink-volume @DEFAULT_SINK@ {}%"
+            :class "volume-slider"
+            :disabled {volume-status.mute}
+            :onclick "pactl set-sink-mute @DEFAULT_SINK@ toggle")
+    (slider :icon {microphone-status.icon}
+            :percentage {microphone-status.volume}
+            :class "microphone-slider"
+            :onchange "pactl set-source-volume @DEFAULT_SOURCE@ {}%"
+            :disabled {microphone-status.mute}
+            :onclick "pactl set-source-mute @DEFAULT_SOURCE@ toggle")
+    (slider :icon "󰃠 "
+            :percentage 50
+            :class "brightness-slider"
+            :onchange ""
+            :disabled false
+            :onclick "")
+    (box :orientation "horizontal"
+            :space-evenly true
+            :spacing 20
+        (indicator :icon " "
+                :class "wifi-indicator"
+                :text ""
+                :disabled false
+                :disabled-text "Disabled")
+        (indicator :icon {bluetooth-status.icon}
+                :class "bluetooth-indicator"
+                :text {bluetooth-status.text}
+                :disabled {bluetooth-status.disabled}))
+    (box :orientation "horizontal" :space-evenly false :spacing 20
+        (battery))))

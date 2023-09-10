@@ -1,0 +1,119 @@
+.controlcenter {
+  border: 2px solid #c4a7e7;
+  border-radius: 15px;
+  background-color: #191724;
+}
+
+.controlcenter-content {
+  margin: 1.5rem;
+}
+
+.slider {
+  font-family: "JetBrains Mono NF";
+  background: #1f1d2e;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+
+  .slider-icon {
+    font-size: 2rem;
+    transition: 0.4s color;
+
+    &:hover {
+      color: #524f67;
+    }
+
+    &:active {
+      background: transparent;
+    }
+  }
+
+  .slider-scale {
+    trough {
+      all: unset;
+      background-color: #191724;
+      border-radius: 1rem;
+      min-height: 1rem;
+      border: 2px solid #524f67;
+
+      slider {
+        border: 1px solid transparent;
+        background: transparent;
+      }
+
+      highlight {
+        margin: 0.1rem;
+        border-radius: 2rem;
+        background-color: #908caa;
+      }
+    }
+  }
+  &.disabled .slider-scale trough highlight {
+    background-color: #26233a;
+  }
+
+  .slider-percentage {
+    font-size: 1.5rem;
+  }
+}
+
+.volume-slider {
+  .slider-icon {
+    color: #9ccfd8;
+  }
+}
+
+.microphone-slider {
+  .slider-icon {
+    color: #31748f;
+  }
+}
+
+.brightness-slider {
+  .slider-icon {
+    color: #f6c177;
+  }
+}
+
+.indicator {
+  font-family: "JetBrains Mono NF";
+  background: #1f1d2e;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+
+  &.disabled {
+    background: #403d52;
+    color: #21202e;
+
+    .indicator-icon {
+      color: #21202e;
+    }
+  }
+
+  .indicator-icon {
+    font-size: 2rem;
+  }
+
+  .indicator-text {
+    font-size: 1.25rem;
+  }
+}
+
+.wifi-indicator {
+  .indicator-icon {
+    color: #ebbcba;
+  }
+}
+
+.bluetooth-indicator {
+  .indicator-icon {
+    color: #31748f;
+  }
+}
+
+.battery {
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 2rem;
+  background: #1f1d2e;
+  font-family: JetBrains Mono NF;
+}

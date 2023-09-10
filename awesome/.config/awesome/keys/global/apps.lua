@@ -64,5 +64,14 @@ return gears.table.join(
             description = "run prompt",
             group = "launcher"
         }
+    ),
+
+    awful.key(
+        { modkey }, "i",
+        function() awful.spawn.with_shell(apps.controlcenter) end,
+        {
+            description = "toggle controlcenter",
+            group = "launcher"
+        }
     )
 )

@@ -1,6 +1,7 @@
 return {
     base = "#191724",
     surface = "#1f1d2e",
+    highlight_high = "#524f67",
     text = "#e0def4",
     muted = "#6e6a86",
     red = "#eb6f92",

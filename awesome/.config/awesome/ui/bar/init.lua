@@ -11,7 +11,7 @@ local volume = require('awesome-wm-widgets.pactl-widget.volume') {
     widget_type = "horizontal_bar",
     tooltip = true,
     main_color = colors.text,
-    mute_color = colors.muted,
+    mute_color = colors.highlight_high,
     shape = "rounded_rect"
 }
 local date = wibox.widget.textclock("%d.%m.%Y")
@@ -44,7 +44,13 @@ awful.screen.connect_for_each_screen(function(s)
             -- Right widgets
             {
                 layout = wibox.layout.fixed.horizontal,
-                create_module(s.systray),
+                create_module(
+                    {
+                        layout = wibox.layout.margin,
+                        margins = beautiful.module_outer_margin,
+                        s.systray
+                    }
+                ),
                 -- create_module(keyboard_layout, " ", colors.blue),
                 -- create_module(battery),
                 create_module(volume, " ", colors.cyan),
