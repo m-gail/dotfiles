@@ -4,9 +4,7 @@ import json
 import re
 import subprocess
 
-process = subprocess.run(
-    ["echo", "Battery 0: Charging, 40%, 04:32"], capture_output=True, text=True
-)
+process = subprocess.run(["acpi"], capture_output=True, text=True)
 battery_stdout = process.stdout
 battery_stderr = process.stderr
 
