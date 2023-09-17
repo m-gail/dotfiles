@@ -15,3 +15,5 @@ require("ui")
 require("rules")
 
 require("autostart")
+
+pcall(require, "localconfig")

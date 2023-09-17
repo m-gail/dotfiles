@@ -28,6 +28,7 @@ awful.rules.rules = {
                 "Blueman-manager",
                 "Pavucontrol",
                 "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
+                "Zenity"
             },
 
             -- Note that the name property shown in xprop might be set slightly after creation of the client
@@ -51,13 +52,33 @@ awful.rules.rules = {
     },
 
     {
-        rule_any = { class = { "firefox", "Firefox" } },
-        properties = { tag = "󰖟 " }
+        rule = { class = "jetbrains-idea" },
+        properties = { tag = " " }
+    },
+
+    {
+        rule = { class = "KeePassXC" },
+        properties = { tag = "󰍹 " }
+    },
+
+    {
+        rule_any = { class = { "firefox", "Firefox", "Chromium" } },
+        properties = { tag = "󰜏 " }
+    },
+
+    {
+        rule_any = { instance = { "chromium (.*/tmp/.*).*" } }, -- selenium
+        properties = { tag = "󱞐 " }
     },
 
     {
         rule = { class = "discord" },
         properties = { tag = "󰭹 ", screen = 2 }
+    },
+
+    {
+        rule = { name = "Microsoft Teams.*" },
+        properties = { tag = "󰭹 ", floating = false }
     },
 
     {
