@@ -29,6 +29,7 @@ local configs = {
     vuels = {},
     bashls = {},
     -- nil_ls = {}
+    clangd = {},
 }
 
 return configs

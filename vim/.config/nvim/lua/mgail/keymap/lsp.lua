@@ -1,18 +1,19 @@
 local nmap = require('mgail.util.keymap').nmap
 
-nmap("K", "<cmd>Lspsaga hover_doc<CR>")
+nmap("K", vim.lsp.buf.hover)
 
-nmap("gpd", function() require('lspsaga.definition'):peek_definition(1) end, "preview definition")
-nmap("<leader>rn", function() require('lspsaga.rename'):lsp_rename() end, "rename")
-nmap("gd", ":lua vim.lsp.buf.definition()<CR>", "go to definition")
+nmap("<leader>rn", vim.lsp.buf.rename, "rename")
+nmap("gd", require("telescope.builtin").lsp_definitions, "go to definition")
 nmap("gD", ":lua vim.lsp.buf.declaration()<CR>", "go to declaration")
-nmap("gI", ":lua vim.lsp.buf.implementation()<CR>", "go to implementation")
-nmap("gr", ":lua vim.lsp.buf.references()<CR>", "show references")
+nmap("gI", require("telescope.builtin").lsp_implementations, "go to implementation")
+nmap("gr", require("telescope.builtin").lsp_references, "show references")
 
-nmap("<leader>sa", ":Lspsaga code_action<CR>", "code action")
-nmap("<leader>sd", ":Lspsaga show_line_diagnostics<CR>", "show line diagnostics")
+nmap("<leader>sa", vim.lsp.buf.code_action, "code action")
+nmap("<leader>sd", vim.diagnostic.open_float, "show line diagnostics")
 nmap("<leader>sf", ":lua vim.lsp.buf.format { async = true }<CR>", "format")
 nmap("<leader>sr", ":LspRestart<CR>", "restart lsp")
 
 nmap("[d", vim.diagnostic.goto_prev, "go to previous diagnostic")
 nmap("]d", vim.diagnostic.goto_next, "go to next diagnostic")
+nmap("[De", function () vim.diagnostic.goto_prev { severity = vim.diagnostic.severity.ERROR } end, "go to previous error diagnostic")
+nmap("]De", function () vim.diagnostic.goto_next { severity = vim.diagnostic.severity.ERROR } end, "go to next error diagnostic")

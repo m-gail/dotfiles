@@ -8,11 +8,16 @@ require("telescope").setup {
         selection_caret = " ",
         path_display = { "truncate" },
         layout_config = {
-            preview_width = 0.5,
             width = 0.7,
             height = 0.7,
             prompt_position = "top",
+            horizontal = {
+                preview_width = 0.5,
+            }
         }
+    },
+    pickers = {
+
     },
     extensions = {
         file_browser = {
@@ -26,9 +31,13 @@ require("telescope").setup {
             override_generic_sorter = true,
             override_file_sorter = true,
             case_mode = "smart_case"
+        },
+        ["ui-select"] = {
+            require("telescope.themes").get_dropdown {}
         }
     }
 }
 
 require("telescope").load_extension("file_browser")
 require("telescope").load_extension("fzf")
+require("telescope").load_extension("ui-select")

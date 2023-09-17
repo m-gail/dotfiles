@@ -21,6 +21,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
 vim.opt.showmode = false
 vim.opt.cursorline = true
+vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.g.mapleader = " "

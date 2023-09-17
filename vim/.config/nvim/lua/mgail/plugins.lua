@@ -24,10 +24,10 @@ require("lazy").setup({
             "nvim-lua/plenary.nvim",
             {
                 "nvim-telescope/telescope-fzf-native.nvim",
-                build =
-                "make"
+                build = "make"
             },
-            { "nvim-telescope/telescope-file-browser.nvim" }
+            "nvim-telescope/telescope-file-browser.nvim",
+            "nvim-telescope/telescope-ui-select.nvim",
         },
         init = function()
             require("mgail.config.telescope")
@@ -51,11 +51,15 @@ require("lazy").setup({
     },
 
     -- Themes
-    { "rose-pine/neovim", priority = 1000, name = "rose-pine",
+    {
+        "rose-pine/neovim",
+        priority = 1000,
+        name = "rose-pine",
         init = function()
             require("mgail.config.rosepine")
             vim.cmd("colorscheme rose-pine")
-        end },
+        end
+    },
     "m-gail/northernlights.vim",
 
     -- Git
@@ -69,7 +73,7 @@ require("lazy").setup({
     },
     {
         "sindrets/diffview.nvim",
-        init = function ()
+        init = function()
             require("mgail.config.diffview")
             require("mgail.keymap.diffview")
         end
@@ -98,12 +102,10 @@ require("lazy").setup({
                 dependencies = { "rafamadriz/friendly-snippets" }
             },
             "saadparwaiz1/cmp_luasnip",
-            "glepnir/lspsaga.nvim",
             { "folke/neodev.nvim", opts = {} },
         },
         init = function()
             require("mgail.config.lsp")
-            require("mgail.config.lspsaga")
             require("mgail.config.luasnip")
             require("mgail.keymap.lsp")
             require("mgail.keymap.luasnip")
@@ -141,6 +143,7 @@ require("lazy").setup({
             require("mgail.config.diagnostic_manipulation")
         end
     },
+    "m-gail/concise_diagnostics.nvim",
 
     -- Debugging
     {
@@ -207,6 +210,7 @@ require("lazy").setup({
         "folke/which-key.nvim",
         init = function()
             require("mgail.config.whichkey")
+            require("mgail.keymap.whichkey")
         end
     },
 

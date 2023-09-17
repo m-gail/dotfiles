@@ -74,7 +74,6 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = 'luasnip' }, -- For luasnip users.
         { name = 'path' },
-        { name = 'orgmode' }
     }, {
         { name = 'buffer' },
     })
@@ -119,6 +118,9 @@ end
 vim.diagnostic.config {
     severity_sort = true,
     underline = function(ns_id, _)
+        if ns_id == nil then
+            return true
+        end
         local namespace = vim.diagnostic.get_namespace(ns_id)
         -- Remove underlines for eslint warnings
         if namespace.name == "NULL_LS_SOURCE_7" then
