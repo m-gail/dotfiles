@@ -4,7 +4,7 @@ super + space ; c
     echo "require('awful').screen.focused().tags[4]:view_only()" | awesome-client
 super + space ; b ; b
     echo "require('awful').screen.focused().tags[3]:view_only()" | awesome-client
-super + space ; b ; a
+super + space ; b ; d
     echo "require('awful').screen.focused().tags[5]:view_only()" | awesome-client
 super + space ; b ; s
     echo "require('awful').screen.focused().tags[6]:view_only()" | awesome-client
