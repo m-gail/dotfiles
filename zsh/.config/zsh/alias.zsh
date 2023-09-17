@@ -53,3 +53,7 @@ alias lg="lazygit"
 
 # ssh
 alias ssh="TERM=xterm ssh"
+
+# nvm
+alias nvminit="source ~/.nvm/nvm.sh"
+alias sdkinit="source ~/.sdkman/bin/sdkman-init.sh"

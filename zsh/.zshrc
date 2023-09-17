@@ -22,3 +22,6 @@ eval "$(starship init zsh)"
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [[ ! -d ~/.config/zsh/plugins/zsh-autosuggestions ]] && git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/plugins/zsh-autosuggestions
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# direnv
+eval "$(direnv hook zsh)"
