@@ -6,3 +6,5 @@ setxkbmap us -variant altgr-intl -option caps:escape
 [ -z  "$(pgrep nm-applet)" ] && nm-applet &
 [ -z  "$(pgrep blueman-applet)" ] && blueman-applet &
 [ -z  "$(pgrep nextcloud)" ] && nextcloud --background &
+killall sxhkd
+sxhkd -c ~/.config/sxhkd/sequences/sxhkdrc
