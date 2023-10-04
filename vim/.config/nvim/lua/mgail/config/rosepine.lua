@@ -6,5 +6,6 @@ require("rose-pine").setup({
 		TelescopeResultsNormal = { fg = "subtle", bg = "none" },
 		TelescopeSelection = { fg = "text", bg = "base" },
 		TelescopeSelectionCaret = { fg = "rose", bg = "none" },
+        LspInlayHint = { bg = "overlay", fg = "subtle" }
 	},
 })

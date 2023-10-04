@@ -63,6 +63,14 @@ cmp.setup({
             return vim_item
         end
     },
+    view = {
+        entries = {
+            selection_order = "near_cursor"
+        }
+    },
+    completion = {
+        completeopt = "menu,menuone"
+    },
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
