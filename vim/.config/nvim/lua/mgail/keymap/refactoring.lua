@@ -6,12 +6,12 @@ vim.keymap.set(
 
 vim.keymap.set(
 	{"n", "x"},
-	"<leader>ref",
-	function() require('telescope').refactor("Extract Function") end
+	"<leader>rf",
+	function() require('refactoring').refactor("Extract Function") end
 )
 
 vim.keymap.set(
 	{"n", "x"},
-	"<leader>rev",
-	function() require('telescope').refactor("Extract Variable") end
+	"<leader>rv",
+	function() require('refactoring').refactor("Extract Variable") end
 )
