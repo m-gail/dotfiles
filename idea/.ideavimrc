@@ -2,6 +2,8 @@ let mapleader=" "
 
 set scrolloff=5
 
+set visualbell
+set noerrorbells
 set incsearch
 set number
 set relativenumber
@@ -102,6 +104,8 @@ map ]h <Action>(VcsShowNextChangeMarker)zz
 " Navigation
 map ]m ]mzz
 map [m [mzz
+map [d <Action>(GotoPreviousError)
+map ]d <Action>(GotoNextError)
 
 " IntelliJ
 map <leader>z <Action>(ToggleDistractionFreeMode)

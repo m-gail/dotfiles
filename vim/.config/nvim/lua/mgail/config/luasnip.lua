@@ -9,7 +9,9 @@ require("luasnip.loaders.from_vscode").lazy_load()
 
 ls.config.set_config {
     history = false,
-    updateevents = "TextChanged,TextChangedI"
+    updateevents = "TextChanged,TextChangedI",
+    region_check_events = "InsertEnter",
+    delete_check_events = "InsertLeave"
 }
 
 ls.add_snippets("javascript", {
@@ -17,7 +19,7 @@ ls.add_snippets("javascript", {
         t("intl.formatMessage({id: '"), i(1, "id"), t("'})")
     }),
     s("state", {
-        t("["),
+        t("const ["),
         i(1, "stateName"),
         t(", "),
         d(2, function(args)
@@ -27,6 +29,18 @@ ls.add_snippets("javascript", {
             })
         end, { 1 }),
         t("] = useState("), i(3, "default"), t(")")
+    }),
+    s("component", {
+        t({ "import React from 'react';", "", "export interface " }),
+        d(4, function(args) return sn(nil, { t(args[1][1]) }) end, { 1 }),
+        t({ "Props {", "}", "", "" }),
+        t("export function "),
+        i(1, "CompenentName"),
+        t("(props: "),
+        d(2, function(args) return sn(nil, { t(args[1][1]) }) end, { 1 }),
+        t({ "Props): React.JSX.Element {", "    " }),
+        i(3),
+        t({ "", "}" })
     })
 })
 

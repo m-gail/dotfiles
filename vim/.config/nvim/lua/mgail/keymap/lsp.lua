@@ -21,3 +21,7 @@ nmap("[De", function() vim.diagnostic.goto_prev { severity = vim.diagnostic.seve
     "go to previous error diagnostic")
 nmap("]De", function() vim.diagnostic.goto_next { severity = vim.diagnostic.severity.ERROR } end,
     "go to next error diagnostic")
+nmap("[Dw", function() vim.diagnostic.goto_prev { severity = vim.diagnostic.severity.WARN } end,
+    "go to previous warn diagnostic")
+nmap("]Dw", function() vim.diagnostic.goto_next { severity = vim.diagnostic.severity.WARN } end,
+    "go to next warn diagnostic")
