@@ -3,6 +3,8 @@
 (defpoll microphone-status :interval "1s" "~/.config/eww/scripts/microphone.py")
 (defpoll battery-status :interval "1s" "~/.config/eww/scripts/battery.py")
 (defpoll brightness-status :interval "1s" "~/.config/eww/scripts/brightness.py")
+(defpoll network-status :interval "1s" "~/.config/eww/scripts/network.py")
+(defpoll dunst-paused :interval "1s" "dunstctl is-paused")
 
 (defwidget slider [icon class percentage onchange disabled onclick]
 (box :orientation "horizontal"
@@ -14,7 +16,9 @@
         (label :text "${icon}"))
     (scale :hexpand true
             :class "slider-scale"
+            :round-digits 0
             :value percentage
+            :max 101
             :onchange onchange)
     (label :text "${round(percentage, 0)}%"
             :class "slider-percentage")))
@@ -28,22 +32,36 @@
     (label :text "${disabled ? "Not connected" : text}" :class "indicator-text")))
 
 (defwidget battery []
-    (box :class "battery"
-(overlay :style "color: ${battery-status.color}"
-        :visible {battery-status.has_battery}
-    (circular-progress
-            :value {battery-status.percent}
-            :start-at 75
-            :width 60
-            :height 60
-            :thickness 6)
-    (label :text {battery-status.icon}))
+(box :class "battery" :visible {battery-status.has_battery} :hexpand true
+    (overlay :style "color: ${battery-status.color}"
+        (circular-progress
+                :value {battery-status.percent}
+                :start-at 75
+                :width 60
+                :height 60
+                :thickness 6)
+        (label :text {battery-status.icon}))
+    ))
+
+(defwidget notifications-status []
+(box :class "notifications-status ${dunst-paused ? "disabled":"enabled"}"
+    (eventbox :onclick "dunstctl set-paused toggle" :class "button"
+        (label :text "${dunst-paused ? "":""}"))
+    )
+)
+
+(defwidget user []
+(box :orientation "horizontal" :space-evenly false :spacing 20 :class "user"
+        (box :style "background-image: url('/home/michael/.face')" :width 100 :height 100 :class "user-image")
+        (battery)
 ))
 
 (defwidget controlcenter []
 (box :orientation "vertical" :class "controlcenter-content"
         :valign "start"
         :spacing 16
+        :space-evenly false
+        (user)
     (slider :icon {volume-status.icon}
             :percentage {volume-status.volume}
             :onchange "pactl set-sink-volume @DEFAULT_SINK@ {}%"
@@ -65,14 +83,14 @@
     (box :orientation "horizontal"
             :space-evenly true
             :spacing 20
-        (indicator :icon " "
+        (indicator :icon {network-status.icon}
                 :class "wifi-indicator"
-                :text ""
+                :text {network-status.name}
                 :disabled false
                 :disabled-text "Disabled")
         (indicator :icon {bluetooth-status.icon}
                 :class "bluetooth-indicator"
                 :text {bluetooth-status.text}
                 :disabled {bluetooth-status.disabled}))
-    (box :orientation "horizontal" :space-evenly false :spacing 20
-        (battery))))
+    (box :orientation "horizontal" :space-evenly true :spacing 20
+        (notifications-status))))

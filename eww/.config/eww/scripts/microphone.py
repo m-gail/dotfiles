@@ -15,7 +15,8 @@ pactl_sinks = json.loads(pactl_list_process.stdout)
 
 for sink in pactl_sinks:
     if sink["name"] == default_sink:
-        volume = int(sink["volume"]["mono"]["value_percent"].replace("%", ""))
+        channel = sink["volume"]["mono"] if "mono" in sink["volume"] else sink["volume"]["front-left"]
+        volume = int(channel["value_percent"].replace("%", ""))
         mute = sink["mute"]
         print(
             json.dumps({"icon": " " if mute else " ", "volume": volume, "mute": mute})

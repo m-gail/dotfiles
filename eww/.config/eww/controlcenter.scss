@@ -113,7 +113,41 @@
 .battery {
   font-size: 1.5rem;
   padding: 1rem;
+  font-family: JetBrains Mono NF;
+}
+
+.user {
+  border-radius: 2rem;
+  background: #1f1d2e;
+
+  .user-image {
+    border-radius: 2rem;
+    background-size: cover;
+  }
+}
+
+.notifications-status {
+  font-size: 1.5rem;
+  padding: 1rem;
   border-radius: 2rem;
   background: #1f1d2e;
   font-family: JetBrains Mono NF;
+
+  &.enabled {
+    color: #f6c177;
+  }
+
+  &.disabled {
+    color: #eb6f92;
+  }
+
+  .button {
+    transition: 0.4s color;
+    &:hover {
+      color: #524f67;
+    }
+    &:active {
+      background: transparent;
+    }
+  }
 }
