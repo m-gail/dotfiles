@@ -1,7 +1,6 @@
 (include "./controlcenter.yuck")
 
 (defwindow controlcenter
-    :monitor 0
     :geometry (geometry :x "-30px"
         :y "0"
         :width "20%"
