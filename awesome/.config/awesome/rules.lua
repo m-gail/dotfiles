@@ -1,5 +1,6 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
+local wibox = require("wibox")
 
 local clientkeys = require("keys.client.keys")
 local clientbuttons = require("keys.client.buttons")
@@ -67,7 +68,17 @@ awful.rules.rules = {
     },
 
     {
+        rule_any = { class = { "ff%-dev%-.*" } },
+        properties = { tag = "󰖟 ", titlebars_enabled = true }
+    },
+
+    {
         rule_any = { instance = { "chromium (.*/tmp/.*).*" } }, -- selenium
+        properties = { tag = "󱞐 " }
+    },
+
+    {
+        rule_any = { instance = { "chromium (.*/Cypress/.*).*" } }, -- cypress
         properties = { tag = "󱞐 " }
     },
 
@@ -97,3 +108,17 @@ awful.rules.rules = {
         properties = { tag = " ", screen = 2 }
     },
 }
+
+-- Titlebar for dev firefox windows
+client.connect_signal("request::titlebars", function(c)
+    local titlewidget = wibox.widget.textbox(c.class:gsub("^ff%-dev%-", ""))
+    titlewidget.font = beautiful.titlebar_font
+    awful.titlebar(c, { size = beautiful.titlebar_size }):setup {
+        {
+            titlewidget,
+            margins = 8,
+            layout = wibox.layout.margin,
+        },
+        layout = wibox.layout.fixed.horizontal
+    }
+end)

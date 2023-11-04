@@ -22,15 +22,6 @@ return gears.table.join(
     ),
 
     awful.key(
-        { modkey }, "d",
-        function() awful.spawn.with_shell(apps.dev_terminal) end,
-        {
-            description = "open or focus a development terminal",
-            group = "launcher"
-        }
-    ),
-
-    awful.key(
         { modkey }, "a",
         function() awful.spawn.with_shell(apps.screenshot.area) end,
         {

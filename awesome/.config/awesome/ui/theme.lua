@@ -46,4 +46,9 @@ theme.hotkeys_label_fg = colors.text
 theme.hotkeys_fg = colors.text
 theme.hotkeys_modifiers_fg = colors.purple
 
+theme.titlebar_size = dpi(32)
+theme.titlebar_font = "JetBrains Mono Nerd Font 12"
+theme.titlebar_bg = colors.surface
+theme.titlebar_fg = colors.yellow
+
 return theme
