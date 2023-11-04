@@ -52,7 +52,7 @@
 
 (defwidget user []
 (box :orientation "horizontal" :space-evenly false :spacing 20 :class "user"
-        (box :style "background-image: url('/home/michael/.face')" :width 100 :height 100 :class "user-image")
+        (box :style "background-image: url('../../../../.face')" :width 100 :height 100 :class "user-image")
         (battery)
 ))
 
