@@ -1,4 +1,4 @@
-autorandr --load default &
+autorandr --load default
 picom &
 emacs --daemon &
 xsetroot -cursor_name left_ptr &

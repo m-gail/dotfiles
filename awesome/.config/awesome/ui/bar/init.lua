@@ -37,10 +37,15 @@ awful.screen.connect_for_each_screen(function(s)
         bg = colors.base,
         {
             layout = wibox.layout.align.horizontal,
+            expand = "none",
             -- Left widgets
             create_module(s.mytaglist),
             -- center widgets
-            nil,
+            {
+                layout = wibox.layout.fixed.horizontal,
+                create_module(date, " ", colors.yellow),
+                create_module(clock, " ", colors.red),
+            },
             -- Right widgets
             {
                 layout = wibox.layout.fixed.horizontal,
@@ -54,8 +59,6 @@ awful.screen.connect_for_each_screen(function(s)
                 -- create_module(keyboard_layout, " ", colors.blue),
                 -- create_module(battery),
                 create_module(volume, " ", colors.cyan),
-                create_module(date, " ", colors.yellow),
-                create_module(clock, " ", colors.red),
                 create_module(s.mylayoutbox),
             },
         }
