@@ -1,5 +1,17 @@
-d:echo "require('awful').screen.focused().tags[1]:view_only()" | awesome-client
-c:echo "require('awful').screen.focused().tags[4]:view_only()" | awesome-client
-bb:echo "require('awful').screen.focused().tags[3]:view_only()" | awesome-client
-bd:echo "require('awful').screen.focused().tags[5]:view_only()" | awesome-client
-bs:echo "require('awful').screen.focused().tags[6]:view_only()" | awesome-client
+d:echo "require('keys.external').focus(1)" | awesome-client
+md:echo "require('keys.external').move_to(1)" | awesome-client
+j:echo "require('keys.external').focus(2)" | awesome-client
+mj:echo "require('keys.external').move_to(2)" | awesome-client
+c:echo "require('keys.external').focus(4)" | awesome-client
+ii:echo "require('keys.external').focus(3)" | awesome-client
+mii:echo "require('keys.external').move_to(3)" | awesome-client
+id:echo "require('keys.external').focus(5)" | awesome-client
+mid:echo "require('keys.external').move_to(5)" | awesome-client
+is:echo "require('keys.external').focus(6)" | awesome-client
+mis:echo "require('keys.external').move_to(6)" | awesome-client
+al:echo "require('awful').layout.inc(1)" | awesome-client
+as:autorandr --load $(autorandr --list | rofi -dmenu)
+lff:firefox
+lfd:~/.dotfiles/scripts/firefox-profiles.sh
+lc:chromium
+lkd:kitty --class="kitty-dev"
