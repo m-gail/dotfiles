@@ -3,6 +3,7 @@ md:echo "require('keys.external').move_to(1)" | awesome-client
 j:echo "require('keys.external').focus(2)" | awesome-client
 mj:echo "require('keys.external').move_to(2)" | awesome-client
 c:echo "require('keys.external').focus(4)" | awesome-client
+mc:echo "require('keys.external').move_to(4)" | awesome-client
 ii:echo "require('keys.external').focus(3)" | awesome-client
 mii:echo "require('keys.external').move_to(3)" | awesome-client
 id:echo "require('keys.external').focus(5)" | awesome-client
