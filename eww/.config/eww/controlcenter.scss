@@ -8,11 +8,29 @@
   margin: 1.5rem;
 }
 
+.sliders {
+  background: #1f1d2e;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+}
+
 .slider {
   font-family: "JetBrains Mono NF";
-  background: #1f1d2e;
-  padding: 1rem 2rem;
   border-radius: 2rem;
+
+  &.unsupported {
+    color: #524f67;
+    .slider-icon {
+      color: #524f67;
+    }
+
+    .slider-scale {
+      trough {
+        border: 2px solid #403d52;
+        background-color: #21202e;
+      }
+    }
+  }
 
   .slider-icon {
     font-size: 2rem;
@@ -123,6 +141,23 @@
   .user-image {
     border-radius: 2rem;
     background-size: cover;
+  }
+
+  .user-info {
+    font-family: JetBrains Mono NF;
+    font-size: 1.5rem;
+  }
+}
+
+.user-name {
+  .user-info-icon {
+    color: #ebbcba;
+  }
+}
+
+.windowmanager {
+  .user-info-icon {
+    color: #f6c177;
   }
 }
 

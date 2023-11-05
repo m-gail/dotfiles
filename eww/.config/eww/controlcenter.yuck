@@ -5,10 +5,12 @@
 (defpoll brightness-status :interval "1s" "~/.config/eww/scripts/brightness.py")
 (defpoll network-status :interval "1s" "~/.config/eww/scripts/network.py")
 (defpoll dunst-paused :interval "1s" "dunstctl is-paused")
+(defpoll username :interval "7200s" "whoami")
+(defpoll windowmanager :interval "7200s" "wmctrl -m | head -n 1 | sed 's/^Name: //g'")
 
-(defwidget slider [icon class percentage onchange disabled onclick]
+(defwidget slider [icon class percentage onchange disabled onclick supported]
 (box :orientation "horizontal"
-        :class "slider ${class} ${disabled ? "disabled" : "enabled"}"
+        :class "slider ${class} ${disabled ? "disabled" : "enabled"} ${supported ? "supported" : "unsupported"}"
         :space-evenly false
         :spacing 10
     (eventbox :class "slider-icon"
@@ -18,7 +20,7 @@
             :class "slider-scale"
             :round-digits 0
             :value percentage
-            :max 101
+            :max {supported ? 101 : 0}
             :onchange onchange)
     (label :text "${round(percentage, 0)}%"
             :class "slider-percentage")))
@@ -50,36 +52,52 @@
     )
 )
 
+(defwidget user-info [icon text class]
+(box :orientation "horizontal" :halign "start" :space-evenly false :spacing 16 :class "user-info ${class}"
+    (label :text {icon} :class "user-info-icon")
+    (label :text {text} :class "user-info-text")))
+
 (defwidget user []
 (box :orientation "horizontal" :space-evenly false :spacing 20 :class "user"
-        (box :style "background-image: url('../../../../.face')" :width 100 :height 100 :class "user-image")
-        (battery)
-))
+    (box :style "background-image: url('../../../../.face')" :width 100 :height 100 :class "user-image")
+    (box :space-evenly false
+            :hexpand true
+            :valign "center"
+            :spacing 10
+            :halign "start"
+            :orientation "vertical"
+        (user-info :text {username} :icon "" :class "user-name")
+        (user-info :text {windowmanager} :icon "" :class "windowmanager"))
+    (battery)))
 
 (defwidget controlcenter []
 (box :orientation "vertical" :class "controlcenter-content"
         :valign "start"
         :spacing 16
         :space-evenly false
-        (user)
-    (slider :icon {volume-status.icon}
-            :percentage {volume-status.volume}
-            :onchange "pactl set-sink-volume @DEFAULT_SINK@ {}%"
-            :class "volume-slider"
-            :disabled {volume-status.mute}
-            :onclick "pactl set-sink-mute @DEFAULT_SINK@ toggle")
-    (slider :icon {microphone-status.icon}
-            :percentage {microphone-status.volume}
-            :class "microphone-slider"
-            :onchange "pactl set-source-volume @DEFAULT_SOURCE@ {}%"
-            :disabled {microphone-status.mute}
-            :onclick "pactl set-source-mute @DEFAULT_SOURCE@ toggle")
-    (slider :icon {brightness-status.icon}
-            :percentage {brightness-status.brightness}
-            :class "brightness-slider"
-            :onchange "brightnessctl set {}%"
-            :disabled false
-            :onclick "")
+    (user)
+    (box :orientation "vertical" :space-evenly false :class "sliders" :spacing 10
+        (slider :icon {volume-status.icon}
+                :percentage {volume-status.volume}
+                :onchange "pactl set-sink-volume @DEFAULT_SINK@ {}%"
+                :class "volume-slider"
+                :disabled {volume-status.mute}
+                :supported true
+                :onclick "pactl set-sink-mute @DEFAULT_SINK@ toggle")
+        (slider :icon {microphone-status.icon}
+                :percentage {microphone-status.volume}
+                :class "microphone-slider"
+                :onchange "pactl set-source-volume @DEFAULT_SOURCE@ {}%"
+                :disabled {microphone-status.mute}
+                :supported true
+                :onclick "pactl set-source-mute @DEFAULT_SOURCE@ toggle")
+        (slider :icon {brightness-status.icon}
+                :percentage {brightness-status.brightness}
+                :class "brightness-slider"
+                :onchange "brightnessctl set {}%"
+                :disabled false
+                :supported {brightness-status.supported}
+                :onclick ""))
     (box :orientation "horizontal"
             :space-evenly true
             :spacing 20
