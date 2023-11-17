@@ -3,6 +3,8 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
 // Firefox View
 user_pref("browser.tabs.firefox-view", false);
+user_pref("browser.tabs.firefox-view-newIcon", false);
+user_pref("browser.tabs.firefox-view-next", false);
 
 // Tracking
 user_pref("browser.contentblocking.category", "strict");

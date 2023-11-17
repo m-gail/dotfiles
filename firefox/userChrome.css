@@ -1,23 +1,17 @@
 :root {
-    --toolbarbutton-border-radius: 0 !important;
+    --toolbarbutton-border-radius: 14px !important;
 }
 
-#tabbrowser-arrowscrollbox-periphery {
+#tabbrowser-tabs {
     display: none;
 }
 
-.tabbrowser-tab {
-    padding: 0 !important;
-    margin: 0 !important;
+#alltabs-button {
+    display: none;
 }
 
-.tabbrowser-tab[fadein=true]:not([pinned]) {
-    max-width: unset !important;
-    font-family: monospace;
-}
+#sidebar-header { display: none; }
 
 .tab-background {
-    margin: 0 !important;
-    border-radius: 0 !important;
-    outline: none !important;
+    border-radius: 14px !important;
 }

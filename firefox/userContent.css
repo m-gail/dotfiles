@@ -1,0 +1,6 @@
+@-moz-document url("about:home"), url("about:newtab") {
+  :root {
+    --newtab-background-color: #191724 !important;
+    --newtab-background-color-secondary: #26233a !important;
+  }
+}
