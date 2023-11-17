@@ -1,12 +1,13 @@
-(defpoll bluetooth-status :interval "1s" "~/.config/eww/scripts/bluetooth.py")
-(defpoll volume-status :interval "1s" "~/.config/eww/scripts/volume.py")
-(defpoll microphone-status :interval "1s" "~/.config/eww/scripts/microphone.py")
-(defpoll battery-status :interval "1s" "~/.config/eww/scripts/battery.py")
-(defpoll brightness-status :interval "1s" "~/.config/eww/scripts/brightness.py")
-(defpoll network-status :interval "1s" "~/.config/eww/scripts/network.py")
-(defpoll dunst-paused :interval "1s" "dunstctl is-paused")
-(defpoll username :interval "7200s" "whoami")
-(defpoll windowmanager :interval "7200s" "wmctrl -m | head -n 1 | sed 's/^Name: //g'")
+(defpoll bluetooth-status :initial "" :interval "1s" "~/.config/eww/scripts/bluetooth.py")
+(defpoll volume-status :inital "" :interval "1s" "~/.config/eww/scripts/volume.py")
+(defpoll microphone-status :initial "" :interval "1s" "~/.config/eww/scripts/microphone.py")
+(defpoll battery-status :initial "" :interval "1s" "~/.config/eww/scripts/battery.py")
+(defpoll brightness-status :initial "" :interval "1s" "~/.config/eww/scripts/brightness.py")
+(defpoll network-status :initial "" :interval "1s" "~/.config/eww/scripts/network.py")
+(defpoll powerprofile-status :initial "" :interval "1s" "~/.config/eww/scripts/powerprofiles.py")
+(defpoll dunst-paused :initial "" :interval "1s" "dunstctl is-paused")
+(defpoll username :initial "" :interval "7200s" "whoami")
+(defpoll windowmanager :initial "" :interval "7202s" "wmctrl -m | head -n 1 | sed 's/^Name: //g'")
 
 (defwidget slider [icon class percentage onchange disabled onclick supported]
 (box :orientation "horizontal"
@@ -111,4 +112,8 @@
                 :text {bluetooth-status.text}
                 :disabled {bluetooth-status.disabled}))
     (box :orientation "horizontal" :space-evenly true :spacing 20
+        (indicator :icon {powerprofile-status.icon}
+                :class "powerprofile-indicator"
+                :text {powerprofile-status.powerprofile}
+                :disabled false)
         (notifications-status))))
