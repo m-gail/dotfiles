@@ -1,0 +1,29 @@
+git:
+  paging:
+    colorArg: always
+    pager: ~/SourcePackages/delta/target/release/delta --dark --paging=never --line-numbers --tabs 4
+gui:
+  border: 'rounded'
+  theme:
+    activeBorderColor:
+      - magenta
+      - bold
+    inactiveBorderColor:
+      - '#6e6a86'
+    searchingActiveBorderColor:
+      - cyan
+      - bold
+    optionsTextColor:
+      - '#ebbcba'
+    selectedLineBgColor:
+      - '#26233a'
+    selectedRangeBgColor:
+      - blue
+    cherryPickedCommitBgColor:
+      - cyan
+    cherryPickedCommitFgColor:
+      - '#ebbcba'
+    unstagedChangesColor:
+      - red
+    defaultFgColor:
+      - default
