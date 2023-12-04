@@ -37,11 +37,6 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
 
-;; If you use `org' and don't want your org files in the default location below,
-;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/Nextcloud/Notes/")
-
-
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
@@ -73,4 +68,11 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-(map! :desc "Write all" :n "Z W" #'evil-write-all)
+(load-file "~/.config/doom/mgail/vim.el")
+(load-file "~/.config/doom/mgail/files.el")
+(load-file "~/.config/doom/mgail/org.el")
+
+(map! :leader :n "sf" #'+format/buffer)
+
+;; projectile
+(setq projectile-project-search-path '(("~/Nextcloud/Notes" . 1) ("~/.config/doom" . 1)))
