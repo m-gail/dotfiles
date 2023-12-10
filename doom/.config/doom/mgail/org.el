@@ -15,8 +15,14 @@
 
 (map! :leader
       (:prefix ("o" . "org")
-       :desc "latex preview" "m" #'org-agenda
-       :desc "latex preview" "a" (lambda () (interactive) (org-agenda nil "a"))
+       :desc "agenda menu" "m" #'org-agenda
+       :desc "agenda" "a" (lambda () (interactive) (org-agenda nil "a"))
+       :desc "export as pdf" "ep" #'org-latex-export-to-pdf
        :desc "timestamp" "t" #'org-timestamp
        :desc "inactive timestamp" "T" #'org-timestamp-inactive
        :desc "latex preview" "l" #'org-latex-preview))
+
+(custom-set-faces!
+  '(org-level-1 :height 1.4)
+  '(org-level-2 :height 1.2)
+  '(org-level-3 :height 1.1))

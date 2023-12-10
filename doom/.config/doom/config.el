@@ -71,6 +71,7 @@
 (load-file "~/.config/doom/mgail/vim.el")
 (load-file "~/.config/doom/mgail/files.el")
 (load-file "~/.config/doom/mgail/org.el")
+(load-file "~/.config/doom/mgail/dashboard.el")
 
 (map! :leader :n "sf" #'+format/buffer)
 
