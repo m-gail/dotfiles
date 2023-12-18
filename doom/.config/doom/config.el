@@ -77,3 +77,4 @@
 
 ;; projectile
 (setq projectile-project-search-path '(("~/Nextcloud/Notes" . 1) ("~/.config/doom" . 1)))
+(setq browse-url-browser-function 'browse-url-firefox)

@@ -1,13 +1,13 @@
-(setq org-directory "~/Nextcloud/Notes/")
-(setq org-startup-with-latex-preview t)
-(setq org-startup-with-inline-images t)
-(setq org-export-directory "./build/out")
-(setq org-latex-pdf-process
-      '("latexmk -auxdir=build/aux -outdir=build/out -pdflatex='pdflatex -interaction nonstopmode' -pdf -bibtex -f %f"))
+(setq org-directory "~/Nextcloud/Notes/"
+      org-startup-with-inline-images t
+      org-export-directory "./build/out"
+      org-latex-pdf-process
+      '("latexmk -auxdir=build/aux -outdir=build/out -pdflatex='pdflatex -interaction nonstopmode' -pdf -bibtex -f %f")
+      org-time-stamp-custom-formats '("<%a %d.%m.%Y>" . "<%a %d.%m.%Y %H:%M>")
+      org-agenda-files (directory-files-recursively "~/Nextcloud/Notes" "\\.org$")
+      org-agenda-start-on-weekday nil
+      org-startup-with-latex-preview t)
 (setq-default org-display-custom-times t)
-(setq org-time-stamp-custom-formats '("<%a %d.%m.%Y>" . "<%a %d.%m.%Y %H:%M>"))
-(setq org-agenda-files (directory-files-recursively "~/Nextcloud/Notes" "\\.org$"))
-(setq org-agenda-start-on-weekday nil)
 
 (setq org-agenda-custom-commands
       '(("v" "Agenda"
@@ -30,11 +30,12 @@
 (map! :leader
       (:prefix ("o" . "org")
        :desc "agenda menu" "m" #'org-agenda
-       :desc "agenda" "a" (lambda () (interactive) (org-agenda nil "a"))
+       :desc "agenda" "a" (lambda () (interactive) (org-agenda nil "v"))
        :desc "export as pdf" "ep" #'org-latex-export-to-pdf
        :desc "timestamp" "t" #'org-timestamp
        :desc "inactive timestamp" "T" #'org-timestamp-inactive
-       :desc "latex preview" "l" #'org-latex-preview))
+       :desc "latex preview" "l" #'org-latex-preview
+       :desc "image preview" "i" #'org-toggle-inline-images))
 
 (custom-set-faces!
   '(org-level-1 :height 1.4)
