@@ -57,3 +57,9 @@ alias ssh="TERM=xterm ssh"
 # nvm
 alias nvminit="source ~/.nvm/nvm.sh"
 alias sdkinit="source ~/.sdkman/bin/sdkman-init.sh"
+function pyenvinit ()
+{
+    export PYENV_ROOT="$HOME/.pyenv"
+    [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
+}
