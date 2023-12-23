@@ -22,6 +22,10 @@
                       (org-agenda-span-name)
                       (org-agenda-entry-types '(:deadline)))))
          ((org-agenda-prefix-format '((agenda . "   %11s%11t  %-40c  %b")))
+          (org-agenda-breadcrumbs-separator "  ")))
+        ("t" "Todo"
+         ((todo ""))
+         ((org-agenda-prefix-format '((todo . "%-40c  %b")))
           (org-agenda-breadcrumbs-separator "  ")))))
 
 ;; unbind default org bindings
