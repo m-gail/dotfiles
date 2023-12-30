@@ -39,6 +39,7 @@
        :desc "timestamp" "t" #'org-timestamp
        :desc "inactive timestamp" "T" #'org-timestamp-inactive
        :desc "latex preview" "l" #'org-latex-preview
+       :desc "choose spell language" "sl" #'ispell-change-dictionary
        :desc "image preview" "i" #'org-toggle-inline-images))
 
 (custom-set-faces!
