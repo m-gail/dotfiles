@@ -19,13 +19,18 @@
                       (org-agenda-start-day "0d")
                       (org-deadline-warning-days 31)
                       (org-agenda-show-all-dates nil)
-                      (org-agenda-span-name)
+                      (org-agenda-overriding-header "Deadlines")
                       (org-agenda-entry-types '(:deadline)))))
          ((org-agenda-prefix-format '((agenda . "   %11s%11t  %-40c  %b")))
           (org-agenda-breadcrumbs-separator "  ")))
         ("t" "Todo"
          ((todo ""))
          ((org-agenda-prefix-format '((todo . "%-40c  %b")))
+          (org-agenda-breadcrumbs-separator "  ")))
+        ("m" "Monthly view"
+         ((agenda ""))
+         ((org-agenda-prefix-format '((agenda . "   %11s%11t  %-40c  %b")))
+          (org-agenda-span 'month)
           (org-agenda-breadcrumbs-separator "  ")))))
 
 ;; unbind default org bindings
@@ -33,6 +38,10 @@
 
 (map! :leader
       (:prefix ("o" . "org")
+       :desc "reload agenda files" "r"
+       (lambda ()
+         (interactive)
+         (setq org-agenda-files (directory-files-recursively "~/Nextcloud/Notes" "\\.org$")))
        :desc "agenda menu" "m" #'org-agenda
        :desc "agenda" "a" (lambda () (interactive) (org-agenda nil "v"))
        :desc "export as pdf" "ep" #'org-latex-export-to-pdf
