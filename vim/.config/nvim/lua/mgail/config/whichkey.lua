@@ -6,7 +6,6 @@ wk.setup {
         position = "bottom",
         padding = { 2, 2, 2, 2 }
     },
-    triggers = {},
 }
 
 wk.register({

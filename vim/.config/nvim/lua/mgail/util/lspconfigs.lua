@@ -23,24 +23,24 @@ local configs = {
     rust_analyzer = {},
     kotlin_language_server = {},
     html = {},
-    tsserver = {},
     cssls = {},
     jsonls = {},
+    tailwindcss = {},
+    emmet_language_server = {},
+    svelte = {},
+    volar = {},
+    vuels = {},
     gopls = {},
     ansiblels = {},
     vimls = {},
     taplo = {},
-    svelte = {},
-    -- volar = {}
-    vuels = {},
     bashls = {},
-    -- nil_ls = {}
     clangd = {},
     zls = {
         settings = {
             enable_autofix = false
         }
-    }
+    },
 }
 
 return configs

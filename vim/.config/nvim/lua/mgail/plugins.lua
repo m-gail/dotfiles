@@ -26,7 +26,6 @@ require("lazy").setup({
                 "nvim-telescope/telescope-fzf-native.nvim",
                 build = "make"
             },
-            "nvim-telescope/telescope-file-browser.nvim",
             "nvim-telescope/telescope-ui-select.nvim",
         },
         init = function()
@@ -39,14 +38,6 @@ require("lazy").setup({
         dependencies = { "nvim-lua/plenary.nvim" },
         init = function()
             require("mgail.keymap.harpoon")
-        end
-    },
-    {
-        'phaazon/hop.nvim',
-        branch = 'v1',
-        init = function()
-            require('hop').setup()
-            require("mgail.keymap.hop")
         end
     },
 
@@ -63,14 +54,6 @@ require("lazy").setup({
     "m-gail/northernlights.vim",
 
     -- Git
-    {
-        "NeogitOrg/neogit",
-        dependencies = 'nvim-lua/plenary.nvim',
-        init = function()
-            require("mgail.config.neogit")
-            require("mgail.keymap.neogit")
-        end
-    },
     {
         "sindrets/diffview.nvim",
         init = function()
@@ -112,7 +95,20 @@ require("lazy").setup({
         end
     },
     {
-        "jose-elias-alvarez/null-ls.nvim",
+        "pmizio/typescript-tools.nvim",
+        dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+        opts = {
+            settings = {
+                tsserver_file_preferences = {
+                    includeInlayParameterNameHints = "all",
+                    includeInlayVariableTypeHints = true,
+                },
+                complete_function_calls = true
+            }
+        },
+    },
+    {
+        "nvimtools/none-ls.nvim",
         init = function()
             require("mgail.config.null_ls")
         end
@@ -141,9 +137,13 @@ require("lazy").setup({
         "m-gail/diagnostic_manipulation.nvim",
         init = function()
             require("mgail.config.diagnostic_manipulation")
-        end
+        end,
+        dev = true
     },
-    "m-gail/concise_diagnostics.nvim",
+    {
+        "m-gail/concise_diagnostics.nvim",
+        dev = true
+    },
 
     -- Debugging
     {
@@ -207,6 +207,14 @@ require("lazy").setup({
         end
     },
     {
+        'stevearc/oil.nvim',
+        init = function()
+            require("mgail.config.oil")
+            require("mgail.keymap.oil")
+        end,
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
+    {
         "folke/which-key.nvim",
         init = function()
             require("mgail.config.whichkey")
@@ -217,6 +225,22 @@ require("lazy").setup({
     -- Other
     {
         'm-gail/escape.nvim',
-        init = function() require("mgail.keymap.escape") end
+        init = function() require("mgail.keymap.escape") end,
+        dev = true
     },
+    {
+        "nvim-orgmode/orgmode",
+        dependencies = {
+            'akinsho/org-bullets.nvim',
+        },
+        config = function()
+            require("mgail.config.orgmode")
+        end
+    },
+}, {
+    dev = {
+        path = "~/Programming/neovim-plugins",
+        patterns = {},
+        fallback = true
+    }
 })
