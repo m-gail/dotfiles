@@ -1,6 +1,7 @@
 local default_opts = require('mgail.util.keymap').default_opts
 local nmap = require('mgail.util.keymap').nmap
 local map = require('mgail.util.keymap').map
+local vmap = require('mgail.util.keymap').vmap
 
 -- General
 
@@ -16,6 +17,8 @@ map({"x", "n"}, "<leader>P", "\"+P", default_opts)
 map({"x", "n"}, "<leader>p", "\"+p", default_opts)
 map({"x", "n"}, "<leader>y", "\"+y", default_opts)
 map({"x", "n"}, "<leader>Y", "\"+Y", default_opts)
+vmap("K", ":m '<-2<CR>gv=gv")
+vmap("J", ":m '>+1<CR>gv=gv")
 
 vim.cmd.cnoreabbrev {
     "H",
