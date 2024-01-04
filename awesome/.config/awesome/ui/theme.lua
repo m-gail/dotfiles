@@ -13,7 +13,7 @@ local theme = {}
 
 gtable.crush(theme, default_theme)
 
-theme.wallpaper = "~/Pictures/Wallpapers/pexels-creative-free-stock-971360.jpg"
+theme.wallpaper = "~/Pictures/Wallpapers/pexels-mo-eid-3337210.jpg"
 theme.useless_gap = dpi(6)
 theme.border_width = dpi(2)
 theme.border_normal = colors.muted
