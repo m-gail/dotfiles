@@ -3,7 +3,7 @@ require("oil").setup {
         show_hidden = true,
     },
     float = {
-        max_width = 180,
-        max_height = 50
+        border = "rounded",
+        padding = 8,
     }
 }

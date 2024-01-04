@@ -7,6 +7,8 @@ require("rose-pine").setup({
 		TelescopeSelection = { fg = "text", bg = "base" },
 		TelescopeSelectionCaret = { fg = "rose", bg = "none" },
         LspInlayHint = { bg = "overlay", fg = "subtle" },
-        OrgHeadlineLevel1 = { fg = "foam" }
+        OrgHeadlineLevel1 = { fg = "foam" },
+        NormalFloat = { bg = "base" },
+        FloatBorder = { bg = "base" }
 	},
 })

@@ -1,31 +1,26 @@
-local actions = require("telescope.actions")
+local layout_config = {
+    height = 0.65,
+    preview_width = 0.75,
+}
 
 require("telescope").setup {
-    defaults = {
+    defaults = vim.tbl_extend("force", require("telescope.themes").get_ivy(), {
         sorting_strategy = "ascending",
         results_title = false,
         prompt_prefix = " ",
         selection_caret = " ",
         path_display = { "truncate" },
-        layout_config = {
-            width = 0.7,
-            height = 0.7,
-            prompt_position = "top",
-            horizontal = {
-                preview_width = 0.5,
-            }
+        layout_config = layout_config
+    }),
+    pickers = {
+        find_files = {
+            layout_config = layout_config
+        },
+        live_grep = {
+            layout_config = layout_config
         }
     },
-    pickers = {
-
-    },
     extensions = {
-        file_browser = {
-            hijack_netrw = false,
-            initial_mode = "normal",
-            grouped = true,
-            hidden = true
-        },
         fzf = {
             fuzzy = true,
             override_generic_sorter = true,
@@ -33,7 +28,7 @@ require("telescope").setup {
             case_mode = "smart_case"
         },
         ["ui-select"] = {
-            require("telescope.themes").get_dropdown {}
+            require("telescope.themes").get_cursor {}
         }
     }
 }
