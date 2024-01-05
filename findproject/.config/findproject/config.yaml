@@ -1,0 +1,17 @@
+directories:
+  - path: ~/Programming/
+    sub_directories:
+      - path: AppArmor
+  - path: ~/.config
+    exclude:
+      - Nextcloud
+      - GIMP
+      - Thunar
+      - xfce4
+      - dconf
+  - path: ~/Nextcloud/Notes
+    only_self: true
+  - path: ~/.dotfiles
+    only_self: true
+  - path: ~/.ansible
+    only_self: true
