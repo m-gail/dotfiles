@@ -184,7 +184,7 @@ require("lazy").setup({
     -- UI
     {
         "nvim-lualine/lualine.nvim",
-        dependencies = { "kyazdani42/nvim-web-devicons" },
+        dependencies = { "nvim-tree/nvim-web-devicons" },
         init = function()
             require("mgail.config.lualine")
         end
@@ -201,7 +201,7 @@ require("lazy").setup({
     },
     {
         "goolord/alpha-nvim",
-        dependencies = { "kyazdani42/nvim-web-devicons" },
+        dependencies = { "nvim-tree/nvim-web-devicons" },
         init = function()
             require("mgail.config.alpha")
         end
