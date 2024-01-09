@@ -1,6 +1,6 @@
 local layout_config = {
     height = 0.65,
-    preview_width = 0.75,
+    preview_width = 0.65,
 }
 
 require("telescope").setup {
