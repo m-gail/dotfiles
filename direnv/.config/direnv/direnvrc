@@ -1,0 +1,9 @@
+use_nvm() {
+    source ~/.nvm/nvm.sh
+    nvm use $1
+}
+
+use_jdk() {
+    source ~/.sdkman/bin/sdkman-init.sh
+    sdk use java $1
+}
