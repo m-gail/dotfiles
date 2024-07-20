@@ -27,3 +27,5 @@ gui:
       - red
     defaultFgColor:
       - default
+  showIcons: true
+  nerdFontsVersion: "3"
