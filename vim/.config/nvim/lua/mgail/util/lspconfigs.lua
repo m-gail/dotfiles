@@ -2,6 +2,9 @@ local configs = {
     lua_ls = {
         settings = {
             Lua = {
+                format = {
+                    enable = false
+                },
                 diagnostics = {
                     globals = { 'vim', 'use' }
                 },
@@ -41,6 +44,7 @@ local configs = {
             enable_autofix = false
         }
     },
+    asm_lsp = {}
 }
 
 return configs

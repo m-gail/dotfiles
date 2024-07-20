@@ -150,6 +150,7 @@ vim.diagnostic.config {
         return true
     end,
     virtual_text = {
-        format = require("concise_diagnostics").format
+        prefix = "",
+        format = require("concise_diagnostics").format,
     }
 }

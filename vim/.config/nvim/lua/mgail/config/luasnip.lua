@@ -14,7 +14,7 @@ ls.config.set_config {
     delete_check_events = "InsertLeave"
 }
 
-ls.add_snippets("javascript", {
+local react_snippets = {
     s("intl", {
         t("intl.formatMessage({id: '"), i(1, "id"), t("'})")
     }),
@@ -42,8 +42,9 @@ ls.add_snippets("javascript", {
         i(3),
         t({ "", "}" })
     })
-})
+}
 
-ls.filetype_extend("typescript", { "javascript" })
-ls.filetype_extend("javascriptreact", { "javascript" })
-ls.filetype_extend("typescriptreact", { "javascript" })
+ls.add_snippets("javascript", react_snippets)
+ls.add_snippets("typescript", react_snippets)
+ls.add_snippets("javascriptreact", react_snippets)
+ls.add_snippets("typescriptreact", react_snippets)

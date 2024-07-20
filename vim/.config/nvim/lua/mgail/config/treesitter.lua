@@ -54,9 +54,6 @@ require('nvim-treesitter.configs').setup {
             },
         }
     },
-    context_commentstring = {
-        enable = true,
-    },
 }
 
 function _G.custom_fold_text()

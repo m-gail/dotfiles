@@ -106,6 +106,7 @@ require("lazy").setup({
                 complete_function_calls = true
             }
         },
+        dev = true
     },
     {
         "nvimtools/none-ls.nvim",
@@ -142,6 +143,7 @@ require("lazy").setup({
     },
     {
         "m-gail/concise_diagnostics.nvim",
+        opts = {},
         dev = true
     },
 
