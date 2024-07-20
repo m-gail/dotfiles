@@ -2,11 +2,16 @@
       org-startup-with-inline-images t
       org-export-directory "./build/out"
       org-latex-pdf-process
-      '("latexmk -auxdir=build/aux -outdir=build/out -pdflatex='pdflatex -interaction nonstopmode' -pdf -bibtex -f %f")
+      '("latexmk -shell-escape -auxdir=build/aux -outdir=build/out -pdflatex='pdflatex -interaction nonstopmode' -pdf -bibtex -f %f")
       org-time-stamp-custom-formats '("<%a %d.%m.%Y>" . "<%a %d.%m.%Y %H:%M>")
       org-agenda-files (directory-files-recursively "~/Nextcloud/Notes" "\\.org$")
       org-agenda-start-on-weekday nil
-      org-startup-with-latex-preview t)
+      org-startup-with-latex-preview t
+      org-latex-src-block-backend 'engraved
+      org-latex-engraved-theme 'doom-nord-light
+      org-latex-subtitle-separate t
+      org-latex-subtitle-format "\\newcommand{\\subtitle}{%s}")
+
 (setq-default org-display-custom-times t)
 
 (setq org-agenda-custom-commands
@@ -32,6 +37,24 @@
          ((org-agenda-prefix-format '((agenda . "   %11s%11t  %-40c  %b")))
           (org-agenda-span 'month)
           (org-agenda-breadcrumbs-separator "  ")))))
+
+(setq org-publish-project-alist
+      (list
+       (list "TUWien Org"
+             :auto-sitemap t
+             :sitemap-filename "index.org"
+             :recursive t
+             :base-directory "~/Nextcloud/Notes/TUWien"
+             :exclude "setup.org"
+             :html-head-extra "<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/org.css\">"
+             :publishing-directory "~/Nextcloud/OrgPublish/TUWien"
+             :publishing-function 'org-html-publish-to-html)
+       (list "TUWien Images"
+             :recursive t
+             :base-directory "~/Nextcloud/Notes/TUWien"
+             :base-extension "png\\|jpg\\|css"
+             :publishing-directory "~/Nextcloud/OrgPublish/TUWien"
+             :publishing-function 'org-publish-attachment)))
 
 ;; unbind default org bindings
 (map! :leader "o" nil)
