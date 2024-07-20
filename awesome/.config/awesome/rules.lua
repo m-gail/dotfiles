@@ -107,6 +107,11 @@ awful.rules.rules = {
         rule = { class = "Spotify" },
         properties = { tag = " ", screen = 2 }
     },
+
+    {
+        rule = { class = "Emacs" },
+        properties = { tag = " " }
+    },
 }
 
 -- Titlebar for dev firefox windows
