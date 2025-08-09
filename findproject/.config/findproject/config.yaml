@@ -2,6 +2,10 @@ directories:
   - path: ~/Programming/
     sub_directories:
       - path: AppArmor
+      - path: neovim-plugins
+      - path: TUWien
+        sub_directories:
+          - path: Uebersetzerbau
   - path: ~/.config
     exclude:
       - Nextcloud
@@ -9,7 +13,9 @@ directories:
       - Thunar
       - xfce4
       - dconf
-  - path: ~/Nextcloud/Notes
+  - path: ~/Syncthing/Notes/TUWien/WS24
+  - path: ~/Syncthing/Notes/TUWien/SS25
+  - path: ~/Syncthing/Notes
     only_self: true
   - path: ~/.dotfiles
     only_self: true
