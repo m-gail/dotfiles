@@ -12,3 +12,5 @@
     cmd = nvim -d $LOCAL $MERGED $REMOTE
 [commit]
 	gpgsign = true
+[core]
+	excludesfile = /home/michael/.gitignore.global
