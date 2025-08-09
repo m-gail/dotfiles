@@ -76,5 +76,5 @@
 (map! :leader :n "sf" #'+format/buffer)
 
 ;; projectile
-(setq projectile-project-search-path '(("~/Nextcloud/Notes" . 1) ("~/.config/doom" . 1)))
+(setq projectile-project-search-path '(("~/.config/doom" . 1) ("~/Syncthing/Notes" . 1)))
 (setq browse-url-browser-function 'browse-url-firefox)
