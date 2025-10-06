@@ -1,0 +1,50 @@
+{
+    "layer": "top",
+    "position": "top",
+    "reload_style_on_change": true,
+    "modules-left": ["niri/workspaces"],
+    "modules-center": ["custom/clockicon", "clock"],
+    "modules-right": ["tray", "battery", "custom/volumeicon", "pulseaudio/slider"],
+
+    "niri/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "terminal-1": "",
+            "dev-1": "",
+            "browser-1": "󰜏",
+            "chat-1": "󰭹",
+            "browserdev-1": "󰖟",
+            "browsertest-1": "󱞐",
+            "music-1": "",
+            "virtualmachine-1": "󰍹",
+            "notes-1": "",
+            "terminal-2": "",
+            "dev-2": "",
+            "browser-2": "󰜏",
+            "chat-2": "󰭹",
+            "browserdev-2": "󰖟",
+            "browsertest-2": "󱞐",
+            "music-2": "",
+            "virtualmachine-2": "󰍹",
+            "notes-2": "",
+            "default": "..."
+        },
+    },
+
+    "custom/clockicon": {
+        "format": " ",
+    },
+
+    "clock": {
+        "format": "{:%a, %d.%m.%Y %H:%M}",
+    },
+
+    "custom/volumeicon": {
+        "format": " ",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+
+    "tray": {
+        "spacing": 4
+    }
+}

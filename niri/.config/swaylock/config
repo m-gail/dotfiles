@@ -1,0 +1,23 @@
+image=/home/michael/Pictures/Wallpapers/bay.JPG
+scaling=fill
+font=JetBrains Mono Nerd Font
+font-size=20
+show-keyboard-layout
+ignore-empty-password
+show-failed-attempts
+
+indicator-radius=60
+indicator-thickness=6
+
+ring-color=#b096cf
+inside-color=#c4a7e7
+key-hl-color=#9c85b8
+
+ring-wrong-color=#d36383
+inside-wrong-color=#EB6F92
+
+ring-ver-color=#31748f
+inside-ver-color=#9ccfd8
+
+text-color=#191724
+
