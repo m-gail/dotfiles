@@ -1,10 +1,10 @@
-(setq org-directory "~/Nextcloud/Notes/"
+(setq org-directory "~/Syncthing/Notes/"
       org-startup-with-inline-images t
       org-export-directory "./build/out"
       org-latex-pdf-process
       '("latexmk -shell-escape -auxdir=build/aux -outdir=build/out -pdflatex='pdflatex -interaction nonstopmode' -pdf -bibtex -f %f")
       org-time-stamp-custom-formats '("<%a %d.%m.%Y>" . "<%a %d.%m.%Y %H:%M>")
-      org-agenda-files (directory-files-recursively "~/Nextcloud/Notes" "\\.org$")
+      org-agenda-files (directory-files-recursively "~/Syncthing/Notes" "\\.org$")
       org-agenda-start-on-weekday nil
       org-startup-with-latex-preview t
       org-latex-src-block-backend 'engraved
@@ -44,16 +44,16 @@
              :auto-sitemap t
              :sitemap-filename "index.org"
              :recursive t
-             :base-directory "~/Nextcloud/Notes/TUWien"
+             :base-directory "~/Syncthing/Notes/TUWien"
              :exclude "setup.org"
              :html-head-extra "<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/org.css\">"
-             :publishing-directory "~/Nextcloud/OrgPublish/TUWien"
+             :publishing-directory "~/Syncthing/OrgPublish/TUWien"
              :publishing-function 'org-html-publish-to-html)
        (list "TUWien Images"
              :recursive t
-             :base-directory "~/Nextcloud/Notes/TUWien"
+             :base-directory "~/Syncthing/Notes/TUWien"
              :base-extension "png\\|jpg\\|css"
-             :publishing-directory "~/Nextcloud/OrgPublish/TUWien"
+             :publishing-directory "~/Syncthing/OrgPublish/TUWien"
              :publishing-function 'org-publish-attachment)))
 
 ;; unbind default org bindings
@@ -64,7 +64,7 @@
        :desc "reload agenda files" "r"
        (lambda ()
          (interactive)
-         (setq org-agenda-files (directory-files-recursively "~/Nextcloud/Notes" "\\.org$")))
+         (setq org-agenda-files (directory-files-recursively "~/Syncthing/Notes" "\\.org$")))
        :desc "agenda menu" "m" #'org-agenda
        :desc "agenda" "a" (lambda () (interactive) (org-agenda nil "v"))
        :desc "export as pdf" "ep" #'org-latex-export-to-pdf
