@@ -58,6 +58,7 @@ map <leader>sf <Action>(ReformatCode)<Action>(OptimizeImports)
 map <leader>rn <Action>(RenameElement)
 map <leader>sd <Action>(ShowErrorDescription)
 map <leader>rv <Action>(IntroduceVariable)
+map <leader>rc <Action>(IntroduceConstant)
 map <leader>rf <Action>(ExtractMethod)
 
 " Telescope/find files
