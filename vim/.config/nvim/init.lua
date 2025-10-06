@@ -1,1 +1,1 @@
-require("mgail")
+require('m-gail')

@@ -1,0 +1,22 @@
+local map = require("m-gail.util.map").map
+local nmap = require("m-gail.util.map").nmap
+
+nmap("ZW", ":wa<CR>", "Write all")
+nmap("H", "^")
+nmap("<C-h>", "<C-w>h")
+nmap("<C-j>", "<C-w>j")
+nmap("<C-k>", "<C-w>k")
+nmap("<C-l>", "<C-w>l")
+nmap("<C-d>", "<C-d>zz")
+nmap("<C-u>", "<C-u>zz")
+map({"x", "n"}, "<leader>P", "\"+P")
+map({"x", "n"}, "<leader>p", "\"+p")
+map({"x", "n"}, "<leader>y", "\"+y")
+map({"x", "n"}, "<leader>Y", "\"+Y")
+map("v", "K", ":m '<-2<CR>gv=gv", "Move line 1 up")
+map("v", "J", ":m '>+1<CR>gv=gv", "Move line 1 down")
+nmap("<leader><esc>", function ()
+    vim.cmd("noh")
+    vim.cmd("NoiceDismiss")
+end)
+nmap("<leader>oep", ":!latexmk -pdf -output-directory=build<CR>")

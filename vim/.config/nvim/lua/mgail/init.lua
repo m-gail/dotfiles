@@ -1,5 +1,0 @@
-require("mgail.options")
-require("mgail.keymap.vim")
-require("mgail.keymap.tabstop")
-require("mgail.autocommands")
-require("mgail.plugins")
