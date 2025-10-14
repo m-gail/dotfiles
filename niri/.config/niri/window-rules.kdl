@@ -1,0 +1,23 @@
+// Open the Firefox picture-in-picture player as floating by default.
+window-rule {
+    // This app-id regular expression will work for both:
+    // - host Firefox (app-id is "firefox")
+    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"firefox$"#
+    open-on-workspace "browser-2"
+}
+
+window-rule {
+    match app-id=r#"Spotify$"#
+    open-on-workspace "music-2"
+}
+
+window-rule {
+    match app-id=r#"discord$"#
+    open-on-workspace "chat-2"
+}

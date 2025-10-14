@@ -1,0 +1,75 @@
+// Main Monitor
+
+workspace "terminal-1" {
+    open-on-output "DP-1"
+}
+
+workspace "dev-1" {
+    open-on-output "DP-1"
+}
+
+workspace "browser-1" {
+    open-on-output "DP-1"
+}
+
+workspace "chat-1" {
+    open-on-output "DP-1"
+}
+
+workspace "browserdev-1" {
+    open-on-output "DP-1"
+}
+
+workspace "browsertest-1"{
+    open-on-output "DP-1"
+}
+
+workspace "music-1" {
+    open-on-output "DP-1"
+}
+
+workspace "virtualmachine-1" {
+    open-on-output "DP-1"
+}
+
+workspace "notes-1" {
+    open-on-output "DP-1"
+}
+
+// Secondary Monitor
+
+workspace "terminal-2" {
+    open-on-output "HDMI-2-A"
+}
+
+workspace "dev-2" {
+    open-on-output "HDMI-2-A"
+}
+
+workspace "browser-2" {
+    open-on-output "HDMI-2-A"
+}
+
+workspace "chat-2" {
+    open-on-output "HDMI-2-A"
+}
+
+workspace "browserdev-2" {
+    open-on-output "HDMI-2-A"
+}
+
+workspace "browsertest-2"{
+    open-on-output "HDMI-2-A"
+}
+
+workspace "music-2" {
+    open-on-output "HDMI-2-A"
+}
+
+workspace "virtualmachine-2" {
+    open-on-output "HDMI-2-A"
+}
+
+workspace "notes-2" {
+    open-on-output "HDMI-2-A"
+}
