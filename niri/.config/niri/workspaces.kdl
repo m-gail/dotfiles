@@ -20,19 +20,11 @@ workspace "browserdev-1" {
     open-on-output "DP-1"
 }
 
-workspace "browsertest-1"{
-    open-on-output "DP-1"
-}
-
-workspace "music-1" {
-    open-on-output "DP-1"
-}
-
-workspace "virtualmachine-1" {
-    open-on-output "DP-1"
-}
-
 workspace "notes-1" {
+    open-on-output "DP-1"
+}
+
+workspace "other-1" {
     open-on-output "DP-1"
 }
 
@@ -58,18 +50,10 @@ workspace "browserdev-2" {
     open-on-output "HDMI-2-A"
 }
 
-workspace "browsertest-2"{
-    open-on-output "HDMI-2-A"
-}
-
-workspace "music-2" {
-    open-on-output "HDMI-2-A"
-}
-
-workspace "virtualmachine-2" {
-    open-on-output "HDMI-2-A"
-}
-
 workspace "notes-2" {
+    open-on-output "HDMI-2-A"
+}
+
+workspace "other-2" {
     open-on-output "HDMI-2-A"
 }

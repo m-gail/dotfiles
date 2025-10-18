@@ -93,8 +93,8 @@ layout {
 
     focus-ring {
         width 3
-        active-color "#9ccfd8"
-        inactive-color "#6e6a86"
+        active-color "#ebbcba"
+        inactive-color "transparent"
     }
 
     shadow {
