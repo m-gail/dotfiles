@@ -1,3 +1,4 @@
+import Quickshell
 import qs.Config
 import qs.Modules.Bar.Components
 
