@@ -13,6 +13,7 @@ Singleton {
         for (const workspace of sortedWorkspaces) {
             workspaces.append({
                 id: workspace.id,
+                idx: workspace.idx,
                 isActive: workspace.is_active,
                 name: workspace.name,
                 output: workspace.output
@@ -27,6 +28,7 @@ Singleton {
             if (value.output === activatedWorkspace.output) {
                 workspaces.set(i, {
                     id: value.id,
+                    idx: value.idx,
                     isActive: value.id === activatedWorkspace.id,
                     name: value.name,
                     output: value.output

@@ -7,9 +7,10 @@ Item {
     id: root
     property string source
     property color color
+    property real size: 30
 
-    width: 30
-    height: 30
+    width: root.size
+    height: root.size
 
     IconImage {
         id: icon

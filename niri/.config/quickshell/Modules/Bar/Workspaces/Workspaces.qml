@@ -7,7 +7,7 @@ Rectangle {
     implicitWidth: content.width
     implicitHeight: content.height
     radius: 10
-    color: Colorscheme.highlightLow
+    color: Colorscheme.surface
 
     ColumnLayout {
         id: content

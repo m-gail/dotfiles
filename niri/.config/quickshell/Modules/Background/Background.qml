@@ -28,26 +28,11 @@ Variants {
             source: Qt.resolvedUrl(Quickshell.shellPath("assets/wallpapers/bay.JPG"))
         }
 
-        ColumnLayout {
+        BackgroundClock {
             anchors {
                 right: parent.right
                 verticalCenter: parent.verticalCenter
                 rightMargin: 200
-            }
-
-            Text {
-                color: Colorscheme.iris
-                text: Time.hours
-                font.pointSize: 72
-                font.bold: true
-            }
-
-            Text {
-                leftPadding: 60
-                color: Colorscheme.text
-                text: Time.minutes
-                font.pointSize: 72
-                font.bold: true
             }
         }
     }

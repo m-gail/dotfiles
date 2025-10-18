@@ -4,9 +4,12 @@ import Quickshell.Wayland
 import QtQuick
 import QtQuick.Layouts
 import qs.Modules.Bar.Workspaces
-import qs.Modules.Bar.Launcher
+import qs.Modules.Bar.Components
 import qs.Modules.Bar.Clock
+import qs.Modules.Bar.Tray
+import qs.Modules.Bar.Settings
 import qs.Components
+import qs.Config
 
 Variants {
     model: Quickshell.screens
@@ -32,7 +35,7 @@ Variants {
         Rectangle {
             id: barContent
             implicitWidth: 52
-            color: "#191724"
+            color: Colorscheme.base
             anchors {
                 top: parent.top
                 bottom: parent.bottom
@@ -45,8 +48,10 @@ Variants {
                     top: parent.top
                     horizontalCenter: parent.horizontalCenter
                 }
+                spacing: 10
 
-                Launcher { }
+                LauncherButton { }
+                Workspaces { }
             }
 
             ColumnLayout {
@@ -54,8 +59,10 @@ Variants {
                     verticalCenter: parent.verticalCenter
                     horizontalCenter: parent.horizontalCenter
                 }
+                spacing: 10
 
-                Workspaces { }
+                Clock { }
+                NotificationsButton { }
             }
 
             ColumnLayout {
@@ -64,8 +71,11 @@ Variants {
                     bottom: parent.bottom
                     horizontalCenter: parent.horizontalCenter
                 }
+                spacing: 10
 
-                Clock { }
+                Tray {}
+                Settings {}
+                PowerButton { }
             }
         }
 
@@ -76,8 +86,7 @@ Variants {
                 left: barContent.right
                 top: barContent.top
             }
-            size: 24
-            color: "#191724"
+            color: Colorscheme.base
         }
 
         RoundedCorner {
@@ -86,8 +95,7 @@ Variants {
                 left: barContent.right
                 bottom: barContent.bottom
             }
-            size: 24
-            color: "#191724"
+            color: Colorscheme.base
         }
     }
 }

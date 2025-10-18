@@ -1,55 +1,73 @@
+import Quickshell
 import QtQuick
 import qs.Config
 import qs.Components
+import qs.Services
 
 Item {
     required property var modelData
     property string icon: {
         const icons = {
             "terminal": "fa_terminal.svg",
-            "dev": "fa_code.svg",
+            "dev": "fa_dev.svg",
             "browser": "fa_globe.svg",
             "chat": "fa_comment.svg",
-            "browserdev": "fa_dev.svg",
-            "browsertest": "fa_vial.svg",
-            "music": "fa_music.svg",
-            "virtualmachine": "fa_computer.svg",
+            "browserdev": "fa_flask_vial.svg",
+            "other": "fa_window_restore.svg",
             "notes": "fa_note_sticky.svg"
         };
         return icons[modelData.name.slice(0, -2)] ?? "fa_plus.svg";
     }
 
     visible: modelData.output == root.modelData.name
-    implicitWidth: rectangle.width
-    implicitHeight: rectangle.height
+    implicitWidth: mouseArea.implicitWidth
+    implicitHeight: mouseArea.implicitHeight
 
-    Rectangle {
-        id: rectangle
-        color: modelData.isActive ? Colorscheme.highlightMed : Colorscheme.highlightLow
-        implicitWidth: svg.width + 10
-        implicitHeight: modelData.isActive ? svg.width + 40 : svg.width + 10
-        radius: 10
+    MouseArea {
+        id: mouseArea
+        implicitWidth: rectangle.implicitWidth
+        implicitHeight: rectangle.implicitHeight
+        hoverEnabled: true
+        cursorShape: Qt.PointingHandCursor
 
-        Behavior on implicitHeight {
-            NumberAnimation {
-                duration: 200
-                easing.type: Easing.InOutQuad
-            }
-        }
-        Behavior on color {
-            ColorAnimation {
-                duration: 200
-                easing.type: Easing.InOutQuad
-            }
+        onClicked: {
+            Quickshell.execDetached(["niri", "msg", "action", "focus-workspace", modelData.idx]);
         }
 
-        SvgIcon {
-            id: svg
-            anchors.centerIn: parent
-            color: modelData.isActive ? Colorscheme.iris : Colorscheme.text
-            source: icon
-            width: 24
-            height: 24
+        Rectangle {
+            id: rectangle
+            anchors.fill: parent
+            color: modelData.isActive ? Colorscheme.highlightMed : Colorscheme.surface
+            implicitWidth: svg.width + 10
+            implicitHeight: modelData.isActive ? svg.width + 40 : svg.width + 10
+            radius: 10
+
+            Behavior on implicitHeight {
+                NumberAnimation {
+                    duration: 200
+                    easing.type: Easing.InOutQuad
+                }
+            }
+            Behavior on color {
+                ColorAnimation {
+                    duration: 200
+                    easing.type: Easing.InOutQuad
+                }
+            }
+
+            SvgIcon {
+                id: svg
+                anchors.centerIn: parent
+                color: modelData.isActive ? Colorscheme.iris : mouseArea.containsMouse ? Colorscheme.subtle : Colorscheme.text
+                source: icon
+                width: 24
+                height: 24
+                Behavior on color {
+                    ColorAnimation {
+                        duration: 200
+                    }
+                }
+            }
         }
     }
 }

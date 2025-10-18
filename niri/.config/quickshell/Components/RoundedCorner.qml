@@ -11,7 +11,7 @@ Item {
         BottomRight
     }
 
-    property real size
+    property real size: 24
     property color color
     property var position: RoundedCorner.Position.TopLeft
 
