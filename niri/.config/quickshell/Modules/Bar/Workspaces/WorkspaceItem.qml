@@ -19,7 +19,7 @@ Item {
         return icons[modelData.name.slice(0, -2)] ?? "fa_plus.svg";
     }
 
-    visible: modelData.output == root.modelData.name
+    visible: modelData.output == barWindow.modelData.name
     implicitWidth: mouseArea.implicitWidth
     implicitHeight: mouseArea.implicitHeight
 

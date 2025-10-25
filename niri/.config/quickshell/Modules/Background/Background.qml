@@ -1,9 +1,6 @@
 import Quickshell
 import Quickshell.Wayland
 import QtQuick
-import QtQuick.Layouts
-import qs.Services
-import qs.Config
 
 Variants {
     model: Quickshell.screens

@@ -2,7 +2,7 @@ import qs.Config
 import qs.Modules.Bar.Components
 
 BarButton {
-    color: Colorscheme.rose
+    color: Colorscheme.subtle
     colorHover: Colorscheme.gold
     icon: "fa_bell.svg"
 }

@@ -9,9 +9,16 @@ Item {
     implicitHeight: openButton.height + trayItems.height
 
     TrayButton {
-        anchors.top: parent.top
         id: openButton
-        onClicked: { root.open = !root.open }
+        anchors.top: parent.top
+        onClicked: {
+            root.open = !root.open;
+        }
+        transform: Rotation {
+            angle: root.open ? 180 : 0
+            origin.x: openButton.width / 2
+            origin.y: openButton.height / 2
+        }
     }
 
     Column {

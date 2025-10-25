@@ -1,5 +1,6 @@
 import QtQuick.Shapes
 import QtQuick
+import qs.Config
 
 Item {
     id: root
@@ -13,9 +14,10 @@ Item {
 
     property real size: 24
     property color color
+    property color borderColor: "transparent"
     property var position: RoundedCorner.Position.TopLeft
 
-    property bool isLeft: position == RoundedCorner.Position.TopLeft || position == RoundedCorner.Position.BottomLeft 
+    property bool isLeft: position == RoundedCorner.Position.TopLeft || position == RoundedCorner.Position.BottomLeft
     property bool isTop: position == RoundedCorner.Position.TopLeft || position == RoundedCorner.Position.TopRight
 
     width: corner.width
@@ -49,6 +51,31 @@ Item {
             PathLine {
                 x: root.isLeft ? 0 : root.size
                 y: root.isTop ? 0 : root.size
+            }
+        }
+    }
+
+    Shape {
+        ShapePath {
+            strokeWidth: Size.borderWidth
+            strokeColor: root.borderColor
+            fillColor: "transparent"
+            PathAngleArc {
+                startAngle: switch (root.position) {
+                case RoundedCorner.Position.TopLeft:
+                    return 180;
+                case RoundedCorner.Position.BottomLeft:
+                    return 90;
+                case RoundedCorner.Position.TopRight:
+                    return -90;
+                case RoundedCorner.Position.BottomRight:
+                    return 0;
+                }
+                sweepAngle: 90
+                centerX: root.isLeft ? root.size : 0
+                centerY: root.isTop ? root.size : 0
+                radiusX: root.size
+                radiusY: root.size
             }
         }
     }

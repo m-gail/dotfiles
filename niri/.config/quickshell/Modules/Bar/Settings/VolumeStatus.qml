@@ -7,9 +7,10 @@ Item {
     id: root
     implicitWidth: svgIcon.width
     implicitHeight: svgIcon.height
+    property bool muted: Pipewire.defaultAudioSink.audio.muted
     property string icon: {
         const audio = Pipewire.defaultAudioSink.audio;
-        if (audio.muted) {
+        if (muted) {
             return "fa_volume_xmark.svg";
         }
         if (audio.volume > 0.8) {
@@ -27,7 +28,7 @@ Item {
 
     SvgIcon {
         id: svgIcon
-        color: Colorscheme.text
+        color: muted ? Colorscheme.muted : Colorscheme.text
         source: root.icon
         size: 24
     }

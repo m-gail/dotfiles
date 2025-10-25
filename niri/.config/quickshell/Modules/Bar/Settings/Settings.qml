@@ -13,6 +13,12 @@ MouseArea {
     hoverEnabled: true
     cursorShape: Qt.PointingHandCursor
 
+    property var popup
+
+    onClicked: {
+        popup.open = !popup.open;
+    }
+
     Rectangle {
         id: rectangle
         color: mouseArea.containsMouse ? Colorscheme.highlightMed : Colorscheme.surface
@@ -37,12 +43,8 @@ MouseArea {
                 source: "fa_ethernet.svg"
                 size: 24
             }
-            SvgIcon {
-                color: Colorscheme.text
-                source: "fa_bluetooth_b.svg"
-                size: 24
-            }
-            VolumeStatus {  }
+            BluetoothStatus {}
+            VolumeStatus {}
             SvgIcon {
                 color: Colorscheme.text
                 source: "fa_battery_full.svg"

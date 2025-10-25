@@ -15,7 +15,7 @@ Variants {
     model: Quickshell.screens
 
     PanelWindow {
-        id: root
+        id: barWindow
         required property var modelData
         screen: modelData
 
@@ -31,6 +31,7 @@ Variants {
         mask: Region {
             item: barContent
         }
+        width: barContent.width + topLeftCorner.width
 
         Rectangle {
             id: barContent
@@ -50,8 +51,8 @@ Variants {
                 }
                 spacing: 10
 
-                LauncherButton { }
-                Workspaces { }
+                LauncherButton {}
+                Workspaces {}
             }
 
             ColumnLayout {
@@ -61,8 +62,8 @@ Variants {
                 }
                 spacing: 10
 
-                Clock { }
-                NotificationsButton { }
+                Clock {}
+                NotificationsButton {}
             }
 
             ColumnLayout {
@@ -74,8 +75,10 @@ Variants {
                 spacing: 10
 
                 Tray {}
-                Settings {}
-                PowerButton { }
+                Settings {
+                    popup: settingsPopup
+                }
+                PowerButton {}
             }
         }
 
@@ -87,6 +90,7 @@ Variants {
                 top: barContent.top
             }
             color: Colorscheme.base
+            borderColor: Colorscheme.iris
         }
 
         RoundedCorner {
@@ -96,6 +100,13 @@ Variants {
                 bottom: barContent.bottom
             }
             color: Colorscheme.base
+            borderColor: Colorscheme.iris
+        }
+
+        SettingsPopup {
+            id: settingsPopup
+            window: barWindow
+            bar: barContent
         }
     }
 }
