@@ -10,8 +10,8 @@ Item {
 
     SvgIcon {
         id: svgIcon
-        color: Volume.sinkMuted ? Colorscheme.muted : Colorscheme.text
-        source: Volume.sinkIcon
+        color: Network.connected ? Colorscheme.text : Colorscheme.muted
+        source: Network.activeConnectionIcon
         size: 24
         Behavior on color {
             ColorAnimation {

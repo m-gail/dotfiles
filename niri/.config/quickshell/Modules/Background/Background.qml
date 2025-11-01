@@ -1,6 +1,7 @@
 import Quickshell
 import Quickshell.Wayland
 import QtQuick
+import qs.Components
 
 Variants {
     model: Quickshell.screens

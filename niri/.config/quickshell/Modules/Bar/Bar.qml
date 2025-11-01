@@ -26,17 +26,22 @@ Variants {
         }
 
         color: "transparent"
-        exclusiveZone: barContent.implicitWidth
+        exclusiveZone: barContent.contentWidth
         WlrLayershell.layer: WlrLayer.Top
         mask: Region {
             item: barContent
         }
-        width: barContent.width + topLeftCorner.width
+        width: barContent.width
+        property real contentWidth: 52
 
-        Rectangle {
+        HuggingRectangle {
             id: barContent
-            implicitWidth: 52
-            color: Colorscheme.base
+            bottomEdge: true
+            topEdge: true
+            leftEdge: true
+            contentHeight: parent.height
+            contentWidth: barWindow.contentWidth
+            backgroundColor: Colorscheme.base
             anchors {
                 top: parent.top
                 bottom: parent.bottom
@@ -80,27 +85,6 @@ Variants {
                 }
                 PowerButton {}
             }
-        }
-
-        RoundedCorner {
-            id: topLeftCorner
-            position: RoundedCorner.Position.TopLeft
-            anchors {
-                left: barContent.right
-                top: barContent.top
-            }
-            color: Colorscheme.base
-            borderColor: Colorscheme.iris
-        }
-
-        RoundedCorner {
-            position: RoundedCorner.Position.BottomLeft
-            anchors {
-                left: barContent.right
-                bottom: barContent.bottom
-            }
-            color: Colorscheme.base
-            borderColor: Colorscheme.iris
         }
 
         SettingsPopup {

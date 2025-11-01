@@ -38,11 +38,7 @@ MouseArea {
             id: content
             spacing: 10
 
-            SvgIcon {
-                color: Colorscheme.text
-                source: "fa_ethernet.svg"
-                size: 24
-            }
+            NetworkStatus {}
             BluetoothStatus {}
             VolumeStatus {}
             SvgIcon {

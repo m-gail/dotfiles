@@ -6,8 +6,8 @@ import qs.Components
 
 MouseArea {
     id: root
-    width: 250
-    height: 75
+    width: Size.settingsBoxWidth
+    height: Size.settingsBoxHeight
 
     property bool enabled: Bluetooth.defaultAdapter.enabled
     property color background: enabled ? Colorscheme.pine : Colorscheme.overlay
@@ -15,20 +15,15 @@ MouseArea {
 
     Rectangle {
         anchors.fill: parent
-        radius: 20
+        radius: Size.borderRadiusLarge
 
         color: root.background
 
-
-        Row {
+        SvgIcon {
             anchors.centerIn: parent
-            spacing: 20
-            SvgIcon {
-                anchors.verticalCenter: parent.verticalCenter
-                source: "fa_bluetooth_b.svg"
-                size: 24
-                color: root.foreground
-            }
+            source: "fa_bluetooth_b.svg"
+            size: Size.settingsBoxIconSize
+            color: root.foreground
         }
     }
 }
