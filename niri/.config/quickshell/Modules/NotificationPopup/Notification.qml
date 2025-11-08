@@ -4,13 +4,18 @@ import QtQuick
 import qs.Components
 import qs.Config
 
-Item {
+MouseArea {
     id: root
     required property var modelData
     width: Size.notificationWidth - (2 * Size.notificationPadding)
     height: Size.notificationHeight - (2 * Size.notificationPadding)
+    cursorShape: Qt.PointingHandCursor
 
-    property real textWidth: root.width - image.width - svgIcon.width - row.spacing
+    property real textWidth: root.width - root.height - row.spacing
+
+    onClicked: {
+        modelData.dismiss()
+    }
 
     Row {
         id: row
@@ -54,14 +59,14 @@ Item {
                 font.bold: true
                 color: Colorscheme.text
                 font.pointSize: Size.notificationTitleFontSize
-                clip: true
                 width: root.textWidth
+                elide: Text.ElideRight
             }
             Text {
                 text: modelData.body
                 color: Colorscheme.text
                 font.pointSize: Size.notificationBodyFontSize
-                clip: true
+                elide: Text.ElideRight
                 width: root.textWidth
             }
         }

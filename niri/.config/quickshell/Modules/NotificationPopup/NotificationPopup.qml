@@ -28,7 +28,7 @@ Variants {
 
         property bool open: Notifications.popupNotifications.length > 0
         property real transformY: notificationWindow.open ? 0 : -content.height
-        property real cornerTransformY: notificationWindow.open ? 0 : -24
+        property real cornerTransformY: notificationWindow.open ? 0 : -content.height
         visible: transformY != -content.height
 
         Behavior on transformY {
@@ -57,6 +57,7 @@ Variants {
             }
             contentWidth: Size.notificationWidth
             backgroundColor: Colorscheme.base
+            borderColor: Colorscheme.iris
 
             rectTranslateY: notificationWindow.transformY
             topBottomTranslateY: notificationWindow.transformY

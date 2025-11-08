@@ -14,12 +14,6 @@ window-rule {
 
 window-rule {
     match app-id=r#"firefox$"#
-    match title=r#"Extension:.*"#
-    open-floating true
-}
-
-window-rule {
-    match app-id=r#"firefox$"#
     open-on-workspace "browser-2"
 }
 

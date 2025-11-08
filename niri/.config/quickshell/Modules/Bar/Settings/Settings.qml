@@ -41,6 +41,7 @@ MouseArea {
             NetworkStatus {}
             BluetoothStatus {}
             VolumeStatus {}
+            MicrophoneStatus {}
             SvgIcon {
                 color: Colorscheme.text
                 source: "fa_battery_full.svg"

@@ -206,7 +206,8 @@ binds {
     Mod+Shift+U         { move-column-to-workspace-up; }
 
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+R hotkey-overlay-title="Run an Application: fuzzel" { spawn "~/.local/bin/fuzzel"; }
+    Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "~/.local/bin/fuzzel"; }
+    Mod+R hotkey-overlay-title="Run an Application: quickshell-launcher" { spawn "~/.local/bin/quickshell" "ipc" "call" "launcher" "toggle"; }
 
     Super+Shift+Q hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
@@ -345,6 +346,8 @@ binds {
     Mod+Shift+S { screenshot-screen; }
     Mod+S { screenshot-screen; }
     Mod+A { screenshot; }
+
+    Mod+Semicolon { spawn-sh "/home/michael/Documents/togglemute.sh"; }
 }
 
 clipboard {

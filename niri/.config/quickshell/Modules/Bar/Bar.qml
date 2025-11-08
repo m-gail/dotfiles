@@ -8,6 +8,7 @@ import qs.Modules.Bar.Components
 import qs.Modules.Bar.Clock
 import qs.Modules.Bar.Tray
 import qs.Modules.Bar.Settings
+import qs.Modules.Bar.Notifications
 import qs.Components
 import qs.Config
 
@@ -68,7 +69,9 @@ Variants {
                 spacing: 10
 
                 Clock {}
-                NotificationsButton {}
+                NotificationsButton {
+                    popup: notificationCenter
+                }
             }
 
             ColumnLayout {
@@ -89,6 +92,12 @@ Variants {
 
         SettingsPopup {
             id: settingsPopup
+            window: barWindow
+            bar: barContent
+        }
+
+        NotificationCenter {
+            id: notificationCenter
             window: barWindow
             bar: barContent
         }

@@ -18,4 +18,11 @@ Singleton {
     readonly property real notificationHeight: 140
     readonly property real notificationWidth: 440
     readonly property real notificationPadding: 20
+
+    readonly property real iconTextPadding: 10
+
+    readonly property real launcherWidth: 600
+    readonly property real launcherOuterPadding: 20
+    readonly property real launcherInnerPadding: 10
+    readonly property real launcherFontSize: 18
 }

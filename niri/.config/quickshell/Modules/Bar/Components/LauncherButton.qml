@@ -7,6 +7,6 @@ BarButton {
     colorHover: Colorscheme.pine
     icon: "fa_rocket.svg"
     onClicked: {
-        Quickshell.execDetached(["fuzzel"]);
+        Quickshell.execDetached(["/home/michael/.local/bin/quickshell", "ipc", "call", "launcher", "toggle"]);
     }
 }

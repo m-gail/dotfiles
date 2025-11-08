@@ -20,12 +20,12 @@ PopupWindow {
 
     anchor.window: window
     anchor.adjustment: PopupAdjustment.None
-    anchor.rect.x: bar.contentWidth
+    anchor.rect.x: bar.contentWidth - 2
     anchor.rect.y: bar.height - settingsPopup.height
 
     Item {
         id: content
-        property real transformTopCornerX: settingsPopup.open ? 0 : -24
+        property real transformTopCornerX: settingsPopup.open ? 0 : -rect.width
         property real transformX: settingsPopup.open ? 0 : -rect.width
         Behavior on transformTopCornerX {
             NumberAnimation {
