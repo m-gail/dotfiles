@@ -4,6 +4,7 @@ import Quickshell.Io
 import QtQuick
 import QtQuick.Layouts
 import qs.Components
+import qs.Modules.Bar.Notifications
 import qs.Services
 import qs.Config
 import qs.Modules.NotificationPopup
@@ -52,7 +53,9 @@ PopupWindow {
                 id: rectContent
                 anchors.centerIn: parent
                 height: Size.notificationHeight * 3.3
+                width: Size.notificationWidth - (2 * Size.notificationPadding)
                 spacing: Size.notificationPadding
+                MediaPlayer {}
                 RowLayout {
                     spacing: Size.iconTextPadding
                     SvgIcon {

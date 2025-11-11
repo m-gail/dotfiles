@@ -20,9 +20,15 @@ Singleton {
     readonly property real notificationPadding: 20
 
     readonly property real iconTextPadding: 10
+    readonly property real iconTextPaddingLarge: 20
 
     readonly property real launcherWidth: 600
     readonly property real launcherOuterPadding: 20
     readonly property real launcherInnerPadding: 10
     readonly property real launcherFontSize: 18
+
+    readonly property real mediaPlayerTitle: 14
+    readonly property real mediaPlayerArtist: 12
+    readonly property real mediaPlayerPositionHeight: 10
+    readonly property real mediaPlayerCoverSize: 100
 }

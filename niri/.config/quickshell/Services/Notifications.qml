@@ -35,7 +35,11 @@ Singleton {
         onTriggered: () => {
             const index = popupNotifications.findIndex(notification => notification.id == notificationId);
             if (index >= 0) {
-                popupNotifications[index].popup = false
+                if (popupNotifications[index].desktopEntry === "com.spotify.Client") {
+                    popupNotifications[index].expire() 
+                } else {
+                    popupNotifications[index].popup = false
+                }
                 root.updateModels()
             }
             destroy();
@@ -44,7 +48,7 @@ Singleton {
 
     function updateModels() {
         root.popupNotifications = notificationServer.trackedNotifications.values.filter(notif => notif.popup);
-        root.centerNotifications = notificationServer.trackedNotifications.values
+        root.centerNotifications = notificationServer.trackedNotifications.values.filter(notif => notif.desktopEntry !== "com.spotify.Client")
     }
 
     Component {

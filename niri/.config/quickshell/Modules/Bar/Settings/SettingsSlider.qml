@@ -1,4 +1,5 @@
 import Quickshell
+import Quickshell.Widgets
 import QtQuick
 import QtQuick.Controls
 import qs.Config
@@ -33,7 +34,7 @@ MouseArea {
         z: 0
         enabled: !root.disabled && !root.fixed
 
-        background: Rectangle {
+        background: ClippingRectangle {
             color: Colorscheme.surface
             radius: 20
 
