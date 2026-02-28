@@ -4,3 +4,6 @@ export EXA_COLORS="ur=1;35:uw=1;34:ux=1;36:ue=1;32:gr=1;35:gw=1;34:gx=1;32:tr=1;
 export FPATH=$FPATH:/usr/share/zsh/vendor-completions
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+export _JAVA_AWT_WM_NONREPARENTING=1
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
