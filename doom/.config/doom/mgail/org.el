@@ -2,7 +2,7 @@
       org-startup-with-inline-images t
       org-export-directory "./build/out"
       org-latex-pdf-process
-      '("latexmk -shell-escape -auxdir=build/aux -outdir=build/out -pdflatex='pdflatex -interaction nonstopmode' -pdf -bibtex -f %f")
+      '("latexmk -shell-escape -auxdir=build/aux -outdir=build/out -pdflatex='lualatex -interaction nonstopmode' -pdf -bibtex -f %f")
       org-time-stamp-custom-formats '("<%a %d.%m.%Y>" . "<%a %d.%m.%Y %H:%M>")
       org-agenda-files (directory-files-recursively "~/Syncthing/Notes" "\\.org$")
       org-agenda-start-on-weekday nil
