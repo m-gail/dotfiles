@@ -10,7 +10,6 @@ local vue_plugin = {
 	configNamespace = "typescript",
 }
 local tsserver_filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
-local disable_formatting_for = { "vue_ls" }
 
 local servers = {
 	lua_ls = {
@@ -29,26 +28,19 @@ local servers = {
 			},
 		},
 	},
+	eslint = {},
 	pyright = {},
-	rust_analyzer = {},
 	html = {},
 	cssls = {},
 	jsonls = {},
 	tailwindcss = {},
-	emmet_language_server = {},
 	svelte = {},
 	vue_ls = {},
 	gopls = {},
 	ansiblels = {},
 	vimls = {},
-	taplo = {},
 	bashls = {},
 	clangd = {},
-	zls = {
-		settings = {
-			enable_autofix = false,
-		},
-	},
 	vtsls = {
 		settings = {
 			typescript = {
@@ -137,11 +129,7 @@ return {
 				map("<leader>sio", ":VtsExec organize_imports<CR>", "Organize TS imports")
 				map("<leader>sir", ":VtsExec remove_unused_imports<CR>", "Remove unused TS imports")
 				map("<leader>sia", ":VtsExec add_missing_imports<CR>", "Add missing imports")
-				util_map({ "n", "v" }, "<leader>sf", function()
-					vim.lsp.buf.format({ async = true, filter = function (client)
-						return not vim.tbl_contains(disable_formatting_for, client.name)
-					end })
-				end, "format", { buffer = event.buf })
+				map("<leader>sh", function () vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, "Toggle Inlay Hints")
 
 				local client = vim.lsp.get_client_by_id(event.data.client_id)
 				if client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
