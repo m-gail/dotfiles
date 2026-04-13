@@ -7,7 +7,7 @@ ColumnLayout {
     spacing: 0
 
     Text {
-        color: Colorscheme.iris
+        color: Colorscheme.base
         text: Time.hours
         font.pointSize: 124
         font.bold: true
@@ -15,7 +15,7 @@ ColumnLayout {
 
     Text {
         leftPadding: 120
-        color: Colorscheme.subtle
+        color: Colorscheme.surface
         text: Time.minutes
         font.pointSize: 96
         font.bold: true

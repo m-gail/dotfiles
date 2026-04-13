@@ -1,6 +1,6 @@
 import QtQuick
 
 NumberAnimation {
-    duration: 200
+    duration: 250
     easing.type: Easing.InOutQuad
 }

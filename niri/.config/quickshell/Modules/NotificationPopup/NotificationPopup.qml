@@ -32,16 +32,10 @@ Variants {
         visible: transformY != -content.height
 
         Behavior on transformY {
-            NumberAnimation {
-                duration: 200
-                easing.type: Easing.InOutQuad
-            }
+            DefaultNumberAnimation {}
         }
         Behavior on cornerTransformY {
-            NumberAnimation {
-                duration: 200
-                easing.type: Easing.InOutQuad
-            }
+            DefaultNumberAnimation {}
         }
 
         HuggingRectangle {
@@ -50,10 +44,7 @@ Variants {
             rightEdge: true
             contentHeight: Notifications.popupNotifications.length > 0 ? notificationsWrapper.height : Size.notificationHeight
             Behavior on contentHeight {
-                NumberAnimation {
-                    duration: 200
-                    easing.type: Easing.InOutQuad
-                }
+                DefaultNumberAnimation {}
             }
             contentWidth: Size.notificationWidth
             backgroundColor: Colorscheme.base

@@ -93,15 +93,23 @@ layout {
 
     focus-ring {
         width 3
-        active-color "#ebbcba"
+        active-color "#999999"
         inactive-color "transparent"
     }
 
+    background-color "transparent"
 }
 
 overview {
     zoom 0.25
-    backdrop-color "#403d52"
+    workspace-shadow {
+        off
+    }
+}
+
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
 }
 
 gestures {
@@ -119,6 +127,7 @@ hotkey-overlay {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 spawn-at-startup "/home/michael/.local/bin/quickshell"
+spawn-sh-at-startup "wl-paste --watch cliphist store"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -146,7 +155,7 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
+    slowdown 1.25
 }
 
 window-rule {
@@ -302,8 +311,6 @@ binds {
     // Makes the column "fill the rest of the space".
     Mod+Ctrl+F { expand-column-to-available-width; }
 
-    Mod+C { center-column; }
-
     // Center all fully visible columns on screen.
     Mod+Ctrl+C { center-visible-columns; }
 
@@ -348,6 +355,9 @@ binds {
     Mod+A { screenshot; }
 
     Mod+Semicolon { spawn-sh "/home/michael/Documents/togglemute.sh"; }
+
+    Mod+C { spawn-sh "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
+    Mod+Shift+C { spawn-sh "cliphist wipe"; }
 }
 
 clipboard {

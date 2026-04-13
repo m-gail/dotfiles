@@ -12,6 +12,8 @@ Variants {
         screen: modelData
 
         WlrLayershell.layer: WlrLayer.Background
+        WlrLayershell.namespace: "wallpaper"
+        exclusionMode: ExclusionMode.Ignore
 
         anchors {
             top: true
@@ -23,7 +25,7 @@ Variants {
         Image {
             anchors.fill: parent
             fillMode: Image.PreserveAspectCrop
-            source: Qt.resolvedUrl(Quickshell.shellPath("assets/wallpapers/bay.JPG"))
+            source: Qt.resolvedUrl(Quickshell.shellPath("assets/wallpapers/pexels-mahdibafande-14128008.jpg"))
         }
 
         BackgroundClock {

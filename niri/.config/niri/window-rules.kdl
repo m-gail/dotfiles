@@ -9,12 +9,7 @@ window-rule {
 
 window-rule {
     match app-id=r#"firefox$"#
-    open-on-workspace "browser-2"
-}
-
-window-rule {
-    match app-id=r#"firefox$"#
-    open-on-workspace "browser-2"
+    open-on-workspace "browser-1"
 }
 
 window-rule {
