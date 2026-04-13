@@ -8,7 +8,11 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 				rust = { "rustfmt", lsp_format = "fallback" },
+				css = { "prettier" },
+				html = { "prettier" },
 				javascript = { "prettier" },
+				typescript = { "prettier" },
+				typescriptreact = { "prettier" },
 				vue = { "prettier" },
 			},
 		})
