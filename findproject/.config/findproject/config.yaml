@@ -13,6 +13,8 @@ directories:
       - Thunar
       - xfce4
       - dconf
+  - path: ~/Syncthing/Notes/TUWien
+  - path: ~/Syncthing/Notes/TUWien/SS26
   - path: ~/Syncthing/Notes/TUWien/WS25
   - path: ~/Syncthing/Notes/TUWien/WS24
   - path: ~/Syncthing/Notes/TUWien/SS25
