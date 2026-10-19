@@ -22,3 +22,7 @@ eval "$(starship init zsh)"
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [[ ! -d ~/.dotfiles/config/zsh/.config/zsh/plugins/zsh-autosuggestions ]] && git clone https://github.com/zsh-users/zsh-autosuggestions ~/.dotfiles/config/zsh/.config/zsh/plugins/zsh-autosuggestions
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+if command -v fzf >/dev/null; then
+  source <(fzf --zsh)
+fi
