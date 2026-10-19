@@ -92,6 +92,9 @@ in
       name = "m-gail";
       email = "34513390+m-gail@users.noreply.github.com";
     };
+    ignores = [
+      ".envrc"
+    ];
   };
 
   gtk = {
