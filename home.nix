@@ -40,6 +40,7 @@ in
     spotify
     kitty
     firefox
+    nautilus
     (callPackage ./findproject.nix { src = inputs.findproject-src; })
   ];
 
@@ -61,7 +62,12 @@ in
       target = "graphical-session.target";
       environment = [];
     };
-    cli.enable = true;
+    cli = {
+      enable = true;
+      settings = {
+        theme.enableGtk = false;
+      };
+    };
     settings = {
       bar = {
         workspaces = {
@@ -85,6 +91,33 @@ in
     settings.user = {
       name = "m-gail";
       email = "34513390+m-gail@users.noreply.github.com";
+    };
+  };
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
+
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
+    };
+
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
+    };
+
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
+    };
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
     };
   };
 
