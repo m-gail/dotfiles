@@ -1,5 +1,5 @@
 # ls
-alias ls="exa -Fgh --icons"
+alias ls="exa -gh --icons"
 alias l="ls"
 alias ll="ls -l"
 alias lla="ls -la"

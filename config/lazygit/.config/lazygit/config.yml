@@ -1,7 +1,7 @@
 git:
-  paging:
-    colorArg: always
-    pager: ~/SourcePackages/delta/target/release/delta --dark --paging=never --line-numbers --tabs 4
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never --line-numbers --tabs 4
 gui:
   border: 'rounded'
   theme:
