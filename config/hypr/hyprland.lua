@@ -34,7 +34,7 @@ local menu        = "caelestia shell drawers toggle launcher"
 hl.on("hyprland.start", function () 
   hl.exec_cmd("caelestia-shell")
   hl.exec_cmd("caelestia scheme set -n dynamic -m dark")
-  hl.exec_cmd("caelestia wallpaper -f ~/Pictures/Wallpapers/bold_and_brash.png")
+  hl.exec_cmd("caelestia wallpaper -f ~/Pictures/Wallpapers/pexels-roman-kirienko-67502392-9906079.jpg")
 end)
 
 
