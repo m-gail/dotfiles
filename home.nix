@@ -16,6 +16,9 @@ in
   
 
   home.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    fd
+    syncthing
     direnv
     delta
     gnumake
@@ -44,6 +47,8 @@ in
     nautilus
     (callPackage ./findproject.nix { src = inputs.findproject-src; })
   ];
+
+  fonts.fontconfig.enable = true;
 
   programs.firefox = {
     enable = true;
@@ -125,6 +130,7 @@ in
     };
   };
 
+  xdg.configFile."doom".source = link "config/doom/.config/doom";
   xdg.configFile."kitty".source = link "config/kitty/.config/kitty";
   xdg.configFile."zsh".source = link "config/zsh/.config/zsh";
   xdg.configFile."starship.toml".source = link "config/zsh/.config/starship.toml";
