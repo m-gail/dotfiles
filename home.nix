@@ -33,6 +33,13 @@ in
     tmux
     tree-sitter
     fzf
+    prismlauncher
+    emacs
+    android-studio
+    discord
+    spotify
+    kitty
+    firefox
     (callPackage ./findproject.nix { src = inputs.findproject-src; })
   ];
 

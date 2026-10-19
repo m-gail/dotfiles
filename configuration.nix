@@ -67,10 +67,7 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-    kitty
-    alacritty
     git
-    firefox
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -82,7 +79,6 @@
   # };
 
   programs.zsh.enable = true;
-  programs.niri.enable = true;
   programs.hyprland.enable = true;
   programs.nix-ld.enable = true;
 
