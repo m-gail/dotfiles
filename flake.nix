@@ -23,14 +23,14 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
-            ./configuration.nix
+            ./hosts/nix-vm
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs; };
 	      home-manager.backupFileExtension = "bak";
-              home-manager.users.michael = ./home.nix;
+              home-manager.users.michael = ./home;
             }
           ];
         };

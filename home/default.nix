@@ -45,7 +45,7 @@ in
     kitty
     firefox
     nautilus
-    (callPackage ./findproject.nix { src = inputs.findproject-src; })
+    (callPackage ../modules/findproject.nix { src = inputs.findproject-src; })
   ];
 
   fonts.fontconfig.enable = true;
