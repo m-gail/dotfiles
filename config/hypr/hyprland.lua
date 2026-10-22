@@ -10,7 +10,7 @@ hl.monitor({
     output   = "",
     mode     = "preferred",
     position = "auto",
-    scale    = "auto",
+    scale    = "1",
 })
 
 
@@ -205,6 +205,7 @@ hl.config({
 
         touchpad = {
             natural_scroll = false,
+            tap_to_click = false
         },
     },
 })
