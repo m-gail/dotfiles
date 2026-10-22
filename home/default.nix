@@ -17,6 +17,7 @@ in
 
   home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    fastfetch
     fd
     syncthing
     direnv
