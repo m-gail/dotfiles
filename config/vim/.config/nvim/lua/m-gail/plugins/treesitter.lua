@@ -8,7 +8,7 @@ return {
 	lazy = false,
 	build = ":TSUpdate",
 	config = function()
-		local langs = { "lua", "python", "javascript", "typescript", "tsx", "jsx" }
+		local langs = { "lua", "python", "javascript", "typescript", "tsx", "jsx", "nix" }
 
 		require("nvim-treesitter").install(langs)
 
