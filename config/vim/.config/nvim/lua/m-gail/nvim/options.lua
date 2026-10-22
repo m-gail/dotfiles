@@ -29,3 +29,4 @@ vim.g.maplocalleader = " "
 
 vim.o.timeout = true
 vim.o.timeoutlen = 300
+vim.opt.foldlevel = 1000

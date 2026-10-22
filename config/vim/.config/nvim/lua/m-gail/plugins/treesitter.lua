@@ -1,91 +1,38 @@
-function _G.treesitter_fold_text()
-	local line = vim.fn.getline(vim.v.foldstart)
-	local line_count = vim.v.foldend - vim.v.foldstart + 1
-	return line .. "  " .. line_count .. " lines"
-end
-
 return {
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter-context",
-			"nvim-treesitter/nvim-treesitter-textobjects",
-			"windwp/nvim-ts-autotag",
-			"JoosepAlviste/nvim-ts-context-commentstring",
-			{ "windwp/nvim-autopairs", opts = {} },
-		},
-		branch = "master",
-		config = function()
-			local parsers = require("nvim-treesitter.parsers").get_parser_configs()
-			local ensure_installed = {}
-			for lang, _ in pairs(parsers) do
-				if lang ~= "ipkg" then
-					table.insert(ensure_installed, lang)
-				end
-			end
-			require("nvim-treesitter.configs").setup({
-				ensure_installed = ensure_installed,
-				sync_install = false,
-				highlight = {
-					enable = true,
-				},
-				indent = {
-					enable = true,
-				},
-				autotag = {
-					enable = true,
-				},
-				incremental_selection = {
-					enable = true,
-					keymaps = {
-						init_selection = "gnn",
-						node_incremental = "<A-o>",
-						scope_incremental = "grc",
-						node_decremental = "<A-i>",
-					},
-				},
-				textobjects = {
-					select = {
-						enable = true,
-						lookahead = true,
-						keymaps = {
-							["af"] = "@function.outer",
-							["if"] = "@function.inner",
-							["ac"] = "@class.outer",
-							["ic"] = "@class.inner",
-							["aa"] = "@parameter.outer",
-							["ia"] = "@parameter.inner",
-						},
-					},
-					move = {
-						enable = true,
-						set_jumps = true,
-						goto_next_start = {
-							["]a"] = "@parameter.inner",
-							["]c"] = "@class.inner",
-							["]m"] = "@function.outer",
-						},
-						goto_next_end = {
-							["]M"] = "@function.outer",
-						},
-						goto_previous_start = {
-							["[a"] = "@parameter.inner",
-							["[c"] = "@class.inner",
-							["[m"] = "@function.outer",
-						},
-						goto_previous_end = {
-							["[M"] = "@function.outer",
-						},
-					},
-				},
-			})
-
-			vim.opt.foldmethod = "expr"
-			vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-			vim.opt.foldlevel = 1000
-			vim.opt.foldtext = "v:lua.treesitter_fold_text()"
-			vim.opt.fillchars = { fold = " " }
-		end,
+	"nvim-treesitter/nvim-treesitter",
+	dependencies = {
+		"nvim-treesitter/nvim-treesitter-context",
+		"nvim-treesitter/nvim-treesitter-textobjects",
 	},
+	branch = "main",
+	lazy = false,
+	build = ":TSUpdate",
+	config = function()
+		local langs = { "lua", "python", "javascript", "typescript", "tsx", "jsx" }
+
+		require("nvim-treesitter").install(langs)
+
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = langs,
+			callback = function()
+				vim.treesitter.start()
+				vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+				vim.wo[0][0].foldmethod = "expr"
+				vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+			end,
+		})
+
+		vim.keymap.set({ "x", "o" }, "af", function()
+			require("nvim-treesitter-textobjects.select").select_textobject("@function.outer", "textobjects")
+		end)
+		vim.keymap.set({ "x", "o" }, "if", function()
+			require("nvim-treesitter-textobjects.select").select_textobject("@function.inner", "textobjects")
+		end)
+		vim.keymap.set({ "x", "o" }, "ac", function()
+			require("nvim-treesitter-textobjects.select").select_textobject("@class.outer", "textobjects")
+		end)
+		vim.keymap.set({ "x", "o" }, "ic", function()
+			require("nvim-treesitter-textobjects.select").select_textobject("@class.inner", "textobjects")
+		end)
+	end,
 }
